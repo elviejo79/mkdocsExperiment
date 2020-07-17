@@ -1,0 +1,10 @@
+{
+    "name": "Alinex Development Guide",
+    "short_name": "Alinex Guide",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#fff",
+    "description": "A book to learn modern web technologies.",
+    "lang": "en-US",
+    "theme_color": "indigo"
+}
