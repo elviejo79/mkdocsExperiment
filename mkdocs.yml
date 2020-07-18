@@ -1,143 +1,143 @@
-site_name: Alinex Development Guide
+site_name: Elviejo79 Development Guide
 site_description: A book to learn modern web technologies.
 site_author: Alexander Schilling
-copyright: Copyright &copy; 2016 - 2020 <a href="https://alinex.de">Alexander Schilling</a>
+copyright: Copyright &copy; 2016 - 2020 <a href="https://elviejo79.github.io">Alexander Schilling</a>
 
 nav:
-    - Home:
-          - README.md
-          - alinex.md
-          - blog/2020.md
-          - blog/2019.md
-          - blog/2018.md
-          - blog/2017.md
-          - blog/2016.md
-          - LICENSE.md
-          - policy.md
-          - about.md
+  - Home:
+      - README.md
+      - alinex.md
+      - blog/2020.md
+      - blog/2019.md
+      - blog/2018.md
+      - blog/2017.md
+      - blog/2016.md
+      - LICENSE.md
+      - policy.md
+      - about.md
 
-    - Environment:
-          - env/README.md
-          - env/freeplane.md
-          - env/gitlab.md
-          - env/github.md
-          - env/trello.md
-          - env/vscode.md
-          - env/atom.md
-          - env/git.md
-          - env/mkdocs.md
-          - env/gitbook.md
+  - Environment:
+      - env/README.md
+      - env/freeplane.md
+      - env/gitlab.md
+      - env/github.md
+      - env/trello.md
+      - env/vscode.md
+      - env/atom.md
+      - env/git.md
+      - env/mkdocs.md
+      - env/gitbook.md
 
-    - Technologies:
-          - Languages:
-                - lang/README.md
-                - lang/markdown.md
-                - lang/handlebars.md
-                - lang/sass.md
-                - lang/bash.md
-                - lang/go.md
-          - Systems:
-                - systems/README.md
-                - systems/linux.md
-                - systems/apache.md
-                - systems/postgres.md
-                - systems/mongo.md
-          - Concepts:
-                - concepts/app.md
-                - concepts/exitcodes.md
+  - Technologies:
+      - Languages:
+          - lang/README.md
+          - lang/markdown.md
+          - lang/handlebars.md
+          - lang/sass.md
+          - lang/bash.md
+          - lang/go.md
+      - Systems:
+          - systems/README.md
+          - systems/linux.md
+          - systems/apache.md
+          - systems/postgres.md
+          - systems/mongo.md
+      - Concepts:
+          - concepts/app.md
+          - concepts/exitcodes.md
 
-    - JavaScript:
-          - js/README.md
-          - Versions:
-                - js/spec.md
-                - js/es-next.md
-                - js/es2015.md
-                - js/es2016.md
-                - js/es2017.md
-                - js/es2018.md
-                - js/es2019.md
-                - js/es2020.md
-          - Transpiler:
-                - js/typescript.md
-                - js/flow.md
-                - js/coffee.md
-                - js/coffee-styleguide.md
-          - js/nodejs.md
-          - js/npm.md
-          - js/modules.md
-    - Rust:
-          - rust/README.md
-          - rust/start.md
-          - rust/core.md
-          - rust/standard.md
-          - rust/modules.md
-          - rust/directory.md
-          - rust/test.md
-          - rust/tools.md
-          - rust/phantom.md
-          - Crates:
-                - rust/crates/README.md
-                - rust/crates/failure.md
-                - rust/crates/clap.md
-                - rust/crates/actix.md
-                - rust/crates/actix-web.md
-                - rust/crates/diesel.md
-          - Solutions:
-                - rust/solutions/README.md
-                - rust/solutions/cache.md
+  - JavaScript:
+      - js/README.md
+      - Versions:
+          - js/spec.md
+          - js/es-next.md
+          - js/es2015.md
+          - js/es2016.md
+          - js/es2017.md
+          - js/es2018.md
+          - js/es2019.md
+          - js/es2020.md
+      - Transpiler:
+          - js/typescript.md
+          - js/flow.md
+          - js/coffee.md
+          - js/coffee-styleguide.md
+      - js/nodejs.md
+      - js/npm.md
+      - js/modules.md
+  - Rust:
+      - rust/README.md
+      - rust/start.md
+      - rust/core.md
+      - rust/standard.md
+      - rust/modules.md
+      - rust/directory.md
+      - rust/test.md
+      - rust/tools.md
+      - rust/phantom.md
+      - Crates:
+          - rust/crates/README.md
+          - rust/crates/failure.md
+          - rust/crates/clap.md
+          - rust/crates/actix.md
+          - rust/crates/actix-web.md
+          - rust/crates/diesel.md
+      - Solutions:
+          - rust/solutions/README.md
+          - rust/solutions/cache.md
 
-    - Solutions:
-          - solutions/README.md
-          - solutions/devops.md
-          - solutions/applications.md
-          - solutions/modules.md
-          - solutions/playground.md
-          - solutions/quality.md
+  - Solutions:
+      - solutions/README.md
+      - solutions/devops.md
+      - solutions/applications.md
+      - solutions/modules.md
+      - solutions/playground.md
+      - solutions/quality.md
 
 theme:
-    name: material
-    icon:
-        logo: material/book-open-variant
-    favicon: assets/favicon.ico
+  name: material
+  icon:
+    logo: material/book-open-variant
+    favicon: "assets/favicon.ico"
     language: en
     palette:
-        primary: grey
-        accent: dark orange
-    font: false
+      primary: grey
+      accent: dark orange
+    # font: false
     # remove to be GDPR conform
-    #    font:
-    #        text: Roboto
-    #        code: Roboto Mono
+    font:
+      text: Roboto
+      code: Roboto Mono
     features:
-        - tabs
-        - instant
+      - tabs
+      - instant
 
-repo_name: 'alinex/alinex.gitlab.io'
-repo_url: 'https://gitlab.com/alinex/alinex.gitlab.io'
-edit_uri: ''
+repo_name: "elviejo79/mkdocsExperiment"
+repo_url: "https://github.com/elviejo79/mkdocsExperiment.git"
+edit_uri: ""
 
 extra:
-    manifest: 'manifest.webmanifest'
-    social:
-        - icon: material/gitlab
-          link: https://gitlab.com/alinex
-        - icon: material/github
-          link: https://github.com/alinex
-        - icon: material/home
-          link: https://alinex.de
+  manifest: "manifest.webmanifest"
+  # social:
+  #   - icon: material/gitlab
+  #     link: https://gitlab.com/elviejo79
+  #   - icon: material/github
+  #     link: https://github.com/elviejo79
+  #   - icon: material/home
+  #     link: https://elviejo79.github.io
 
 extra_css:
-    - assets/extra.css
+  - assets/extra.css
 #PDF#    - assets/pdf.css
 
 plugins:
-    - search
+  - search
 # Enable for PDF export
 #PDF#    - pdf-export:
 #PDF#          verbose: false
 #PDF#          media_type: print
 #PDF#          combined: true
-#PDF#          combined_output_path: alinex-book.pdf
+#PDF#          combined_output_path: elviejo79-book.pdf
 # theme_handler_path: theme-handler.py
 
 # markdown_extensions:
