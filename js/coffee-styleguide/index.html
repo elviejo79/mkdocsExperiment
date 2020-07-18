@@ -1,0 +1,2071 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A book to learn modern web technologies.">
+      
+      
+      
+        <meta name="author" content="Alexander Schilling">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.0">
+    
+    
+      
+        <title>CoffeeScript Styleguide - Elviejo79 Development Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.89dc9fe3.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+      <link rel="manifest" href="../../manifest.webmanifest" crossorigin="use-credentials">
+    
+    
+      <link rel="stylesheet" href="../../assets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#coffeescript-styleguide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Elviejo79 Development Guide" class="md-header-nav__button md-logo" aria-label="Elviejo79 Development Guide">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21,5C19.89,4.65 18.67,4.5 17.5,4.5C15.55,4.5 13.45,4.9 12,6C10.55,4.9 8.45,4.5 6.5,4.5C4.55,4.5 2.45,4.9 1,6V20.65C1,20.9 1.25,21.15 1.5,21.15C1.6,21.15 1.65,21.1 1.75,21.1C3.1,20.45 5.05,20 6.5,20C8.45,20 10.55,20.4 12,21.5C13.35,20.65 15.8,20 17.5,20C19.15,20 20.85,20.3 22.25,21.05C22.35,21.1 22.4,21.1 22.5,21.1C22.75,21.1 23,20.85 23,20.6V6C22.4,5.55 21.75,5.25 21,5M21,18.5C19.9,18.15 18.7,18 17.5,18C15.8,18 13.35,18.65 12,19.5V8C13.35,7.15 15.8,6.5 17.5,6.5C18.7,6.5 19.9,6.65 21,7V18.5Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Elviejo79 Development Guide
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              CoffeeScript Styleguide
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/elviejo79/mkdocsExperiment.git" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    elviejo79/mkdocsExperiment
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Elviejo79 Development Guide" class="md-nav__button md-logo" aria-label="Elviejo79 Development Guide">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21,5C19.89,4.65 18.67,4.5 17.5,4.5C15.55,4.5 13.45,4.9 12,6C10.55,4.9 8.45,4.5 6.5,4.5C4.55,4.5 2.45,4.9 1,6V20.65C1,20.9 1.25,21.15 1.5,21.15C1.6,21.15 1.65,21.1 1.75,21.1C3.1,20.45 5.05,20 6.5,20C8.45,20 10.55,20.4 12,21.5C13.35,20.65 15.8,20 17.5,20C19.15,20 20.85,20.3 22.25,21.05C22.35,21.1 22.4,21.1 22.5,21.1C22.75,21.1 23,20.85 23,20.6V6C22.4,5.55 21.75,5.25 21,5M21,18.5C19.9,18.15 18.7,18 17.5,18C15.8,18 13.35,18.65 12,19.5V8C13.35,7.15 15.8,6.5 17.5,6.5C18.7,6.5 19.9,6.65 21,7V18.5Z" /></svg>
+
+    </a>
+    Elviejo79 Development Guide
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/elviejo79/mkdocsExperiment.git" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    elviejo79/mkdocsExperiment
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Home
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Home" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Home
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../alinex/" title="What is Alinex" class="md-nav__link">
+      What is Alinex
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blog/2020/" title="Blog 2020" class="md-nav__link">
+      Blog 2020
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blog/2019/" title="Blog 2019" class="md-nav__link">
+      Blog 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blog/2018/" title="Blog 2018" class="md-nav__link">
+      Blog 2018
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blog/2017/" title="Blog 2017" class="md-nav__link">
+      Blog 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blog/2016/" title="Blog 2016" class="md-nav__link">
+      Blog 2016
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../LICENSE/" title="License" class="md-nav__link">
+      License
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/" title="Policy" class="md-nav__link">
+      Policy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../about/" title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Environment
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Environment" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Environment
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/freeplane/" title="Freeplane" class="md-nav__link">
+      Freeplane
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/gitlab/" title="GitLab" class="md-nav__link">
+      GitLab
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/github/" title="GitHub" class="md-nav__link">
+      GitHub
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/trello/" title="Trello" class="md-nav__link">
+      Trello
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/vscode/" title="VS Code" class="md-nav__link">
+      VS Code
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/atom/" title="Atom" class="md-nav__link">
+      Atom
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/git/" title="Git" class="md-nav__link">
+      Git
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/mkdocs/" title="MkDocs" class="md-nav__link">
+      MkDocs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/gitbook/" title="GitBook" class="md-nav__link">
+      GitBook
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Technologies
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Technologies" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Technologies
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Languages
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Languages" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Languages
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lang/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lang/markdown/" title="Markdown" class="md-nav__link">
+      Markdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lang/handlebars/" title="Handlebars" class="md-nav__link">
+      Handlebars
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lang/sass/" title="Sass" class="md-nav__link">
+      Sass
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lang/bash/" title="Bash" class="md-nav__link">
+      Bash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lang/go/" title="Go" class="md-nav__link">
+      Go
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Systems
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Systems" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Systems
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systems/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systems/linux/" title="Linux" class="md-nav__link">
+      Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systems/apache/" title="Apache Web Server" class="md-nav__link">
+      Apache Web Server
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systems/postgres/" title="PostgreSQL Database" class="md-nav__link">
+      PostgreSQL Database
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systems/mongo/" title="MongoDB" class="md-nav__link">
+      MongoDB
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Concepts
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Concepts" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Concepts
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../concepts/app/" title="Application" class="md-nav__link">
+      Application
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../concepts/exitcodes/" title="Exit Codes" class="md-nav__link">
+      Exit Codes
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      JavaScript
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="JavaScript" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        JavaScript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="JavaScript" class="md-nav__link">
+      JavaScript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      Versions
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Versions" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Versions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../spec/" title="Specification" class="md-nav__link">
+      Specification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../es-next/" title="ES.Next" class="md-nav__link">
+      ES.Next
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../es2015/" title="ECMAScript 2015" class="md-nav__link">
+      ECMAScript 2015
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../es2016/" title="ECMAScript 2015" class="md-nav__link">
+      ECMAScript 2015
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../es2017/" title="ECMAScript 2017" class="md-nav__link">
+      ECMAScript 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../es2018/" title="ECMAScript 2018" class="md-nav__link">
+      ECMAScript 2018
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../es2019/" title="ECMAScript 2019" class="md-nav__link">
+      ECMAScript 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../es2020/" title="ECMAScript 2020" class="md-nav__link">
+      ECMAScript 2020
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3" checked>
+    
+    <label class="md-nav__link" for="nav-4-3">
+      Transpiler
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Transpiler" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Transpiler
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../typescript/" title="TypeScript" class="md-nav__link">
+      TypeScript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../flow/" title="Flow" class="md-nav__link">
+      Flow
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../coffee/" title="CoffeeScript" class="md-nav__link">
+      CoffeeScript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        CoffeeScript Styleguide
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="CoffeeScript Styleguide" class="md-nav__link md-nav__link--active">
+      CoffeeScript Styleguide
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-layout" class="md-nav__link">
+    General layout
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#naming" class="md-nav__link">
+    Naming
+  </a>
+  
+    <nav class="md-nav" aria-label="Naming">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classes-and-instances" class="md-nav__link">
+    Classes and Instances
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constants" class="md-nav__link">
+    Constants
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asynchronous-code" class="md-nav__link">
+    Asynchronous code
+  </a>
+  
+    <nav class="md-nav" aria-label="Asynchronous code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#callbacks" class="md-nav__link">
+    Callbacks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#async-module" class="md-nav__link">
+    Async module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    Events
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#errorexception-handling" class="md-nav__link">
+    Error/Exception handling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-flow" class="md-nav__link">
+    Control flow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    Documentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging" class="md-nav__link">
+    Debugging
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    Testing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#publishing" class="md-nav__link">
+    Publishing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../nodejs/" title="Node.JS" class="md-nav__link">
+      Node.JS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../npm/" title="NPM" class="md-nav__link">
+      NPM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modules/" title="Modules" class="md-nav__link">
+      Modules
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Rust
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Rust" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Rust
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/start/" title="Getting started" class="md-nav__link">
+      Getting started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/core/" title="Language Core" class="md-nav__link">
+      Language Core
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/standard/" title="Standard Library" class="md-nav__link">
+      Standard Library
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/modules/" title="Modules" class="md-nav__link">
+      Modules
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/directory/" title="Directory Structure" class="md-nav__link">
+      Directory Structure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/test/" title="Unit Testing" class="md-nav__link">
+      Unit Testing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/tools/" title="Tooling" class="md-nav__link">
+      Tooling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/phantom/" title="Phantom Types" class="md-nav__link">
+      Phantom Types
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-10" type="checkbox" id="nav-5-10">
+    
+    <label class="md-nav__link" for="nav-5-10">
+      Crates
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Crates" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-10">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Crates
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/crates/" title="Rust" class="md-nav__link">
+      Rust
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/crates/failure/" title="Error Management" class="md-nav__link">
+      Error Management
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/crates/clap/" title="clap" class="md-nav__link">
+      clap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/crates/actix/" title="actix" class="md-nav__link">
+      actix
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/crates/actix-web/" title="actix_web" class="md-nav__link">
+      actix_web
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/crates/diesel/" title="Diesel Object Relation Mapper" class="md-nav__link">
+      Diesel Object Relation Mapper
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-11" type="checkbox" id="nav-5-11">
+    
+    <label class="md-nav__link" for="nav-5-11">
+      Solutions
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Solutions" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-11">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Solutions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/solutions/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/solutions/cache/" title="Caching using Struct" class="md-nav__link">
+      Caching using Struct
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Solutions
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Solutions" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Solutions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../solutions/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../solutions/devops/" title="DevOps" class="md-nav__link">
+      DevOps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../solutions/applications/" title="Applications" class="md-nav__link">
+      Applications
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../solutions/modules/" title="Modules" class="md-nav__link">
+      Modules
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../solutions/playground/" title="Playground" class="md-nav__link">
+      Playground
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../solutions/quality/" title="Quality Standards" class="md-nav__link">
+      Quality Standards
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-layout" class="md-nav__link">
+    General layout
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#naming" class="md-nav__link">
+    Naming
+  </a>
+  
+    <nav class="md-nav" aria-label="Naming">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classes-and-instances" class="md-nav__link">
+    Classes and Instances
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constants" class="md-nav__link">
+    Constants
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asynchronous-code" class="md-nav__link">
+    Asynchronous code
+  </a>
+  
+    <nav class="md-nav" aria-label="Asynchronous code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#callbacks" class="md-nav__link">
+    Callbacks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#async-module" class="md-nav__link">
+    Async module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    Events
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#errorexception-handling" class="md-nav__link">
+    Error/Exception handling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-flow" class="md-nav__link">
+    Control flow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    Documentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging" class="md-nav__link">
+    Debugging
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    Testing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#publishing" class="md-nav__link">
+    Publishing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="coffeescript-styleguide">CoffeeScript Styleguide</h1>
+<p>This guide should give an overview of the general style within the alinex system
+and it's packages. It is neither meant as a hard limit but neither as some
+nice to have rules. So as much as possible this rules have to be followed.</p>
+<h2 id="general-layout">General layout</h2>
+<p>Within the code I use 2 spaces for indention neither tabs because they make
+reading problematic and also are not suited for coffee script if mixed with
+spaces.</p>
+<h2 id="naming">Naming</h2>
+<h3 id="variables">Variables</h3>
+<p>Over all modules some common variable names will be used for the same values:</p>
+<ul>
+<li><code>cb</code> - for the callback method</li>
+<li><code>done</code> - alternatively used for the callback for better reading</li>
+<li><code>err</code> or <code>error</code> - for an error message object</li>
+</ul>
+<p>Classes start with an Uppercase letter:</p>
+<pre><code class="coffee">test = new Test
+</code></pre>
+
+<p>To mark private properties/functions they may start with an underscore.</p>
+<p>Modules are always imported into a variable which is named after the module
+and if the module exports a class the uppercase name is used.</p>
+<h3 id="requirements">Requirements</h3>
+<p>Generally required modules belong on top of the file. But all things which will
+be required at the top will immediately load and slow down the initialization. Often
+some of these requirements won't be needed in every call. So it is better to load
+them dynamically then needed.</p>
+<p>To optimize readability the variables for dynamically loaded requirement will be
+set on top and the real requirement can be put anywhere in the code.</p>
+<h3 id="classes-and-instances">Classes and Instances</h3>
+<p>Classes are written starting with uppercase letter while it's instances start with
+lowercase letters.</p>
+<h3 id="constants">Constants</h3>
+<p>They are used seldom but if so you have to name it completely in uppercase with
+underscores for word separator.</p>
+<h2 id="asynchronous-code">Asynchronous code</h2>
+<p>Through the whole code as much as possible only asynchronous code should be used
+without blocking. That brings the most performance out.</p>
+<h3 id="callbacks">Callbacks</h3>
+<p>These code follows the node.js convention of providing a single callback as
+the last argument of your asynchronous function.</p>
+<p>To not make it too complex the async function may call it's callback synchronously
+in the same event loop or later. It is no true asynchronity by definition, so
+if you need it maybe think about your code structure or call the function
+through <code>process.nextTick()</code> yourself.</p>
+<h3 id="async-module">Async module</h3>
+<p>You may also use the <a href="https://github.com/alinex/node-async/">Async</a> module. It
+brings you a lot of methods to make asynchronous calls parallel or serial.</p>
+<h3 id="events">Events</h3>
+<p>Often events are also used to make use of the asynchronous behavior in class
+objects.</p>
+<h2 id="errorexception-handling">Error/Exception handling</h2>
+<p>Error and exception handling will be done in JavaScript/CoffeeScript in the
+following ways:</p>
+<ul>
+<li>Synchronous code will return an Error object instead of the normal return
+    value:</li>
+</ul>
+<pre><code class="coffee">    myfuncSync = () -&gt;
+      x = doSomething()
+      if x is 1
+        return new Error &quot;Failed calculation&quot;
+      return x
+
+    result = myfuncSync()
+    if result instanceof Error
+      console.error result.message
+</code></pre>
+
+<ul>
+<li>Asynchronous code should send the error as first parameter to the callback
+    method or <code>null</code> if no error occurred:</li>
+</ul>
+<pre><code class="coffee">    myfunc = (cb) -&gt;
+      x = doSomething()
+      if x is 1
+        cb new Error &quot;Failed calculation&quot;
+      else
+        cb null, x
+
+    myfunc (err, result) -&gt;
+      if err
+        console.error err.message
+</code></pre>
+
+<ul>
+<li>
+<p>And at last an error may be thrown only if it is a hard error which signals
+    an fatal error which may stop the overall process.</p>
+<p>Such an error may be catched in a try block, in a domain or on the process.</p>
+</li>
+<li>
+<p>Another solution is to use eventful methods which emit an <code>error</code> event</p>
+</li>
+</ul>
+<p>Read more in the <a href="https://github.com/alinex/node-error/">errorHandler</a>
+documentation.</p>
+<h2 id="control-flow">Control flow</h2>
+<p>To make the code more readable and prevent some hanging else-statements which
+you have to search to which indention level it belongs to return or callback
+as fast as possible.</p>
+<p>Bad:</p>
+<pre><code class="coffee">if err
+  doSomething (err) -&gt;
+    return cb err
+else
+  return true
+</code></pre>
+
+<p>Good:</p>
+<pre><code class="coffee">return true unless err
+doSomething (err) -&gt;
+  return cb err
+</code></pre>
+
+<h2 id="documentation">Documentation</h2>
+<p>All the code in any language will be documented inline using comments as
+possible in the specific language. No JavaDoc or alike have to be used.
+Only plain markup which will be automatically detected and converted to
+documentation.</p>
+<p>In each exported method the parameters will be documented in detail and the
+callback methods with their values, they will get.</p>
+<p>Some overall documentation like this will be stored in special markup files
+ending with <code>.md</code>.</p>
+<h2 id="debugging">Debugging</h2>
+<p>Best use the node-inspector for this:</p>
+<pre><code class="bash">sudo npm install -g node-inspector
+node-inspector
+node --debug-brk lib/cli.js -v
+</code></pre>
+
+<p>But additionally the <code>debug</code> package is used in all packages to make it possible
+to debug any time, also in the production code to get more information.</p>
+<pre><code class="coffee">debug = require('debug') 'mypack'
+debug &quot;the system is running&quot;
+</code></pre>
+
+<p>You instantiate a new debug instance after requiring it with a name. This should
+be your package name (for the main part). For subparts of your package add a colon
+with a specifier like <code>mypack:reader</code> or <code>mypack:writer:html</code>.</p>
+<p>If you run the code above normally nothing will happen but if you set the <code>DEBUG</code>
+environment variable like:</p>
+<pre><code class="bash">DEBUG=mypack node lib/index.js
+</code></pre>
+
+<p>You will get the debug output. You can add multiple debug packages with colon or
+use asterisk like <code>mypack*</code> to select the package with all sub level.</p>
+<p>You can also add multiple debug statements and exclude some:</p>
+<pre><code>DEBUG=config*,exec*
+DEBUG=*,-config*
+</code></pre>
+<h2 id="testing">Testing</h2>
+<p>Linting is used to pre-check the code. This will not only check the syntax but also
+the style and the above conventions of the styleguide.</p>
+<p>Mocha unit tests are used to check individual parts and the overall
+functionality. As much as possible should be tested but not only single units
+but all interface calls. An test coverage of 100% should be the goal.</p>
+<p>If used the <a href="http://alinex.github.io/node-builder">builder</a> will call them
+with <code>builder -c test</code> for you.</p>
+<h2 id="publishing">Publishing</h2>
+<p>To publish new packages the following steps should be done:</p>
+<ol>
+<li>Check dependencies and their version in package.json (maybe run <code>npm outdated</code>)</li>
+<li>Cleanup to remove test packages</li>
+<li>Install and update packages</li>
+<li>Run the test suite</li>
+<li>Push code to repository</li>
+<li>Publish new package</li>
+<li>Create and publish new documentation</li>
+</ol>
+<p>The tasks are done in an easy way using the
+<a href="http://alinex.github.io/node-builder">alinex-builder</a>.</p>
+<pre><code class="bash"># check what is changed and if all packages are up-to-date
+builder -c changes
+# do the steps 1-7
+builder -c publish --minor
+</code></pre>
+
+<h2 id="configuration">Configuration</h2>
+<p>The general configuration is stored in files to be also available without
+database connection. To make it easy readable and maintainable it should
+be written in YAML rather than JSON.</p>
+<p><a href="http://alinex.github.io/node-config/">alinex-config</a> helps in working with
+such files.</p>
+<h2 id="dependencies">Dependencies</h2>
+<p>To use singleton modules the dependencies for specific versions should be as
+open as possible. This makes it possible to use:</p>
+<pre><code class="bash">npm dedupe
+</code></pre>
+
+<p>This will flatten down the modules to the uppermost common module in hierarchy.</p>
+<p>Peer dependencies are also possible, in which a sub module specifies which
+parent it needs. This will be specified in the <code>peerDependencies</code> section.</p>
+<p>{!docs/abbreviations.txt!}</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../coffee/" title="CoffeeScript" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                CoffeeScript
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../nodejs/" title="Node.JS" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Node.JS
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2016 - 2020 <a href="https://elviejo79.github.io">Alexander Schilling</a>
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.36cbf620.min.js"></script>
+      <script src="../../assets/javascripts/bundle.00c583dd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.7f7c8775.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

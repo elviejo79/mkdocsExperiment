@@ -1,0 +1,2310 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A book to learn modern web technologies.">
+      
+      
+      
+        <meta name="author" content="Alexander Schilling">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.0">
+    
+    
+      
+        <title>VS Code</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.89dc9fe3.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+      <link rel="manifest" href="../../manifest.webmanifest" crossorigin="use-credentials">
+    
+    
+      <link rel="stylesheet" href="../../assets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vs-code-editor" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Elviejo79 Development Guide" class="md-header-nav__button md-logo" aria-label="Elviejo79 Development Guide">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21,5C19.89,4.65 18.67,4.5 17.5,4.5C15.55,4.5 13.45,4.9 12,6C10.55,4.9 8.45,4.5 6.5,4.5C4.55,4.5 2.45,4.9 1,6V20.65C1,20.9 1.25,21.15 1.5,21.15C1.6,21.15 1.65,21.1 1.75,21.1C3.1,20.45 5.05,20 6.5,20C8.45,20 10.55,20.4 12,21.5C13.35,20.65 15.8,20 17.5,20C19.15,20 20.85,20.3 22.25,21.05C22.35,21.1 22.4,21.1 22.5,21.1C22.75,21.1 23,20.85 23,20.6V6C22.4,5.55 21.75,5.25 21,5M21,18.5C19.9,18.15 18.7,18 17.5,18C15.8,18 13.35,18.65 12,19.5V8C13.35,7.15 15.8,6.5 17.5,6.5C18.7,6.5 19.9,6.65 21,7V18.5Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Elviejo79 Development Guide
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              VS Code
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/elviejo79/mkdocsExperiment.git" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    elviejo79/mkdocsExperiment
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Elviejo79 Development Guide" class="md-nav__button md-logo" aria-label="Elviejo79 Development Guide">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21,5C19.89,4.65 18.67,4.5 17.5,4.5C15.55,4.5 13.45,4.9 12,6C10.55,4.9 8.45,4.5 6.5,4.5C4.55,4.5 2.45,4.9 1,6V20.65C1,20.9 1.25,21.15 1.5,21.15C1.6,21.15 1.65,21.1 1.75,21.1C3.1,20.45 5.05,20 6.5,20C8.45,20 10.55,20.4 12,21.5C13.35,20.65 15.8,20 17.5,20C19.15,20 20.85,20.3 22.25,21.05C22.35,21.1 22.4,21.1 22.5,21.1C22.75,21.1 23,20.85 23,20.6V6C22.4,5.55 21.75,5.25 21,5M21,18.5C19.9,18.15 18.7,18 17.5,18C15.8,18 13.35,18.65 12,19.5V8C13.35,7.15 15.8,6.5 17.5,6.5C18.7,6.5 19.9,6.65 21,7V18.5Z" /></svg>
+
+    </a>
+    Elviejo79 Development Guide
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/elviejo79/mkdocsExperiment.git" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    elviejo79/mkdocsExperiment
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Home
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Home" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Home
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../alinex/" title="What is Alinex" class="md-nav__link">
+      What is Alinex
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blog/2020/" title="Blog 2020" class="md-nav__link">
+      Blog 2020
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blog/2019/" title="Blog 2019" class="md-nav__link">
+      Blog 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blog/2018/" title="Blog 2018" class="md-nav__link">
+      Blog 2018
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blog/2017/" title="Blog 2017" class="md-nav__link">
+      Blog 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blog/2016/" title="Blog 2016" class="md-nav__link">
+      Blog 2016
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../LICENSE/" title="License" class="md-nav__link">
+      License
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/" title="Policy" class="md-nav__link">
+      Policy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../about/" title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Environment
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Environment" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Environment
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../freeplane/" title="Freeplane" class="md-nav__link">
+      Freeplane
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../gitlab/" title="GitLab" class="md-nav__link">
+      GitLab
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../github/" title="GitHub" class="md-nav__link">
+      GitHub
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../trello/" title="Trello" class="md-nav__link">
+      Trello
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        VS Code
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="VS Code" class="md-nav__link md-nav__link--active">
+      VS Code
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-settings" class="md-nav__link">
+    User Settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workspace-or-project-settings" class="md-nav__link">
+    Workspace or Project Settings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-interface" class="md-nav__link">
+    User Interface
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    Commands
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shortcuts" class="md-nav__link">
+    Shortcuts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    Tasks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugger" class="md-nav__link">
+    Debugger
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extensions" class="md-nav__link">
+    Extensions
+  </a>
+  
+    <nav class="md-nav" aria-label="Extensions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#project-manager" class="md-nav__link">
+    Project Manager
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-formatting" class="md-nav__link">
+    Code Formatting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spellchecker" class="md-nav__link">
+    Spellchecker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    Git
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#markdown" class="md-nav__link">
+    Markdown
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-programming" class="md-nav__link">
+    Rust Programming
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mongo-db" class="md-nav__link">
+    Mongo DB
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postgresql" class="md-nav__link">
+    PostgreSQL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vuejs-extension-pack" class="md-nav__link">
+    VueJS Extension Pack
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rest-client" class="md-nav__link">
+    REST Client
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit-with-shell" class="md-nav__link">
+    Edit with Shell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote-ssh" class="md-nav__link">
+    Remote - SSH
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    Misc
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../atom/" title="Atom" class="md-nav__link">
+      Atom
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../git/" title="Git" class="md-nav__link">
+      Git
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mkdocs/" title="MkDocs" class="md-nav__link">
+      MkDocs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../gitbook/" title="GitBook" class="md-nav__link">
+      GitBook
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Technologies
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Technologies" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Technologies
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Languages
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Languages" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Languages
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lang/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lang/markdown/" title="Markdown" class="md-nav__link">
+      Markdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lang/handlebars/" title="Handlebars" class="md-nav__link">
+      Handlebars
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lang/sass/" title="Sass" class="md-nav__link">
+      Sass
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lang/bash/" title="Bash" class="md-nav__link">
+      Bash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lang/go/" title="Go" class="md-nav__link">
+      Go
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Systems
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Systems" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Systems
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systems/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systems/linux/" title="Linux" class="md-nav__link">
+      Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systems/apache/" title="Apache Web Server" class="md-nav__link">
+      Apache Web Server
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systems/postgres/" title="PostgreSQL Database" class="md-nav__link">
+      PostgreSQL Database
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systems/mongo/" title="MongoDB" class="md-nav__link">
+      MongoDB
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Concepts
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Concepts" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Concepts
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../concepts/app/" title="Application" class="md-nav__link">
+      Application
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../concepts/exitcodes/" title="Exit Codes" class="md-nav__link">
+      Exit Codes
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      JavaScript
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="JavaScript" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        JavaScript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/" title="JavaScript" class="md-nav__link">
+      JavaScript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      Versions
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Versions" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Versions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/spec/" title="Specification" class="md-nav__link">
+      Specification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/es-next/" title="ES.Next" class="md-nav__link">
+      ES.Next
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/es2015/" title="ECMAScript 2015" class="md-nav__link">
+      ECMAScript 2015
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/es2016/" title="ECMAScript 2015" class="md-nav__link">
+      ECMAScript 2015
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/es2017/" title="ECMAScript 2017" class="md-nav__link">
+      ECMAScript 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/es2018/" title="ECMAScript 2018" class="md-nav__link">
+      ECMAScript 2018
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/es2019/" title="ECMAScript 2019" class="md-nav__link">
+      ECMAScript 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/es2020/" title="ECMAScript 2020" class="md-nav__link">
+      ECMAScript 2020
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
+    
+    <label class="md-nav__link" for="nav-4-3">
+      Transpiler
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Transpiler" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Transpiler
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/typescript/" title="TypeScript" class="md-nav__link">
+      TypeScript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/flow/" title="Flow" class="md-nav__link">
+      Flow
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/coffee/" title="CoffeeScript" class="md-nav__link">
+      CoffeeScript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/coffee-styleguide/" title="CoffeeScript Styleguide" class="md-nav__link">
+      CoffeeScript Styleguide
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/nodejs/" title="Node.JS" class="md-nav__link">
+      Node.JS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/npm/" title="NPM" class="md-nav__link">
+      NPM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/modules/" title="Modules" class="md-nav__link">
+      Modules
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Rust
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Rust" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Rust
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/start/" title="Getting started" class="md-nav__link">
+      Getting started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/core/" title="Language Core" class="md-nav__link">
+      Language Core
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/standard/" title="Standard Library" class="md-nav__link">
+      Standard Library
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/modules/" title="Modules" class="md-nav__link">
+      Modules
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/directory/" title="Directory Structure" class="md-nav__link">
+      Directory Structure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/test/" title="Unit Testing" class="md-nav__link">
+      Unit Testing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/tools/" title="Tooling" class="md-nav__link">
+      Tooling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/phantom/" title="Phantom Types" class="md-nav__link">
+      Phantom Types
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-10" type="checkbox" id="nav-5-10">
+    
+    <label class="md-nav__link" for="nav-5-10">
+      Crates
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Crates" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-10">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Crates
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/crates/" title="Rust" class="md-nav__link">
+      Rust
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/crates/failure/" title="Error Management" class="md-nav__link">
+      Error Management
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/crates/clap/" title="clap" class="md-nav__link">
+      clap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/crates/actix/" title="actix" class="md-nav__link">
+      actix
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/crates/actix-web/" title="actix_web" class="md-nav__link">
+      actix_web
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/crates/diesel/" title="Diesel Object Relation Mapper" class="md-nav__link">
+      Diesel Object Relation Mapper
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-11" type="checkbox" id="nav-5-11">
+    
+    <label class="md-nav__link" for="nav-5-11">
+      Solutions
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Solutions" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-11">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Solutions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/solutions/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/solutions/cache/" title="Caching using Struct" class="md-nav__link">
+      Caching using Struct
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Solutions
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Solutions" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Solutions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../solutions/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../solutions/devops/" title="DevOps" class="md-nav__link">
+      DevOps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../solutions/applications/" title="Applications" class="md-nav__link">
+      Applications
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../solutions/modules/" title="Modules" class="md-nav__link">
+      Modules
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../solutions/playground/" title="Playground" class="md-nav__link">
+      Playground
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../solutions/quality/" title="Quality Standards" class="md-nav__link">
+      Quality Standards
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-settings" class="md-nav__link">
+    User Settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workspace-or-project-settings" class="md-nav__link">
+    Workspace or Project Settings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-interface" class="md-nav__link">
+    User Interface
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    Commands
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shortcuts" class="md-nav__link">
+    Shortcuts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    Tasks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugger" class="md-nav__link">
+    Debugger
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extensions" class="md-nav__link">
+    Extensions
+  </a>
+  
+    <nav class="md-nav" aria-label="Extensions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#project-manager" class="md-nav__link">
+    Project Manager
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-formatting" class="md-nav__link">
+    Code Formatting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spellchecker" class="md-nav__link">
+    Spellchecker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    Git
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#markdown" class="md-nav__link">
+    Markdown
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-programming" class="md-nav__link">
+    Rust Programming
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mongo-db" class="md-nav__link">
+    Mongo DB
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postgresql" class="md-nav__link">
+    PostgreSQL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vuejs-extension-pack" class="md-nav__link">
+    VueJS Extension Pack
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rest-client" class="md-nav__link">
+    REST Client
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit-with-shell" class="md-nav__link">
+    Edit with Shell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote-ssh" class="md-nav__link">
+    Remote - SSH
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    Misc
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="vs-code-editor">VS Code Editor</h1>
+<p>Microsoft Visual Studio Code is a free, open source code editor for developing and debugging. It runs on any OS and unlike large development environments (Microsoft Visual Studio, Eclipse...) it won't need a project setup before.</p>
+<p>VS Code uses the information it finds in the files and folders to provide project and platform-specific functions, such as matching auto complete.</p>
+<p>VS Code supports a variety of programming, markup, and database languages, from JavaScript, HTML, and CSS, through C #, C ++, and Python, to PHP and SQL, just to name a few. Common languages usually already included in the standard scope of the editor, other languages are available as an extension. In addition to pure syntax highlighting, auto completion is also provided for some languages, meaningfully supplementing user input: a pop-up displays previously declared variables, methods, functions, and objects that can be accessed in the program context, as well as extensive templates of commonly used pieces of code (templates and snippets).</p>
+<h2 id="installation">Installation</h2>
+<p>On Debian you may install using the repository, to do the updates with your normal system updates:</p>
+<pre><code class="bash"># add repository
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor &gt; microsoft.gpg
+sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
+sudo sh -c 'echo &quot;deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main&quot; &gt; /etc/apt/sources.list.d/vscode.list'
+sudo apt-get install apt-transport-https
+# install VS Code
+sudo apt-get update
+sudo apt-get install code
+</code></pre>
+
+<h3 id="user-settings">User Settings</h3>
+<p>Visual Studio Code can be configured to your personal needs. The base for this is a JSON configuration file.
+Using the command <code>Preferences: Open User Settings</code> you can open a view with the default configuration on the left and your settings on the right side. You can only change the ones on the right side.</p>
+<p>But you can also use the configuration form which is reachable using the gear icon on the lower left or ++ctrl+,++. This dialog shows a tree structured form with some of the most essential settings for the core and the extensions.</p>
+<p>I used at least the following editor settings:</p>
+<pre><code class="json">{
+    &quot;editor.formatOnSave&quot;: true,
+    &quot;editor.tabSize&quot;: 2,
+    &quot;editor.detectIndentation&quot;: false,
+    &quot;editor.multiCursorModifier&quot;: &quot;ctrlCmd&quot;
+}
+</code></pre>
+
+<p>The last one is necessary on my KDE based Linux Distribution because ++alt+left-button++ is already used by the os.</p>
+<h3 id="workspace-or-project-settings">Workspace or Project Settings</h3>
+<p>You can also add a <code>settings.json</code> within the <code>/.vscode</code> folder in your project which will overwrite the user settings. This is a convenient way to set project specific settings which are needed for every user.</p>
+<h2 id="user-interface">User Interface</h2>
+<p>The user interface of Visual Studio Code is divided into directory tree, editor and console.
+In VS code, multiple editor windows can be opened next to each other thanks to split or side-by-side editing. Multiple selection allows you to interactively change multiple lines at the same time, for example, when renaming variables. Code navigation enables targeted searches for specific codes, such as methods or symbols.</p>
+<p><img alt="VSCode" src="../vscode.png" /></p>
+<p>The UI pattern is similar to other editors such as Sublime Text and Atom: on the left is a file manager that displays all the files and folders in the current directory. Right next to it is the actual editor. There is space for various panels, such as a terminal or a log for errors and warnings. The user interface can be flexibly adapted to your own needs.</p>
+<blockquote>
+<p>If you need to do something always consider to lookup for included commands using ++f1++ and search for them.</p>
+</blockquote>
+<h2 id="commands">Commands</h2>
+<p>Use ++f1++ or the key combination ++ctrl+shift+p++ to open the command palette. The editor can be operated with keyboard commands via them so that you can do without the mouse almost completely. The command palette is an input box that displays a list of all available commands; it is therefore not necessary to remember the shortcuts of all commands. This list can be filtered by entering the command you are looking for and using the arrow keys to search. With Enter a command is executed.</p>
+<p><img alt="VSCode Commands" src="../vscode-command.png" /></p>
+<p>The command palette of VS Code knows different modes:</p>
+<ul>
+<li>++greater++ default command mode commands are executed as usual.</li>
+<li>++"#"++ and ++"@"++ to search for symbols such as methods and variables in the current workspace or file.</li>
+<li>++colon++ jumps to the given line number</li>
+<li>++ctrl+p++ search for open files by typing their name. All files in the currently open folder are searched.</li>
+</ul>
+<p>The command palette of VS Code can do even more use ++"?"++ displays a list of all modes.</p>
+<h2 id="shortcuts">Shortcuts</h2>
+<p>All the shortcuts can be shown directly in the editor calling <code>Preferences</code> -&gt; <code>Keyboard Shortcuts</code> and you can also search and change them in this table. Althought the most used ones will be shown here:</p>
+<p>General</p>
+<ul>
+<li>++ctrl+shift+p++ or ++f1++ Show Command Palette</li>
+<li>++ctrl+p++ Quick Open, Go to File...</li>
+<li>++ctrl+shift+n++ New window/instance</li>
+<li>++ctrl+w++ Close window/instance</li>
+<li>++ctrl+","++ Open User Settings</li>
+<li>++ctrl+k++ ++ctrl+s++ Keyboard Shortcuts</li>
+</ul>
+<p>Basic editing</p>
+<ul>
+<li>++ctrl+x++ Cut line (empty selection)</li>
+<li>++ctrl+c++ Copy line (empty selection)</li>
+<li>++alt+down++ / ++alt+up++ Move line down/up</li>
+<li>++ctrl+shift+k++ Delete line</li>
+<li>++ctrl+enter++ / ++ctrl+shift+enter++ Insert line below/ above</li>
+<li>++ctrl+shift+"\"++ Jump to matching bracket</li>
+<li>++ctrl+j++ / ++ctrl+"["++ Indent/Outdent line</li>
+<li>++ctrl+home++ / ++ctrl+end++ Go to beginning/end of file</li>
+<li>++ctrl+up++ / ++ctrl+down++ Scroll line up/down</li>
+<li>++alt+page-up++ / ++alt+page-down++ Scroll page up/down</li>
+<li>++ctrl+shift+"["++ / ++ctrl+shift+"]"++ Fold/unfold region</li>
+<li>++ctrl+k++ ++ctrl+"["++ / ++ctrl+k++ ++ctrl+"]"++ Fold/unfold all subregions</li>
+<li>++ctrl+k++ ++ctrl+0++ / ++ctrl+k++ ++ctrl+j++ Fold/Unfold all regions</li>
+<li>++ctrl+k++ ++ctrl+c++ Add line comment</li>
+<li>++ctrl+k++ ++ctrl+u++ Remove line comment</li>
+<li>++ctrl+"/"++ Toggle line comment</li>
+<li>++ctrl+shift+a++ Toggle block comment</li>
+<li>++alt+z++ Toggle word wrap</li>
+</ul>
+<p>Rich languages editing</p>
+<ul>
+<li>++ctrl+space++ Trigger suggestion</li>
+<li>++ctrl+shift+space++ Trigger parameter hints</li>
+<li>++ctrl+shift+i++ Format document</li>
+<li>++ctrl+k++ ++ctrl+f++ Format selection</li>
+<li>++f12++ Go to Definition</li>
+<li>++ctrl+shift+F10 Peek Definition</li>
+<li>++ctrl+k++ ++f12++ Open Definition to the side</li>
+<li>++ctrl+"."++ Quick Fix</li>
+<li>++shift+f12++ Show References</li>
+<li>++f2++ Rename Symbol</li>
+<li>++ctrl+k++ ++ctrl+x++ Trim trailing whitespace</li>
+<li>++ctrl+k++ ++m++ Change file language</li>
+</ul>
+<p>Multi-cursor and selection</p>
+<ul>
+<li>++ctrl+left-button++ Insert cursor (changed by multi cursor setting above)</li>
+<li>++shift+alt+up++ / ++shift+alt+down++ Insert cursor above/below</li>
+<li>++ctrl+u++ Undo last cursor operation</li>
+<li>++shift+alt+i++ Insert cursor at end of each line selected</li>
+<li>++ctrl+i++ Select current line</li>
+<li>++ctrl+shift+l++ Select all occurrences of current selection</li>
+<li>++ctrl+f2++ Select all occurrences of current word</li>
+<li>++shift+alt+right++ Expand selection</li>
+<li>++shift+alt+left++ Shrink selection</li>
+<li>++shift+alt+"drag mouse"++ Column (box) selection</li>
+</ul>
+<p>Display</p>
+<ul>
+<li>++f11++ Toggle full screen</li>
+<li>++shift+alt+0++ Toggle editor layout (horizontal/vertical)</li>
+<li>++ctrl+"="++ / ++ctrl+"-"++ Zoom in/out</li>
+<li>++ctrl+b++ Toggle Sidebar visibility</li>
+<li>++ctrl+shift+e++ Show Explorer / Toggle focus</li>
+<li>++ctrl+shift+f++ Show Search</li>
+<li>++ctrl+shift+g++ Show Source Control</li>
+<li>++ctrl+shift+d++ Show Debug</li>
+<li>++ctrl+shift+x++ Show Extensions</li>
+<li>++ctrl+shift+h++ Replace in files</li>
+<li>++ctrl+shift+j++ Toggle Search details</li>
+<li>++ctrl+shift+c++ Open new command prompt/terminal</li>
+<li>++ctrl+k++ ++ctrl+h++ Show Output panel</li>
+<li>++ctrl+shift+v++ Open Markdown preview</li>
+<li>++ctrl+k++ ++v++ Open Markdown preview to the side</li>
+<li>++ctrl+k++ ++z++ Zen Mode (Esc Esc to exit)</li>
+</ul>
+<p>Search and replace</p>
+<ul>
+<li>++ctrl+f++ Find</li>
+<li>++ctrl+h++ Replace</li>
+<li>++f3++ / ++shift+f3++ Find next/previous</li>
+<li>++alt+enter++ Select all occurrences of Find match</li>
+<li>++ctrl+d++ Add selection to next Find match</li>
+<li>++ctrl+k++ ++ctrl+d++ Move last selection to next Find match</li>
+</ul>
+<p>Navigation</p>
+<ul>
+<li>++ctrl+t++ Show all Symbols</li>
+<li>++ctrl+g++ Go to Line...</li>
+<li>++ctrl+p++ Go to File...</li>
+<li>++ctrl+shift+o++ Go to Symbol...</li>
+<li>++ctrl+shift+m++ Show Problems panel</li>
+<li>++f8++ Go to next error or warning</li>
+<li>++shift+f8++ Go to previous error or warning</li>
+<li>++ctrl+shift+tab++ Navigate editor group history</li>
+<li>++ctrl+alt+"-"++ Go back</li>
+<li>++ctrl+shift+"-"++ Go forward</li>
+<li>++ctrl+m++ Toggle Tab moves focus</li>
+</ul>
+<p>Editor management</p>
+<ul>
+<li>++ctrl+w++ Close editor</li>
+<li>++ctrl+k++ ++f++ Close folder</li>
+<li>++ctrl+"\"++ Split editor</li>
+<li>++ctrl+1++ / ++ctrl+2++ / ++ctrl+3++ Focus into 1st, 2nd, 3rd editor group</li>
+<li>++ctrl+k++ ++ctrl+left++ Focus into previous editor group</li>
+<li>++ctrl+k++ ++ctrl+right++ Focus into next editor group</li>
+<li>++ctrl+shift+page-up++ Move editor left</li>
+<li>++ctrl+shift+page-down++ Move editor right</li>
+<li>++ctrl+k++ ++left++ Move active editor group left/up</li>
+<li>++ctrl+k++ ++right++ Move active editor group right/down</li>
+</ul>
+<p>File management</p>
+<ul>
+<li>++ctrl+n++ New File</li>
+<li>++ctrl+o++ Open File...</li>
+<li>++ctrl+s++ Save</li>
+<li>++ctrl+shift+s++ Save As...</li>
+<li>++ctrl+w++ Close</li>
+<li>++ctrl+k++ ++ctrl+w++ Close All</li>
+<li>++ctrl+shift+t++ Reopen closed editor</li>
+<li>++ctrl+k++ ++Enter Keep preview mode editor open</li>
+<li>++ctrl+tab++ Open next</li>
+<li>++ctrl+shift+tab++ Open previous</li>
+<li>++ctrl+k++ ++p++ Copy path of active file</li>
+<li>++ctrl+k++ ++r++ Reveal active file in Explorer</li>
+<li>++ctrl+k++ ++d++ Show active file in new window/instance</li>
+</ul>
+<p>Debug</p>
+<ul>
+<li>++f9++ Toggle breakpoint</li>
+<li>++f5++ Start / Continue</li>
+<li>++f11++ / ++shift+f11++ Step into/out</li>
+<li>++f10++ Step over</li>
+<li>++shift+f5++ Stop</li>
+<li>++ctrl+k++ ++ctrl+i++ Show hover</li>
+</ul>
+<p>Integrated terminal</p>
+<ul>
+<li>++ctrl+"`"++ Show integrated terminal</li>
+<li>++ctrl+shift+"`"++ Create new terminal</li>
+<li>++ctrl+shift+c++ Copy selection</li>
+<li>++ctrl+shift+v++ Paste into active terminal</li>
+<li>++ctrl+shift+up++ / ++ctrl+shift+down++ Scroll up/down</li>
+<li>++shift+page-up++ / ++shift+page-down++ Scroll page up/down</li>
+<li>++shift+home++ / ++shift+end++ Scroll to top/bottom</li>
+</ul>
+<h2 id="tasks">Tasks</h2>
+<p>You can run different tasks which are possible to be run on the command line directly from within the VSCode IDE.</p>
+<p>To define custom tasks call <code>Configure Tasks</code> from the global <code>Tasks</code> menu and select the <code>Create tasks.json file</code> from template entry. Then select <code>Other</code> format. You will get a JSON configuration in the current workspace and can define your tasks there:</p>
+<pre><code class="json">{
+    &quot;version&quot;: &quot;2.0.0&quot;,
+    &quot;tasks&quot;: [
+        {
+            &quot;label&quot;: &quot;build&quot;,
+            &quot;type&quot;: &quot;shell&quot;,
+            &quot;command&quot;: &quot;cargo build&quot;,
+            &quot;group&quot;: {
+                &quot;kind&quot;: &quot;build&quot;,
+                &quot;isDefault&quot;: true
+            },
+            &quot;problemMatcher&quot;: []
+        },
+        {
+            &quot;label&quot;: &quot;test&quot;,
+            &quot;type&quot;: &quot;shell&quot;,
+            &quot;command&quot;: &quot;cargo test&quot;,
+            &quot;group&quot;: {
+                &quot;kind&quot;: &quot;test&quot;,
+                &quot;isDefault&quot;: true
+            }
+        }
+    ]
+}
+</code></pre>
+
+<p>The task's properties have the following semantic:</p>
+<ul>
+<li><code>label</code> - The task's label used in the user interface.</li>
+<li><code>type</code> - The task's type. For a custom task, this can either be <code>shell</code> or <code>process</code>. If shell is specified, the command is interpreted as a shell command. If process is specified, the command is interpreted as a process to execute.</li>
+<li><code>command</code> - The actual command to execute.</li>
+<li><code>args</code> - Optionally array used if they are not given as a one liner within the command call</li>
+<li><code>windows</code> - Any Windows OS specific properties.</li>
+<li><code>group</code> - Defines to which group the task belongs.</li>
+<li><code>presentation</code> - Defines how the task output is handled in the user interface.</li>
+</ul>
+<p>Call the tasks using ++f1++ with <code>tasks</code>.</p>
+<p>Read more at <a href="https://code.visualstudio.com/docs/editor/tasks">VSCode Tasks</a>.</p>
+<h2 id="debugger">Debugger</h2>
+<p>The sleek and flexible Code Editor gives developers all the functionality they need to get the job done. This is mainly due to the good integration of the debugger and the direct Git connection. VS Code is perfect for all scripting languages. There are some enhancements in Marketplace for better handling...</p>
+<p>With the Chrome Debugger extension, front-end developers can debug their JavaScript code with Google Chrome. VS Code uses the Chrome DevTools Protocol, which associates the files loaded in the browser with the files opened in the editor. This allows the developer to place breakpoints directly into VS code, watch variables, or see the entire call stack as they debug - all without leaving the editor. A very useful extension that you should definitely look at as a front-end developer.</p>
+<h2 id="extensions">Extensions</h2>
+<p>The standard functionality of VS Code can be extended with additional packages that can adapt almost anything, from the appearance and behavior of the user interface to core editor functions. Microsoft's code editor brings with it a package manager. Additional languages, debuggers and tools can be easily installed.</p>
+<p>In the chapters below I comment on some plugins. To get more information search for the extension in the editor and read the detailed description.
+Shortcut to get to them is ++ctrl+shift+x++ or open it with the square icon on the left.</p>
+<p>The editor will also sometimes show you some recommended extensions based on the files you opened.</p>
+<h3 id="project-manager">Project Manager</h3>
+<p><a href="https://github.com/alefragnani/vscode-project-manager/blob/master/README.md">Project Manager</a> add a new sidebar to easily switch between projects. After configuring each project you can easily select the project in the new sidebar which switches to this project and Explorer and Source Control will both hold this.</p>
+<h3 id="code-formatting">Code Formatting</h3>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode">Prettier</a> enables VS Code to automatically optimize the format to the default style guides. A good way is to enable it on save in the settings.</p>
+<p>You can customize some parameters, I used to set the following to mainly have markdown which is fully compatible with <a href="../mkdocs/">MkDocs</a> for markdown parsing (spesifically the tabWidth of 4 spaces is needed to use lists with multiline points).</p>
+<pre><code class="json">{
+    &quot;prettier.printWidth&quot;: 100,
+    &quot;prettier.tabWidth&quot;: 4,
+    &quot;editor.formatOnSave&quot;: true
+}
+</code></pre>
+
+<p>Also auto formatting on save is enabled in the above.</p>
+<h3 id="spellchecker">Spellchecker</h3>
+<p>Use <a href="https://marketplace.visualstudio.com/items?itemName=ban.spellright">Spell Right</a> as spell checker which is using <code>hunspell</code> dictionaries. To make it work install also the <code>hunspell</code> dictionaries like:</p>
+<pre><code class="bash">sudo apt install hunspell hunspell-en-us hunspell-de-de
+ln -s /usr/share/hunspell ~/.config/Code/Dictionaries
+</code></pre>
+
+<p>By using ++f8++ or ++shift+f8++ you can jump to the next/previous error in the document. With the cursor over a misspelled word use ++ctrl+.++ to open a context menu with correct spelling or the ability to add the word to the dictionary.</p>
+<p>If you start using this you will have to add lots of specific words from the technical range into the user dictionary but after that it works better and better.
+The dictionary will be stored under <code>.vscode/spellright.dict</code> within your project.</p>
+<p>Sometimes you see encoding problems like in german Umlaut. This can be fixed by converting the dictionary files to UTF-8. To find the dictionary files call <code>hunspell -D</code> and then for the problematic dictionaries:</p>
+<pre><code class="bash">sudo cp /usr/share/hunspell/de_DE.aff /usr/share/hunspell/de_DE.aff.bak
+sudo cp /usr/share/hunspell/de_DE.dic /usr/share/hunspell/de_DE.dic.bak
+sudo iconv -f iso-8859-1 -t UTF-8 /usr/share/hunspell/de_DE.aff.bak | sudo tee /usr/share/hunspell/de_DE.aff
+sudo iconv -f iso-8859-1 -t UTF-8 /usr/share/hunspell/de_DE.dic.bak | sudo tee /usr/share/hunspell/de_DE.dic
+</code></pre>
+
+<p>You have to restart your IDE or if that won't work the whole system to take effect.</p>
+<h3 id="git">Git</h3>
+<p>Nowadays Git is a central tool for many developers. But if you have to switch to the command line or other GUI application while programming to check or uncheck code, it will interrupt the workflow. That's why Microsoft VS Code comes with Git integration by default. This provides the developer with the most important Git operations in the editor.</p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens">GitLens</a> supercharges the Git capabilities built into Visual Studio Code. It helps you to visualize code authorship at a glance via Git blame annotations and code lens, seamlessly navigate and explore Git repositories, gain valuable insights via powerful comparison commands, and so much more.
+All this is available through a new Icon on the left sidebar menu.</p>
+<h3 id="markdown">Markdown</h3>
+<ul>
+<li><code>Markdown All in One</code> - All you need for Markdown (keyboard shortcuts, table of contents, auto preview and more).</li>
+<li><code>markdown lint</code> - The Markdown lint will check the syntax of the markdown files and give hints for proper standardized markdown which will work.</li>
+</ul>
+<p>To configure MarkdownLint add something like the following:</p>
+<p>!!! example "User Settings"</p>
+<pre><code>```json
+"markdownlint.config": {
+    "MD007": { "indent": 4 },
+    "MD013": false,
+    "MD030": {
+        "ul_single": 3,
+        "ol_single": 2,
+        "ul_multi": 3,
+        "ol_multi": 2
+    },
+    "MD041": false
+}
+```
+</code></pre>
+<p>See also the <a href="https://github.com/DavidAnson/markdownlint#rules--aliases">rules</a> description.</p>
+<h3 id="rust-programming">Rust Programming</h3>
+<p>The <a href="https://marketplace.visualstudio.com/items?itemName=kalitaalexey.vscode-rust">Rust</a> plugin includes:</p>
+<ul>
+<li>Rust Language Server integration.</li>
+<li>Auto completion (via <code>racer</code> or <code>RLS</code>).</li>
+<li>Go To Definition (via <code>racer</code> or <code>RLS</code>).</li>
+<li>Go To Symbol (via <code>rustsym</code> or <code>RLS</code>).</li>
+<li>Code formatting (via <code>rustfmt</code>).</li>
+<li>Code Snippets.</li>
+<li>Cargo tasks (<code>Ctrl-Shift-p</code> and type cargo to view them).</li>
+</ul>
+<p>Also the following extensions may help:</p>
+<ul>
+<li><code>Better TOML</code> - TOML configuration files syntax highlighting</li>
+<li><code>CodeLLDB</code> - LLDB debugging for Rust programs</li>
+<li><code>Rust (RLS)</code> - the language server</li>
+<li><code>search-crates-io</code> - auto complete search within <code>Cargo.toml</code></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=serayuzgur.crates"><code>crates</code></a> - will display latest version in <code>Cargo.toml</code> and allows to switch through hover list</li>
+</ul>
+<p>Keep in mind that if you just installed Rust you have to sometimes reboot your systems to find the new commands in the path.
+After that VSCode will ask for tool chain...</p>
+<h3 id="mongo-db">Mongo DB</h3>
+<p>Visual Studio Code has great support for working with <a href="https://www.mongodb.com/what-is-mongodb">MongoDB</a> databases. Through the <a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb">Azure CosmosDB extension</a>, you can create, manage and query MongoDB databases from within VS Code.</p>
+<p>After installing you will find it in the Activity Bar under <strong>Azure</strong>.</p>
+<p>You can:</p>
+<ul>
+<li>connect to a MongoDB server</li>
+<li>browse through your collections</li>
+<li>show entries</li>
+<li>change and update them</li>
+<li>make <code>*.mongo</code> scripts with code completion</li>
+<li>execute the scripts</li>
+</ul>
+<p>To setup the database connection open the Azure activity bar, select 'Attached Database Accounts' -&gt; 'Attach Database Account...' then select 'MongoDB' and give the server address.</p>
+<p><img alt="VSCode MongoDB" src="../vscode-mongodb.png" /></p>
+<p>You can navigate through the database like through a file system.</p>
+<h3 id="postgresql">PostgreSQL</h3>
+<p>This will give you access to PostgreSQL databases and allows to query them.</p>
+<h3 id="vuejs-extension-pack">VueJS Extension Pack</h3>
+<p>This already comes with a lot of extension needed for working with Vue:</p>
+<ul>
+<li><code>npm</code> - This extension supports running npm scripts defined in the <code>package.json</code> file and validating the installed modules against the dependencies defined in the <code>package.json</code></li>
+<li><code>NPM IntelliSense</code> - Visual Studio Code plugin that auto completes npm modules in import statements</li>
+<li><code>Import Cost VSCode</code> - This extension will display inline in the editor the size of the imported package. The extension utilizes <code>webpack</code> with <code>babili-webpack-plugin</code> in order to detect the imported size.</li>
+<li><code>Prettier - Code formatter</code> - VS Code package to format your JavaScript / TypeScript / CSS using Prettier.</li>
+<li><code>vetur</code> - Vue tooling for VS Code, powered by vue-language-server.</li>
+<li><code>vue-peek</code> - This extension extends Vue code editing with Go To Definition and Peek Definition support for components and filenames in single-file components with a .vue extension. It allows quickly jumping to or peeking into files that are referenced as components (from template), or as module imports</li>
+<li><code>auto-rename-tag</code> - Automatically rename paired HTML/XML tag, same as Visual Studio IDE does.</li>
+<li><code>auto-close-tag</code> - Automatically add HTML/XML close tag, same as Visual Studio IDE or Sublime Text does.</li>
+<li><code>Sorting HTML and Jade attributes</code> - Sorting of the tag attributes in the specified order.</li>
+<li><code>Bracket Pair Colorizer</code> - This extension allows matching brackets to be identified with colors. The user can define which characters to match, and which colors to use.</li>
+</ul>
+<p>ESLint - Integrates ESLint into VS Code. If you are new to ESLint check the documentation.</p>
+<h3 id="rest-client">REST Client</h3>
+<p>Write your requests in editor with syntax highlighting and auto completion, send and view the response in a separate pane with syntax highlighting. Also you can create a curl call out of it. Multiple requests in one file are supported by <code>###</code> as a delimiter line.</p>
+<h3 id="edit-with-shell">Edit with Shell</h3>
+<p>This plugin lets you easily call shell commands and get the output within the editor. It can also send the marked text through the command and replace it with the output.</p>
+<p>You may add the key binding:</p>
+<pre><code class="json">{
+    &quot;key&quot;: &quot;ctrl-r ctrl-r&quot;,
+    &quot;command&quot;: &quot;editWithShell.runCommand&quot;,
+    &quot;when&quot;: &quot;editorTextFocus&quot;
+}
+</code></pre>
+
+<h3 id="remote-ssh">Remote - SSH</h3>
+<p>Allows you to open a remote folder from any remote machine, virtual machine, or container with a running SSH server and take full advantage of VS Code's feature set. Once connected to a server, you can interact with files and folders anywhere on the remote filesystem.</p>
+<h3 id="misc">Misc</h3>
+<ul>
+<li><code>Material Icon Theme</code> - lots of icons based on Material Design</li>
+</ul>
+<p>{!docs/abbreviations.txt!}</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../trello/" title="Trello" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Trello
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../atom/" title="Atom" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Atom
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2016 - 2020 <a href="https://elviejo79.github.io">Alexander Schilling</a>
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.36cbf620.min.js"></script>
+      <script src="../../assets/javascripts/bundle.00c583dd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.7f7c8775.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,75 @@
+/* use image for grey color theme */
+[data-md-color-primary='grey'] .md-tabs,
+[data-md-color-primary='grey'] .md-header,
+footer {
+    /*    background-image: url('blue-tunnel.jpg');*/
+    background-image: url('stars.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+.md-footer-nav,
+.md-footer-meta {
+    background: transparent;
+}
+
+/* change link colors for grey theme */
+.md-header-nav__button:hover {
+    opacity: 1;
+    color: darkorange;
+    transition: color 0.5s;
+}
+[data-md-color-primary='grey'] .md-typeset a {
+    color: #cc3200;
+}
+[data-md-color-primary='grey'] .md-typeset a:hover {
+    color: darkorange;
+}
+.md-nav__link:hover {
+    color: darkorange;
+}
+.md-footer-nav__link {
+    font-weight: bold;
+}
+.md-footer-nav__link:hover {
+    opacity: 1;
+    color: darkorange;
+    transition: color 0.5s;
+}
+
+/* display external links with icon */
+div.md-content a[href^="http://"]:not([href*="alinex.gitlab.io"]):after,
+div.md-content a[href^="https://"]:not([href*="alinex.gitlab.io"]):after,
+div.md-content a[href^="//"]:not([href*="alinex.gitlab.io"]) {
+    font-family: 'FontAwesome';
+    content: ' \f08e';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 70%;
+    vertical-align: top;
+    display: inline-block;
+    text-decoration: none;
+    padding-left: 3px;
+}
+
+/* attribute classes to be used via {: .class} */
+.left {
+    /* left align with text float on the right */
+    float: left;
+    padding-right: 20px;
+}
+.right {
+    /* right align with text float on the left */
+    float: right;
+    padding-left: 20px;
+}
+.icon {
+    /* change image size */
+    width: 25%;
+}
+.border {
+    /* add drop shadow */
+    border: 1px solid #021a40;
+    -webkit-box-shadow: 0px 0px 18px 5px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 0px 18px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 18px 5px rgba(0, 0, 0, 0.5);
+}

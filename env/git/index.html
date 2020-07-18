@@ -1,0 +1,2412 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A book to learn modern web technologies.">
+      
+      
+      
+        <meta name="author" content="Alexander Schilling">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.0">
+    
+    
+      
+        <title>Git - Elviejo79 Development Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.89dc9fe3.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+      <link rel="manifest" href="../../manifest.webmanifest" crossorigin="use-credentials">
+    
+    
+      <link rel="stylesheet" href="../../assets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#git" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Elviejo79 Development Guide" class="md-header-nav__button md-logo" aria-label="Elviejo79 Development Guide">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21,5C19.89,4.65 18.67,4.5 17.5,4.5C15.55,4.5 13.45,4.9 12,6C10.55,4.9 8.45,4.5 6.5,4.5C4.55,4.5 2.45,4.9 1,6V20.65C1,20.9 1.25,21.15 1.5,21.15C1.6,21.15 1.65,21.1 1.75,21.1C3.1,20.45 5.05,20 6.5,20C8.45,20 10.55,20.4 12,21.5C13.35,20.65 15.8,20 17.5,20C19.15,20 20.85,20.3 22.25,21.05C22.35,21.1 22.4,21.1 22.5,21.1C22.75,21.1 23,20.85 23,20.6V6C22.4,5.55 21.75,5.25 21,5M21,18.5C19.9,18.15 18.7,18 17.5,18C15.8,18 13.35,18.65 12,19.5V8C13.35,7.15 15.8,6.5 17.5,6.5C18.7,6.5 19.9,6.65 21,7V18.5Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Elviejo79 Development Guide
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Git
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/elviejo79/mkdocsExperiment.git" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    elviejo79/mkdocsExperiment
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Elviejo79 Development Guide" class="md-nav__button md-logo" aria-label="Elviejo79 Development Guide">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21,5C19.89,4.65 18.67,4.5 17.5,4.5C15.55,4.5 13.45,4.9 12,6C10.55,4.9 8.45,4.5 6.5,4.5C4.55,4.5 2.45,4.9 1,6V20.65C1,20.9 1.25,21.15 1.5,21.15C1.6,21.15 1.65,21.1 1.75,21.1C3.1,20.45 5.05,20 6.5,20C8.45,20 10.55,20.4 12,21.5C13.35,20.65 15.8,20 17.5,20C19.15,20 20.85,20.3 22.25,21.05C22.35,21.1 22.4,21.1 22.5,21.1C22.75,21.1 23,20.85 23,20.6V6C22.4,5.55 21.75,5.25 21,5M21,18.5C19.9,18.15 18.7,18 17.5,18C15.8,18 13.35,18.65 12,19.5V8C13.35,7.15 15.8,6.5 17.5,6.5C18.7,6.5 19.9,6.65 21,7V18.5Z" /></svg>
+
+    </a>
+    Elviejo79 Development Guide
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/elviejo79/mkdocsExperiment.git" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    elviejo79/mkdocsExperiment
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Home
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Home" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Home
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../alinex/" title="What is Alinex" class="md-nav__link">
+      What is Alinex
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blog/2020/" title="Blog 2020" class="md-nav__link">
+      Blog 2020
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blog/2019/" title="Blog 2019" class="md-nav__link">
+      Blog 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blog/2018/" title="Blog 2018" class="md-nav__link">
+      Blog 2018
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blog/2017/" title="Blog 2017" class="md-nav__link">
+      Blog 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blog/2016/" title="Blog 2016" class="md-nav__link">
+      Blog 2016
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../LICENSE/" title="License" class="md-nav__link">
+      License
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/" title="Policy" class="md-nav__link">
+      Policy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../about/" title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Environment
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Environment" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Environment
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../freeplane/" title="Freeplane" class="md-nav__link">
+      Freeplane
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../gitlab/" title="GitLab" class="md-nav__link">
+      GitLab
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../github/" title="GitHub" class="md-nav__link">
+      GitHub
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../trello/" title="Trello" class="md-nav__link">
+      Trello
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../vscode/" title="VS Code" class="md-nav__link">
+      VS Code
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../atom/" title="Atom" class="md-nav__link">
+      Atom
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Git
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Git" class="md-nav__link md-nav__link--active">
+      Git
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-concept" class="md-nav__link">
+    Basic Concept
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#branching" class="md-nav__link">
+    Branching
+  </a>
+  
+    <nav class="md-nav" aria-label="Branching">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#central-branch" class="md-nav__link">
+    Central branch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#development-branch" class="md-nav__link">
+    Development branch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-branches" class="md-nav__link">
+    Feature branches
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flow-workflow" class="md-nav__link">
+    Flow workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#support-branches" class="md-nav__link">
+    Support branches
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#merges" class="md-nav__link">
+    Merges
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worktree" class="md-nav__link">
+    Worktree
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submodules" class="md-nav__link">
+    Submodules
+  </a>
+  
+    <nav class="md-nav" aria-label="Submodules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extract-path" class="md-nav__link">
+    Extract path
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove" class="md-nav__link">
+    Remove
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#special-use-cases" class="md-nav__link">
+    Special use cases
+  </a>
+  
+    <nav class="md-nav" aria-label="Special use cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#moving-repository" class="md-nav__link">
+    Moving repository
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subversion-integration" class="md-nav__link">
+    Subversion Integration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-with-forks" class="md-nav__link">
+    Working with forks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-setup" class="md-nav__link">
+    Server Setup
+  </a>
+  
+    <nav class="md-nav" aria-label="Server Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-the-required-package" class="md-nav__link">
+    Install the required package
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authenticated-ssh-access" class="md-nav__link">
+    Authenticated ssh access
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-access" class="md-nav__link">
+    HTTP Access
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-interface-gitweb" class="md-nav__link">
+    Web Interface gitweb
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-new-server-repository" class="md-nav__link">
+    Create a new server repository
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migrate-from-subversion" class="md-nav__link">
+    Migrate from Subversion
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mkdocs/" title="MkDocs" class="md-nav__link">
+      MkDocs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../gitbook/" title="GitBook" class="md-nav__link">
+      GitBook
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Technologies
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Technologies" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Technologies
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Languages
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Languages" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Languages
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lang/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lang/markdown/" title="Markdown" class="md-nav__link">
+      Markdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lang/handlebars/" title="Handlebars" class="md-nav__link">
+      Handlebars
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lang/sass/" title="Sass" class="md-nav__link">
+      Sass
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lang/bash/" title="Bash" class="md-nav__link">
+      Bash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lang/go/" title="Go" class="md-nav__link">
+      Go
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Systems
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Systems" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Systems
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systems/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systems/linux/" title="Linux" class="md-nav__link">
+      Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systems/apache/" title="Apache Web Server" class="md-nav__link">
+      Apache Web Server
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systems/postgres/" title="PostgreSQL Database" class="md-nav__link">
+      PostgreSQL Database
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systems/mongo/" title="MongoDB" class="md-nav__link">
+      MongoDB
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Concepts
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Concepts" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Concepts
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../concepts/app/" title="Application" class="md-nav__link">
+      Application
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../concepts/exitcodes/" title="Exit Codes" class="md-nav__link">
+      Exit Codes
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      JavaScript
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="JavaScript" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        JavaScript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/" title="JavaScript" class="md-nav__link">
+      JavaScript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      Versions
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Versions" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Versions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/spec/" title="Specification" class="md-nav__link">
+      Specification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/es-next/" title="ES.Next" class="md-nav__link">
+      ES.Next
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/es2015/" title="ECMAScript 2015" class="md-nav__link">
+      ECMAScript 2015
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/es2016/" title="ECMAScript 2015" class="md-nav__link">
+      ECMAScript 2015
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/es2017/" title="ECMAScript 2017" class="md-nav__link">
+      ECMAScript 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/es2018/" title="ECMAScript 2018" class="md-nav__link">
+      ECMAScript 2018
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/es2019/" title="ECMAScript 2019" class="md-nav__link">
+      ECMAScript 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/es2020/" title="ECMAScript 2020" class="md-nav__link">
+      ECMAScript 2020
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
+    
+    <label class="md-nav__link" for="nav-4-3">
+      Transpiler
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Transpiler" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Transpiler
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/typescript/" title="TypeScript" class="md-nav__link">
+      TypeScript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/flow/" title="Flow" class="md-nav__link">
+      Flow
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/coffee/" title="CoffeeScript" class="md-nav__link">
+      CoffeeScript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/coffee-styleguide/" title="CoffeeScript Styleguide" class="md-nav__link">
+      CoffeeScript Styleguide
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/nodejs/" title="Node.JS" class="md-nav__link">
+      Node.JS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/npm/" title="NPM" class="md-nav__link">
+      NPM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/modules/" title="Modules" class="md-nav__link">
+      Modules
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Rust
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Rust" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Rust
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/start/" title="Getting started" class="md-nav__link">
+      Getting started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/core/" title="Language Core" class="md-nav__link">
+      Language Core
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/standard/" title="Standard Library" class="md-nav__link">
+      Standard Library
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/modules/" title="Modules" class="md-nav__link">
+      Modules
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/directory/" title="Directory Structure" class="md-nav__link">
+      Directory Structure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/test/" title="Unit Testing" class="md-nav__link">
+      Unit Testing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/tools/" title="Tooling" class="md-nav__link">
+      Tooling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/phantom/" title="Phantom Types" class="md-nav__link">
+      Phantom Types
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-10" type="checkbox" id="nav-5-10">
+    
+    <label class="md-nav__link" for="nav-5-10">
+      Crates
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Crates" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-10">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Crates
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/crates/" title="Rust" class="md-nav__link">
+      Rust
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/crates/failure/" title="Error Management" class="md-nav__link">
+      Error Management
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/crates/clap/" title="clap" class="md-nav__link">
+      clap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/crates/actix/" title="actix" class="md-nav__link">
+      actix
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/crates/actix-web/" title="actix_web" class="md-nav__link">
+      actix_web
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/crates/diesel/" title="Diesel Object Relation Mapper" class="md-nav__link">
+      Diesel Object Relation Mapper
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-11" type="checkbox" id="nav-5-11">
+    
+    <label class="md-nav__link" for="nav-5-11">
+      Solutions
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Solutions" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-11">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Solutions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/solutions/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/solutions/cache/" title="Caching using Struct" class="md-nav__link">
+      Caching using Struct
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Solutions
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Solutions" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Solutions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../solutions/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../solutions/devops/" title="DevOps" class="md-nav__link">
+      DevOps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../solutions/applications/" title="Applications" class="md-nav__link">
+      Applications
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../solutions/modules/" title="Modules" class="md-nav__link">
+      Modules
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../solutions/playground/" title="Playground" class="md-nav__link">
+      Playground
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../solutions/quality/" title="Quality Standards" class="md-nav__link">
+      Quality Standards
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-concept" class="md-nav__link">
+    Basic Concept
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#branching" class="md-nav__link">
+    Branching
+  </a>
+  
+    <nav class="md-nav" aria-label="Branching">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#central-branch" class="md-nav__link">
+    Central branch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#development-branch" class="md-nav__link">
+    Development branch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-branches" class="md-nav__link">
+    Feature branches
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flow-workflow" class="md-nav__link">
+    Flow workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#support-branches" class="md-nav__link">
+    Support branches
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#merges" class="md-nav__link">
+    Merges
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worktree" class="md-nav__link">
+    Worktree
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submodules" class="md-nav__link">
+    Submodules
+  </a>
+  
+    <nav class="md-nav" aria-label="Submodules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extract-path" class="md-nav__link">
+    Extract path
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove" class="md-nav__link">
+    Remove
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#special-use-cases" class="md-nav__link">
+    Special use cases
+  </a>
+  
+    <nav class="md-nav" aria-label="Special use cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#moving-repository" class="md-nav__link">
+    Moving repository
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subversion-integration" class="md-nav__link">
+    Subversion Integration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-with-forks" class="md-nav__link">
+    Working with forks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-setup" class="md-nav__link">
+    Server Setup
+  </a>
+  
+    <nav class="md-nav" aria-label="Server Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-the-required-package" class="md-nav__link">
+    Install the required package
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authenticated-ssh-access" class="md-nav__link">
+    Authenticated ssh access
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-access" class="md-nav__link">
+    HTTP Access
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-interface-gitweb" class="md-nav__link">
+    Web Interface gitweb
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-new-server-repository" class="md-nav__link">
+    Create a new server repository
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migrate-from-subversion" class="md-nav__link">
+    Migrate from Subversion
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="git">Git</h1>
+<p>Version control is the only reasonable way to keep track of changes in code and
+documentation. It allows to step back to any previous version easily.
+But the really big advantage comes if multiple developers work together.</p>
+<p>There are some different version control systems available but after the use of git
+since some time it was clear to go on with it. Not only because it is good but also
+because it has a lot of other advantages coupled with its tools.</p>
+<p><a href="https://git-scm.com/">Git</a> is a free and open source distributed version control
+system designed to handle everything from small to very large projects with speed
+and efficiency.</p>
+<p>Git is easy to learn and has a tiny footprint with features like cheap local branching,
+convenient staging areas, and multiple workflows. Git revolutionized version control for when you have more than one developer working on a project.</p>
+<p>Read more in the <a href="https://git-scm.com/book/en/v2">Git book</a></p>
+<h2 id="installation">Installation</h2>
+<p>At first install the repository software and CLI:</p>
+<pre><code class="bash">sudo apt-get install git-all
+</code></pre>
+
+<p>The setting of the default user will tell Git that you don’t want to type your
+user name and email every time your computer talks to Git.</p>
+<pre><code class="bash"># use the settings you use on the central origin repository (maybe GitHub)
+$ git config --global user.name alinex
+$ git config --global user.email info@alinex.de
+</code></pre>
+
+<p><strong>Allow Password caching</strong></p>
+<p>To also keep Git from asking for your password every time, you need to turn on the
+credential helper so that Git will save your password in memory for some time:</p>
+<pre><code class="bash">git config --global credential.helper cache
+</code></pre>
+
+<p>This will keep the password for 15 minutes in memory. But you can also have Git
+store your credentials permanently using the following:</p>
+<pre><code class="bash">git config --global credential.helper store
+</code></pre>
+
+<p>Note: While this is convenient, Git will store your credentials in clear text in a
+local file <code>.git-credentials</code> under your “home” directory</p>
+<h2 id="basic-concept">Basic Concept</h2>
+<p>The most common commands are shown in the following work flow. Here everything is
+shown using CLI calls but you may use with any Git tool or your editors integration
+for Git.</p>
+<p>Git works with:</p>
+<ul>
+<li>a <strong>workspace</strong> which is a view on the files in a specific branch at a defined time which you see also as files</li>
+<li>the <strong>staging</strong> area is a collection of changes to be committed</li>
+<li>the <strong>local repository</strong> which contains all data for the branches on your local machine</li>
+<li>the <strong>remote repository</strong> also referred as the origin is the central storage (multiple are possible)</li>
+</ul>
+<p>Using some git commands you can now transport data between the repositories:</p>
+<p><img alt="workflow" src="../git-transport.png" /></p>
+<p>Initially to work on an existing project you have to clone it first:</p>
+<pre><code class="bash">git clone &lt;repository url&gt;
+cd &lt;repo dir&gt;
+</code></pre>
+
+<p>This will create a complete clone of the whole repository in a subdirectory with the
+file name from the repository URL.</p>
+<p>Instead you may also fork the repository which makes a copy of the repository on the server. This is useful on GitHub or GitLab if you can only read. The forked project is your own, you can do everything in it and also make a pull request back to the origin with your changes.</p>
+<p>After changing something you have to add the changes:</p>
+<pre><code class="bash">git add -A &lt;changed path&gt;
+</code></pre>
+
+<p>If one change is done commit it with a short descriptive message (will be asked
+interactively):</p>
+<pre><code class="bash">git commit
+</code></pre>
+
+<blockquote>
+<p>Using <code>git commit -a</code> will do both steps in one go.</p>
+</blockquote>
+<p>Later if your whole work is done you can push your local changes to the origin server
+so that other developers will also get them.</p>
+<pre><code class="bash">git pull    # first pull the changes of others and merge them (automatically)
+git push    # now send your own changes
+</code></pre>
+
+<p>If you reached a new major, minor or bug fix version or also a special state of the code you should
+add a tag to get this version easily later:</p>
+<pre><code class="bash">git tag -a v1.4.0 -m 'version 1.4.0 with ....'
+</code></pre>
+
+<p>Here a new version 1.4.0 is tagged.</p>
+<h2 id="branching">Branching</h2>
+<p>Branching enables you to isolate your work from others. Changes in the primary branch or other branches will not affect your branch, unless you decide to pull the latest changes from those branches.</p>
+<p>A branch in Git is simply a lightweight movable pointer to the last commit in a row.
+All branches exist next to each other. Each Git repository (remote or local) contains at least the default <code>master</code> branch.</p>
+<p>In the following figures the use of branches is visually displayed as swim lanes with circles for each commit.</p>
+<p><img alt="technology" src="../git-branches-technology.png" /></p>
+<p>With <code>git checkout -b &lt;name&gt;</code> a new branch will be created. You now work on this branch. The following commands may help further:</p>
+<ul>
+<li><code>git branch</code> to show the current branch</li>
+<li><code>git checkout &lt;name&gt;</code> to switch to another branch</li>
+<li><code>git branch -d &lt;name&gt;</code> to remove a branch</li>
+</ul>
+<p>If you're done you may merge it with the master:</p>
+<pre><code class="bash">git checkout master
+git merge &lt;name&gt;    # merge the named branch into master
+</code></pre>
+
+<p>Different branches can be merged into any one branch as long as they belong to the same repository.</p>
+<p>To sync branches between local and remote repository you have to do it for each branch or use the <code>--all</code> switch:</p>
+<pre><code class="bash">git pull --all
+git push --all
+</code></pre>
+
+<p>This two commands will get all remote changes of all branches to your local repository and then uploads all local changes and branches to the remote repository.</p>
+<p>The organization of branches may differ on your needs, you may use Git here
+in different ways.</p>
+<h3 id="central-branch">Central branch</h3>
+<p>In this approach the <code>master</code> branch serve as the single point-of-entry for all changes to the project.</p>
+<p>This may be the right concept to start the work with git or for very small projects with a single developer it should also be sufficient. Later you can always switch to more sophisticated workflows by adding more branches.</p>
+<p>In this concept you have to check that your code is fully functioning before you transfer your local changes to the remote repository. If you break it, you also break the master on the remote repository and after a <code>pull</code> for all other developers, too.
+Therefore it is essential to tag the releases to find the last functioning point which can be used for production.</p>
+<h3 id="development-branch">Development branch</h3>
+<p>A good first s base is to make two main branches with infinite lifetime:</p>
+<ul>
+<li><code>master</code> - this branch contains production code.
+    All development code is merged into master if released.</li>
+<li><code>develop</code> - this branch contains pre-production code.
+    When the features are finished they are merged into develop.</li>
+</ul>
+<p><img alt="develop" src="../git-branches-develop.png" /></p>
+<p>No commits should be made in master directly.
+It's also convenient to tag all merges to the <code>master</code> branch with a version number.</p>
+<h3 id="feature-branches">Feature branches</h3>
+<p>The base idea is to let the development of each feature or topic take place in it's own branch. Often different teams work on different features and this way they won't disturb each other. The possibility of merge conflicts will be reduced if clear separation is done.</p>
+<p><img alt="feature" src="../git-branches-feature.png" /></p>
+<p>With each single feature or topic like a new package, a new function, or some kind of optimization a new feature branch will be created. It can be pushed to the central repository for backup/collaboration. It is branched from the <code>develop</code> branch which now takes the place of an integration branch. Changes on the <code>develop</code> branch should should only be small fixes.</p>
+<p>The name of each feature branch should be descriptive like <code>newsBlog</code>. They should also be pushed to the remote repository to allow collaboration. And they also end if they are merged back to <code>develop</code>.</p>
+<p>If the development is unsuccessful for a feature or stopped the branch can be discarded or kept open.</p>
+<h3 id="flow-workflow">Flow workflow</h3>
+<p>This workflow described by <a href="https://nvie.com/posts/a-successful-git-branching-model/">Vincent Driessen</a> is especially for projects with release plan. It defines some branch names with specific roles. It is not only a model a specific <a href="https://github.com/nvie/gitflow">toolset</a> for git will help you with it. Install git flow tools in Debian using <code>apt-get install git-flow</code>.</p>
+<p><img alt="flow" src="../git-branches-flow.png" /></p>
+<p>The base is to use a <code>develop</code> branch as described above with feature branches. But it will also add:</p>
+<ul>
+<li><strong>release branches</strong> are used as preparation for new production releases. Minor bugfixes and meta data changes (version numbers, build dates) are done here. They are named using the new release version like <code>release-1.2.0</code>. If done it they will merge to <code>master</code> and <code>develop</code>.</li>
+<li><strong>hotfix branches</strong> are like release branches but they are unplanned and be forged from the <code>master</code>. The normal development work can go on while the fix branched is made in parallel. If done it will be merged with <code>master</code> and the current release branch or <code>develop</code>.</li>
+</ul>
+<p>Both are being deleted after they are merged.</p>
+<p>Using the additional flow toolset:</p>
+<ul>
+<li><code>git flow init -d</code> will create the initial <code>develop</code> branch</li>
+<li><code>git flow feature start &lt;your feature&gt;</code> to start on a new feature</li>
+<li><code>git flow feature publish &lt;your feature&gt;</code> to push to origin</li>
+<li><code>git flow feature pull &lt;your feature&gt;</code> to pull from origin</li>
+<li><code>git flow feature finish &lt;name&gt;</code> to end a feature by merging with <code>develop</code></li>
+<li><code>git flow release start &lt;release&gt; [&lt;base&gt;]</code> start a release branch from <code>&lt;base&gt;</code> on <code>develop</code></li>
+<li><code>git flow release finish &lt;release&gt;</code> this will merge to master</li>
+<li><code>git flow hotfix start &lt;release&gt; [&lt;base&gt;]</code></li>
+<li><code>git flow hotfix finish &lt;release&gt;</code></li>
+</ul>
+<h3 id="support-branches">Support branches</h3>
+<p>Support branches are essential if you need to maintain multiple major versions at the same time. You could use support branches for supporting minor releases as well. They will be forged from the <code>master</code> and are a dead end, so no need to merge with <code>develop</code> anytime.</p>
+<p>Name them with the version pattern they will support like <code>support-1.x</code> or support <code>1.4.x</code>. There may also be hotfix branches which are based on it.</p>
+<p><img alt="support" src="../git-branches-support.png" /></p>
+<p>If a hotfix only for a support branch is made it only have to be merged back to the support branch.</p>
+<p>This can be used in addition to any of the other workflows.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>There is no one-size-fits-all workflow, it should be simple and enhance the productivity of your team. And it should fit in with your business requirements and project workflow.</p>
+<p>If decided it should be documented how to work, to be convenient over your projects and help the developers to concentrate on their real work.</p>
+<p>To keep a clean history you should use <code>--no-ff</code> on merges.</p>
+<h2 id="merges">Merges</h2>
+<p>To bring the changes of two branches or repositories together you have to merge them. Mostly you merge a branch back to another branch or the changes between the local and origin repository.</p>
+<ul>
+<li><code>git merge &lt;branch&gt;</code> will try to merge the given branch into the current</li>
+<li><code>git merge --abort</code> on merge conflicts you may abort the merge</li>
+<li><code>git merge --continue</code> go on after conflict is solved</li>
+</ul>
+<p>Git will decide how the changes from the last common commit will be put together.
+The <strong>fast-forward</strong> algorithm will be used when a linear path exists and will put all commits of the given branch behind the current one.
+This behavior can be suppressed with the <code>--no-ff</code> option.</p>
+<p>If changes were made in both branches git has to use the <strong>3-way merge</strong>.
+If in both branches changes exist in the same file on the same position it will result in a merge conflict.</p>
+<pre><code class="bash">$ git merge iss53
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
+</code></pre>
+
+<p>To get an overview of the conflicts you can always call <code>git status</code>.</p>
+<p>Within the conflicting file you will find one or multiple markers:</p>
+<pre><code class="diff">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+&lt;div id=&quot;footer&quot;&gt;contact : email.support@the.net&lt;/div&gt;
+=======
+&lt;div id=&quot;footer&quot;&gt;
+please contact us at support@the.net
+&lt;/div&gt;
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; iss53
+</code></pre>
+
+<p>The first is the version from the current branch, while the second is from the merging branch.
+You have to solve it by replacing the whole part with the correct content (one, the other or a new one).</p>
+<p>To solve this in a graphical tool use <code>git mergetool</code> and if fixed add the changes in the normal way using <code>git add</code> and <code>git commit</code>.</p>
+<h2 id="worktree">Worktree</h2>
+<p>In git it is possible to work in multiple branches in parallel, so while working on a new feature you can create a parallel directory with the master branch to make a hotfix and have both in your editor at the same time.</p>
+<pre><code class="bash"># create an parallel worktree for master
+git worktree add ../my-repo-master master
+# remove it after done
+git worktree remove ../my-repor-master
+</code></pre>
+
+<p>You can also open a new branch as worktree:</p>
+<pre><code class="bash"># create an parallel worktree for master
+git worktree add -b f_branch ../my-repo-feature origin/master
+</code></pre>
+
+<h2 id="submodules">Submodules</h2>
+<p>Git allow you to modularize your repository. This is done by the use of submodules which are references to other git repositories.</p>
+<p>To add a sub repository in a folder of the current repository use:</p>
+<pre><code class="bash">git submodule add https://github.com/&lt;user&gt;/&lt;repo&gt; lib/path
+</code></pre>
+
+<p>If you go into the submodule path you will directly work in the submodule's repository!</p>
+<p>If this submodule may have changed you should update submodules from the base folder of the parent repository:</p>
+<pre><code class="bash">git submodule update --init --recursive
+</code></pre>
+
+<p>To checkout a project using submodules best way is to use:</p>
+<pre><code class="bash">git clone --recursive &lt;project url&gt;
+</code></pre>
+
+<h3 id="extract-path">Extract path</h3>
+<p>To create a new repository out of some files, you have to clone the repository to a new folder on your machine and run:</p>
+<pre><code class="bash">git filter-branch --subdirectory-filter &lt;path&gt; -- --all
+</code></pre>
+
+<p>This will erase all data from the repository which is not related to this sub path.</p>
+<p>Now you have to create the new repository and change the origin to this one:</p>
+<pre><code class="bash">git remote set-url origin https://github.com/&lt;user&gt;/&lt;new repo&gt;
+git push
+</code></pre>
+
+<p>Now the extracted repository is ready, but you have to replace the code with the submodule now in the original repository:</p>
+<pre><code class="bash">git rm -r &lt;path&gt;
+git commit -m &quot;Remove path (preparing for submodule)&quot;
+</code></pre>
+
+<p>Then add it again as submodule:</p>
+<pre><code class="bash">git submodule add https://github.com/&lt;user&gt;/&lt;new repo&gt; &lt;path&gt;
+git commit -m &quot;path submodule&quot;
+</code></pre>
+
+<p>Don't forget to mention to all collaborators that submodules are used and to make recursive clones and updates.</p>
+<h3 id="remove">Remove</h3>
+<p>To remove a git submodule the following steps are needed:</p>
+<pre><code class="bash">git submodule deinit -f -- a/submodul
+rm -rf .git/modules/a/submodule
+git rm -f a/submodule
+</code></pre>
+
+<h2 id="special-use-cases">Special use cases</h2>
+<h3 id="moving-repository">Moving repository</h3>
+<p>First you have to fetch all remote branches:</p>
+<pre><code class="bash">git fetch origin
+</code></pre>
+
+<p>Now check if all branches are local:</p>
+<pre><code class="bash">git branch -a
+</code></pre>
+
+<p>If there are some branches listed as remote which didn’t exist as local ones you
+have to check them out:</p>
+<pre><code class="bash">git checkout -b &lt;name&gt; origin/&lt;name&gt;
+</code></pre>
+
+<p>Now define a new remote repository:</p>
+<pre><code class="bash">git remote add new-origin &lt;url&gt;
+</code></pre>
+
+<p>Everything set up so you may transfer the repository:</p>
+<pre><code class="bash">git push --all new-origin
+git push --tags new-origin
+</code></pre>
+
+<p>At last you may delete the old origin and rename it:</p>
+<pre><code class="bash">git remote rm origin
+git remote rename new-origin origin
+</code></pre>
+
+<p>Pull/push to origin</p>
+<p>Use the preset names:</p>
+<pre><code class="bash">git pull origin master
+git push origin master
+</code></pre>
+
+<h3 id="subversion-integration">Subversion Integration</h3>
+<p>If you have a subversion server as master you may also use git for your work and sync the changes back to subversion as the master repository.</p>
+<p>To use this you have to install the extension:</p>
+<pre><code class="bash">apt-get install git-svn
+</code></pre>
+
+<p>To do so you first init your git repository from the subversion master and load the initial data:</p>
+<pre><code class="bash">$ git svn clone -s https://subversion.local/svn/my-repo
+# -s is for --stdlayout which presumes the svn recommended layout for tags, trunk, and branches
+# if your repo don't use that remove this option
+</code></pre>
+
+<p>If you don’t want the complete history you may use:</p>
+<pre><code class="bash">$ git svn clone -s -r 40000:HEAD https://subversion.local/svn//my-repo
+# -r is for the revision to start taking history from
+</code></pre>
+
+<p>To update your repository to HEAD of subversion master run:</p>
+<pre><code class="bash">git svn rebase
+</code></pre>
+
+<p>And to push your commits further to subversion:</p>
+<pre><code class="bash">git svn dcommit
+</code></pre>
+
+<h3 id="working-with-forks">Working with forks</h3>
+<p>If you have a fork you may add an additional remote repository:</p>
+<pre><code class="bash">git remote add upstream
+</code></pre>
+
+<p>To sync this you have to:</p>
+<pre><code class="bash">git fetch upstream
+git checkout master
+git merge upstream/master
+</code></pre>
+
+<h2 id="server-setup">Server Setup</h2>
+<p>If you want to use your own central repository you have to setup a git server:</p>
+<h3 id="install-the-required-package">Install the required package</h3>
+<pre><code class="bash">sudo apt-get install -y git-core
+</code></pre>
+
+<h3 id="authenticated-ssh-access">Authenticated ssh access</h3>
+<p>Next you create a local user to access git using ssh:</p>
+<pre><code class="bash">sudo adduser git
+su git
+cd
+mkdir .ssh &amp;&amp; chmod 700 .ssh
+touch .ssh/authorized_keys &amp;&amp; chmod 600 .ssh/authorized_keys
+</code></pre>
+
+<p>Next you need to add each developer SSH public keys to the authorized_keys file for
+the git user.</p>
+<pre><code class="bash">cat /tmp/id_rsa.john.pub &gt;&gt; ~/.ssh/authorized_keys
+</code></pre>
+
+<p>Now, you can set up an empty repository for them as described below.</p>
+<pre><code>The address will be git@gitserver:/var/git/project.git
+</code></pre>
+<p>You can easily restrict the git user to only doing Git activities with a limited
+shell tool called git-shell that comes with Git.</p>
+<pre><code class="bash">cat /etc/shells       # see if `git-shell` is already in there.  If not...
+which git-shell       # make sure git-shell is installed on your system.
+sudo vim /etc/shells  # and add the path to git-shell from last command
+sudo chsh git         # and enter the path to git-shell, usually: /usr/bin/git-shell
+</code></pre>
+
+<p>Now, the git user can only use the SSH connection to push and pull Git repositories and can’t shell onto the machine. If you try, you’ll see a login rejection like this:</p>
+<pre><code class="bash">$ ssh git@gitserver
+fatal: Interactive git shell is not enabled.
+Connection to gitserver closed.
+</code></pre>
+
+<h3 id="http-access">HTTP Access</h3>
+<p>This is done using the Apache web server with its possibilities.</p>
+<p>Add the following to the Apache site configuration:</p>
+<pre><code class="text">SetEnv GIT_PROJECT_ROOT /var/git
+SetEnv GIT_HTTP_EXPORT_ALL
+ScriptAlias /git/ /usr/lib/git-core/git-http-backend/
+
+&lt;Directory &quot;/usr/lib/git-core*&quot;&gt;
+    Options ExecCGI Indexes
+    Order allow,deny
+    Allow from all
+    Require all granted
+&lt;/Directory&gt;
+
+&lt;LocationMatch &quot;^/git/&quot;&gt;
+    AuthType Basic
+    AuthName &quot;Git Access&quot;
+    AuthUserFile /etc/apache2/git.passwd
+    AuthGroupFile /etc/apache2/git.groups
+    Require valid-user
+&lt;/LocationMatch&gt;
+</code></pre>
+
+<p>Now you may access the server.</p>
+<h3 id="web-interface-gitweb">Web Interface <code>gitweb</code></h3>
+<pre><code class="bash">apt-get install -y gitweb
+</code></pre>
+
+<h3 id="create-a-new-server-repository">Create a new server repository</h3>
+<p>First create a bare repository:</p>
+<pre><code class="bash">git --bare init &lt;myrepo&gt;
+cd &lt;myrepo&gt;
+git --bare update-server-info
+cd ..
+chown -R www-data:www-data &lt;myrepo&gt;
+</code></pre>
+
+<p>Now make a new local repository:</p>
+<pre><code class="bash">git init &lt;path&gt;
+</code></pre>
+
+<p>After you have everything committed add the remote and push the repository:</p>
+<pre><code class="bash">git remote add origin &lt;url&gt;
+git push --all origin
+git push --tags origin
+</code></pre>
+
+<p>Add the login credentials in the <code>.netrc</code> file which is used by curl:</p>
+<pre><code class="bash">$ cat ~/.netrc
+machine &lt;git.yourdomain.com&gt;
+login reader
+password reader
+</code></pre>
+
+<h3 id="migrate-from-subversion">Migrate from Subversion</h3>
+<p>Best way is to use <a href="https://github.com/JohnAlbin/git-svn-migrate">git-svn-migrate</a>, which can also convert multiple repository at once.</p>
+<p>{!docs/abbreviations.txt!}</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../atom/" title="Atom" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Atom
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../mkdocs/" title="MkDocs" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                MkDocs
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2016 - 2020 <a href="https://elviejo79.github.io">Alexander Schilling</a>
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.36cbf620.min.js"></script>
+      <script src="../../assets/javascripts/bundle.00c583dd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.7f7c8775.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

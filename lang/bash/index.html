@@ -1,0 +1,2470 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A book to learn modern web technologies.">
+      
+      
+      
+        <meta name="author" content="Alexander Schilling">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.0">
+    
+    
+      
+        <title>Bash - Elviejo79 Development Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.89dc9fe3.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+      <link rel="manifest" href="../../manifest.webmanifest" crossorigin="use-credentials">
+    
+    
+      <link rel="stylesheet" href="../../assets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bash" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Elviejo79 Development Guide" class="md-header-nav__button md-logo" aria-label="Elviejo79 Development Guide">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21,5C19.89,4.65 18.67,4.5 17.5,4.5C15.55,4.5 13.45,4.9 12,6C10.55,4.9 8.45,4.5 6.5,4.5C4.55,4.5 2.45,4.9 1,6V20.65C1,20.9 1.25,21.15 1.5,21.15C1.6,21.15 1.65,21.1 1.75,21.1C3.1,20.45 5.05,20 6.5,20C8.45,20 10.55,20.4 12,21.5C13.35,20.65 15.8,20 17.5,20C19.15,20 20.85,20.3 22.25,21.05C22.35,21.1 22.4,21.1 22.5,21.1C22.75,21.1 23,20.85 23,20.6V6C22.4,5.55 21.75,5.25 21,5M21,18.5C19.9,18.15 18.7,18 17.5,18C15.8,18 13.35,18.65 12,19.5V8C13.35,7.15 15.8,6.5 17.5,6.5C18.7,6.5 19.9,6.65 21,7V18.5Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Elviejo79 Development Guide
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Bash
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/elviejo79/mkdocsExperiment.git" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    elviejo79/mkdocsExperiment
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Elviejo79 Development Guide" class="md-nav__button md-logo" aria-label="Elviejo79 Development Guide">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21,5C19.89,4.65 18.67,4.5 17.5,4.5C15.55,4.5 13.45,4.9 12,6C10.55,4.9 8.45,4.5 6.5,4.5C4.55,4.5 2.45,4.9 1,6V20.65C1,20.9 1.25,21.15 1.5,21.15C1.6,21.15 1.65,21.1 1.75,21.1C3.1,20.45 5.05,20 6.5,20C8.45,20 10.55,20.4 12,21.5C13.35,20.65 15.8,20 17.5,20C19.15,20 20.85,20.3 22.25,21.05C22.35,21.1 22.4,21.1 22.5,21.1C22.75,21.1 23,20.85 23,20.6V6C22.4,5.55 21.75,5.25 21,5M21,18.5C19.9,18.15 18.7,18 17.5,18C15.8,18 13.35,18.65 12,19.5V8C13.35,7.15 15.8,6.5 17.5,6.5C18.7,6.5 19.9,6.65 21,7V18.5Z" /></svg>
+
+    </a>
+    Elviejo79 Development Guide
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/elviejo79/mkdocsExperiment.git" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    elviejo79/mkdocsExperiment
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Home
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Home" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Home
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../alinex/" title="What is Alinex" class="md-nav__link">
+      What is Alinex
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blog/2020/" title="Blog 2020" class="md-nav__link">
+      Blog 2020
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blog/2019/" title="Blog 2019" class="md-nav__link">
+      Blog 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blog/2018/" title="Blog 2018" class="md-nav__link">
+      Blog 2018
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blog/2017/" title="Blog 2017" class="md-nav__link">
+      Blog 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blog/2016/" title="Blog 2016" class="md-nav__link">
+      Blog 2016
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../LICENSE/" title="License" class="md-nav__link">
+      License
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/" title="Policy" class="md-nav__link">
+      Policy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../about/" title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Environment
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Environment" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Environment
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/freeplane/" title="Freeplane" class="md-nav__link">
+      Freeplane
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/gitlab/" title="GitLab" class="md-nav__link">
+      GitLab
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/github/" title="GitHub" class="md-nav__link">
+      GitHub
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/trello/" title="Trello" class="md-nav__link">
+      Trello
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/vscode/" title="VS Code" class="md-nav__link">
+      VS Code
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/atom/" title="Atom" class="md-nav__link">
+      Atom
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/git/" title="Git" class="md-nav__link">
+      Git
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/mkdocs/" title="MkDocs" class="md-nav__link">
+      MkDocs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/gitbook/" title="GitBook" class="md-nav__link">
+      GitBook
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Technologies
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Technologies" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Technologies
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" checked>
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Languages
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Languages" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Languages
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../markdown/" title="Markdown" class="md-nav__link">
+      Markdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../handlebars/" title="Handlebars" class="md-nav__link">
+      Handlebars
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sass/" title="Sass" class="md-nav__link">
+      Sass
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Bash
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Bash" class="md-nav__link md-nav__link--active">
+      Bash
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#script-vs-shell" class="md-nav__link">
+    Script vs Shell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redirection-and-pipes" class="md-nav__link">
+    Redirection and Pipes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expansion" class="md-nav__link">
+    Expansion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditionals" class="md-nav__link">
+    Conditionals
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-conditions" class="md-nav__link">
+    Test Conditions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regular-expressions" class="md-nav__link">
+    Regular Expressions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loops" class="md-nav__link">
+    Loops
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    Options
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include-modules" class="md-nav__link">
+    Include modules
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../go/" title="Go" class="md-nav__link">
+      Go
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Systems
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Systems" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Systems
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systems/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systems/linux/" title="Linux" class="md-nav__link">
+      Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systems/apache/" title="Apache Web Server" class="md-nav__link">
+      Apache Web Server
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systems/postgres/" title="PostgreSQL Database" class="md-nav__link">
+      PostgreSQL Database
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systems/mongo/" title="MongoDB" class="md-nav__link">
+      MongoDB
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Concepts
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Concepts" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Concepts
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../concepts/app/" title="Application" class="md-nav__link">
+      Application
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../concepts/exitcodes/" title="Exit Codes" class="md-nav__link">
+      Exit Codes
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      JavaScript
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="JavaScript" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        JavaScript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/" title="JavaScript" class="md-nav__link">
+      JavaScript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      Versions
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Versions" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Versions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/spec/" title="Specification" class="md-nav__link">
+      Specification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/es-next/" title="ES.Next" class="md-nav__link">
+      ES.Next
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/es2015/" title="ECMAScript 2015" class="md-nav__link">
+      ECMAScript 2015
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/es2016/" title="ECMAScript 2015" class="md-nav__link">
+      ECMAScript 2015
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/es2017/" title="ECMAScript 2017" class="md-nav__link">
+      ECMAScript 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/es2018/" title="ECMAScript 2018" class="md-nav__link">
+      ECMAScript 2018
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/es2019/" title="ECMAScript 2019" class="md-nav__link">
+      ECMAScript 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/es2020/" title="ECMAScript 2020" class="md-nav__link">
+      ECMAScript 2020
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
+    
+    <label class="md-nav__link" for="nav-4-3">
+      Transpiler
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Transpiler" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Transpiler
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/typescript/" title="TypeScript" class="md-nav__link">
+      TypeScript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/flow/" title="Flow" class="md-nav__link">
+      Flow
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/coffee/" title="CoffeeScript" class="md-nav__link">
+      CoffeeScript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/coffee-styleguide/" title="CoffeeScript Styleguide" class="md-nav__link">
+      CoffeeScript Styleguide
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/nodejs/" title="Node.JS" class="md-nav__link">
+      Node.JS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/npm/" title="NPM" class="md-nav__link">
+      NPM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/modules/" title="Modules" class="md-nav__link">
+      Modules
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Rust
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Rust" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Rust
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/start/" title="Getting started" class="md-nav__link">
+      Getting started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/core/" title="Language Core" class="md-nav__link">
+      Language Core
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/standard/" title="Standard Library" class="md-nav__link">
+      Standard Library
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/modules/" title="Modules" class="md-nav__link">
+      Modules
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/directory/" title="Directory Structure" class="md-nav__link">
+      Directory Structure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/test/" title="Unit Testing" class="md-nav__link">
+      Unit Testing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/tools/" title="Tooling" class="md-nav__link">
+      Tooling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/phantom/" title="Phantom Types" class="md-nav__link">
+      Phantom Types
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-10" type="checkbox" id="nav-5-10">
+    
+    <label class="md-nav__link" for="nav-5-10">
+      Crates
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Crates" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-10">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Crates
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/crates/" title="Rust" class="md-nav__link">
+      Rust
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/crates/failure/" title="Error Management" class="md-nav__link">
+      Error Management
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/crates/clap/" title="clap" class="md-nav__link">
+      clap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/crates/actix/" title="actix" class="md-nav__link">
+      actix
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/crates/actix-web/" title="actix_web" class="md-nav__link">
+      actix_web
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/crates/diesel/" title="Diesel Object Relation Mapper" class="md-nav__link">
+      Diesel Object Relation Mapper
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-11" type="checkbox" id="nav-5-11">
+    
+    <label class="md-nav__link" for="nav-5-11">
+      Solutions
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Solutions" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-11">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Solutions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/solutions/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/solutions/cache/" title="Caching using Struct" class="md-nav__link">
+      Caching using Struct
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Solutions
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Solutions" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Solutions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../solutions/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../solutions/devops/" title="DevOps" class="md-nav__link">
+      DevOps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../solutions/applications/" title="Applications" class="md-nav__link">
+      Applications
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../solutions/modules/" title="Modules" class="md-nav__link">
+      Modules
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../solutions/playground/" title="Playground" class="md-nav__link">
+      Playground
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../solutions/quality/" title="Quality Standards" class="md-nav__link">
+      Quality Standards
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#script-vs-shell" class="md-nav__link">
+    Script vs Shell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redirection-and-pipes" class="md-nav__link">
+    Redirection and Pipes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expansion" class="md-nav__link">
+    Expansion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditionals" class="md-nav__link">
+    Conditionals
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-conditions" class="md-nav__link">
+    Test Conditions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regular-expressions" class="md-nav__link">
+    Regular Expressions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loops" class="md-nav__link">
+    Loops
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    Options
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include-modules" class="md-nav__link">
+    Include modules
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="bash">Bash</h1>
+<p>The <code>bash</code> shell is the most common shell in Linux/Unix systems and also called the GNU shell. It is a superset of the <code>sh</code> shell, so everything that works there also works in <code>bash</code>.</p>
+<p>But bash is not only a shell, it is also a powerful scripting language but for the higher level techniques a good understanding of the system and the language is needed. With complex data structures it gets a little cryptic as long as you don't know the syntax.</p>
+<p>Here the language structure and special use cases will be explained.</p>
+<h2 id="script-vs-shell">Script vs Shell</h2>
+<p>Everything which is possible in a script can also be directly typed within the shell. That allows to debug a code by running each line one by one in the console.</p>
+<p>When the program being executed is a shell script, bash will create a new bash process using a fork. This sub shell reads the lines from the shell script one line at a time. Commands on each line are read, interpreted and executed as if they would have come directly from the keyboard.
+Don't change the file contents while a script is running, because this can influence the running program and tend to incalculable results.</p>
+<h2 id="syntax">Syntax</h2>
+<p>Comments: use <code>#</code> to start a comment</p>
+<p>Commands: calls the function, built-in or within the <code>PATH</code></p>
+<p>Arguments: separated by spaces behind the command</p>
+<p>Exits Status: is the integer return value which is <code>0</code> for success: <a href="../../concepts/exitcodes/">exit codes</a></p>
+<p>Shebang: <code>#!/bin/bash</code> as first line is used to run script as <code>bash</code> if executed</p>
+<h2 id="redirection-and-pipes">Redirection and Pipes</h2>
+<p>There are three file descriptors: <code>STDIN</code> (0), <code>STDOUT</code> (1) and <code>STDERR</code> (2) which can be used.
+They can be directed into a file or piped as <code>STDIN</code> to the next command.</p>
+<table>
+<thead>
+<tr>
+<th>Redirection</th>
+<th>Code Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>STDOUT</code> to file</td>
+<td><code>ls -l &gt; ls-l.txt</code></td>
+</tr>
+<tr>
+<td><code>STDERR</code> to file</td>
+<td><code>grep da * 2&gt; grep-errors.txt</code></td>
+</tr>
+<tr>
+<td><code>STDOUT</code> to <code>STDERR</code></td>
+<td><code>grep da * 1&gt;&amp;2</code></td>
+</tr>
+<tr>
+<td><code>STDERR</code> to <code>STDOUT</code></td>
+<td><code>grep * 2&gt;&amp;1</code></td>
+</tr>
+<tr>
+<td><code>STDOUT</code> and <code>STDERR</code> to file</td>
+<td><code>grep da * &amp;&gt; grep-errors.txt</code></td>
+</tr>
+<tr>
+<td>pipe <code>STDOUT</code></td>
+<td><code>ls -l | grep "\.txt$"</code></td>
+</tr>
+<tr>
+<td>pipe <code>STDOUT</code> and <code>STDERR</code></td>
+<td><code>ls -l |&amp; grep "\.txt$"</code></td>
+</tr>
+<tr>
+<td>pipe only <code>STDERR</code></td>
+<td><code>ls -l &gt;/dev/null 2&gt;&amp;1 | grep "\.txt$"</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="variables">Variables</h2>
+<p>A variable is created by setting a value to it like <code>test="xxxx"</code>.
+They are only accessible in the current shell. To make them also available to sub shells you have to <code>export</code> it.</p>
+<p>The following types of variables are possible:</p>
+<ul>
+<li>String variables</li>
+<li>Integer variables</li>
+<li>Constant variables</li>
+<li>Array variables</li>
+</ul>
+<p>Within functions local variables can be defined by using the <code>local</code> prefix.</p>
+<p>The following variables have special use cases:</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$*</code></td>
+<td>Expands to the positional parameters, starting from one. When the expansion occurs within double quotes, it expands to a single word with the value of each parameter separated by the first character of the IFS special variable.</td>
+</tr>
+<tr>
+<td><code>$@</code></td>
+<td>Expands to the positional parameters, starting from one. When the expansion occurs within double quotes, each parameter expands to a separate word.</td>
+</tr>
+<tr>
+<td><code>$#</code></td>
+<td>Expands to the number of positional parameters in decimal.</td>
+</tr>
+<tr>
+<td><code>$?</code></td>
+<td>Expands to the exit status of the most recently executed foreground pipeline.</td>
+</tr>
+<tr>
+<td><code>$-</code></td>
+<td>A hyphen expands to the current option flags as specified upon invocation, by the set built-in command, or those set by the shell itself (such as the -i).</td>
+</tr>
+<tr>
+<td><code>$$</code></td>
+<td>Expands to the process ID of the shell.</td>
+</tr>
+<tr>
+<td><code>$!</code></td>
+<td>Expands to the process ID of the most recently executed background (asynchronous) command.</td>
+</tr>
+<tr>
+<td><code>$0</code></td>
+<td>Expands to the name of the shell or shell script.</td>
+</tr>
+<tr>
+<td><code>$_</code></td>
+<td>The underscore variable is set at shell startup and contains the absolute file name of the shell or script being executed as passed in the argument list. Subsequently, it expands to the last argument to the previous command, after expansion. It is also set to the full pathname of each command executed and placed in the environment exported to that command. When checking mail, this parameter holds the name of the mail file.</td>
+</tr>
+<tr>
+<td><code>CDPATH</code></td>
+<td>A colon-separated list of directories used as a search path for the <code>cd</code> command.</td>
+</tr>
+<tr>
+<td><code>HOME</code></td>
+<td>The current user's home directory; the default for <code>cd</code>. The value of this variable is also used by tilde expansion.</td>
+</tr>
+<tr>
+<td><code>IFS</code></td>
+<td>A list of characters that separate fields; used when the shell splits words as part of expansion.</td>
+</tr>
+<tr>
+<td><code>MAIL</code></td>
+<td>If this parameter is set to a file name and the <code>MAILPATH</code> variable is not set, Bash informs the user of the arrival of mail in the specified file.</td>
+</tr>
+<tr>
+<td><code>MAILPATH</code></td>
+<td>A colon-separated list of file names which the shell periodically checks for new mail.</td>
+</tr>
+<tr>
+<td><code>OPTARG</code></td>
+<td>The value of the last option argument processed by <code>getopts</code>.</td>
+</tr>
+<tr>
+<td><code>OPTIND</code></td>
+<td>The index of the last option argument processed by <code>getopts</code>.</td>
+</tr>
+<tr>
+<td><code>PATH</code></td>
+<td>A colon-separated list of directories in which the shell looks for commands.</td>
+</tr>
+<tr>
+<td><code>PS1</code></td>
+<td>The primary prompt string. The default value is <code>'\s-\v\$ '</code>.</td>
+</tr>
+<tr>
+<td><code>PS2</code></td>
+<td>The secondary prompt string. The default value is <code>'&gt; '</code>.</td>
+</tr>
+<tr>
+<td><code>auto_resume</code></td>
+<td>This variable controls how the shell interacts with the user and job control.</td>
+</tr>
+<tr>
+<td><code>BASH</code></td>
+<td>The full pathname used to execute the current instance of Bash.</td>
+</tr>
+<tr>
+<td><code>BASH_ENV</code></td>
+<td>If this variable is set when Bash is invoked to execute a shell script, its value is expanded and used as the name of a startup file to read before executing the script.</td>
+</tr>
+<tr>
+<td><code>BASH_VERSION</code></td>
+<td>The version number of the current instance of Bash.</td>
+</tr>
+<tr>
+<td><code>BASH_VERSINFO</code></td>
+<td>A read-only array variable whose members hold version information for this instance of Bash.</td>
+</tr>
+<tr>
+<td><code>COLUMNS</code></td>
+<td>Used by the select built-in to determine the terminal width when printing selection lists.</td>
+</tr>
+<tr>
+<td><code>COMP_CWORD</code></td>
+<td>An index of the word containing the current cursor position.</td>
+</tr>
+<tr>
+<td><code>COMP_LINE</code></td>
+<td>The current command line.</td>
+</tr>
+<tr>
+<td><code>COMP_POINT</code></td>
+<td>The index of the current cursor position relative to the beginning of the current command.</td>
+</tr>
+<tr>
+<td><code>COMP_WORDS</code></td>
+<td>An array variable consisting of the individual words in the current command line.</td>
+</tr>
+<tr>
+<td><code>COMPREPLY</code></td>
+<td>An array variable from which Bash reads the possible completions generated by a shell function invoked by the programmable completion facility.</td>
+</tr>
+<tr>
+<td><code>DIRSTACK</code></td>
+<td>An array variable containing the current contents of the directory stack.</td>
+</tr>
+<tr>
+<td><code>EUID</code></td>
+<td>The numeric effective user ID of the current user.</td>
+</tr>
+<tr>
+<td><code>FCEDIT</code></td>
+<td>The editor used as a default by the -e option to the <code>fc</code> command.</td>
+</tr>
+<tr>
+<td><code>FIGNORE</code></td>
+<td>A colon-separated list of suffixes to ignore when performing file name completion.</td>
+</tr>
+<tr>
+<td><code>FUNCNAME</code></td>
+<td>The name of any currently-executing shell function.</td>
+</tr>
+<tr>
+<td><code>GLOBIGNORE</code></td>
+<td>A colon-separated list of patterns defining the set of file names to be ignored by file name expansion.</td>
+</tr>
+<tr>
+<td><code>GROUPS</code></td>
+<td>An array variable containing the list of groups of which the current user is a member.</td>
+</tr>
+<tr>
+<td><code>histchars</code></td>
+<td>Up to three characters which control history expansion, quick substitution, and tokenization.</td>
+</tr>
+<tr>
+<td><code>HISTCMD</code></td>
+<td>The history number, or index in the history list, of the current command.</td>
+</tr>
+<tr>
+<td><code>HISTCONTROL</code></td>
+<td>Defines whether a command is added to the history file.</td>
+</tr>
+<tr>
+<td><code>HISTFILE</code></td>
+<td>The name of the file to which the command history is saved. The default value is <code>~/.bash_history</code>.</td>
+</tr>
+<tr>
+<td><code>HISTFILESIZE</code></td>
+<td>The maximum number of lines contained in the history file, defaults to 500.</td>
+</tr>
+<tr>
+<td><code>HISTIGNORE</code></td>
+<td>A colon-separated list of patterns used to decide which command lines should be saved in the history list.</td>
+</tr>
+<tr>
+<td><code>HISTSIZE</code></td>
+<td>The maximum number of commands to remember on the history list, default is 500.</td>
+</tr>
+<tr>
+<td><code>HOSTFILE</code></td>
+<td>Contains the name of a file in the same format as /etc/hosts that should be read when the shell needs to complete a hostname.</td>
+</tr>
+<tr>
+<td><code>HOSTNAME</code></td>
+<td>The name of the current host.</td>
+</tr>
+<tr>
+<td><code>HOSTTYPE</code></td>
+<td>A string describing the machine Bash is running on.</td>
+</tr>
+<tr>
+<td><code>IGNOREEOF</code></td>
+<td>Controls the action of the shell on receipt of an EOF character as the sole input.</td>
+</tr>
+<tr>
+<td><code>INPUTRC</code></td>
+<td>The name of the Readline initialization file, overriding the default <code>/etc/inputrc</code>.</td>
+</tr>
+<tr>
+<td><code>LANG</code></td>
+<td>Used to determine the locale category for any category not specifically selected with a variable starting with <code>LC_</code>.</td>
+</tr>
+<tr>
+<td><code>LC_ALL</code></td>
+<td>This variable overrides the value of <code>LANG</code> and any other <code>LC_</code> variable specifying a locale category.</td>
+</tr>
+<tr>
+<td><code>LC_COLLATE</code></td>
+<td>This variable determines the collation order used when sorting the results.</td>
+</tr>
+<tr>
+<td><code>LC_CTYPE</code></td>
+<td>This variable determines the interpretation of characters and the behavior of character classes within file name expansion and pattern matching.</td>
+</tr>
+<tr>
+<td><code>LC_MESSAGES</code></td>
+<td>This variable determines the locale used to translate double-quoted strings preceded by a "$" sign.</td>
+</tr>
+<tr>
+<td><code>LC_NUMERIC</code></td>
+<td>This variable determines the locale category used for number formatting.</td>
+</tr>
+<tr>
+<td><code>LINENO</code></td>
+<td>The line number in the script or shell function currently executing.</td>
+</tr>
+<tr>
+<td><code>LINES</code></td>
+<td>Used by the select built-in to determine the column length for printing selection lists.</td>
+</tr>
+<tr>
+<td><code>MACHTYPE</code></td>
+<td>A string that fully describes the system type on which Bash is executing, in the standard GNU CPU-COMPANY-SYSTEM format.</td>
+</tr>
+<tr>
+<td><code>MAILCHECK</code></td>
+<td>How often (in seconds) that the shell should check for mail in the files specified in the <code>MAILPATH</code> or <code>MAIL</code> variables.</td>
+</tr>
+<tr>
+<td><code>OLDPWD</code></td>
+<td>The previous working directory as set by the <code>cd</code> built-in.</td>
+</tr>
+<tr>
+<td><code>OPTERR</code></td>
+<td>If set to the value 1, Bash displays error messages generated by getopts.</td>
+</tr>
+<tr>
+<td><code>OSTYPE</code></td>
+<td>A string describing the operating system Bash is running on.</td>
+</tr>
+<tr>
+<td><code>PIPESTATUS</code></td>
+<td>An array variable containing a list of exit status values from the processes in the most recently executed foreground pipeline.</td>
+</tr>
+<tr>
+<td><code>POSIXLY_CORRECT</code></td>
+<td>If this variable is in the environment when bash starts, the shell enters POSIX mode.</td>
+</tr>
+<tr>
+<td><code>PPID</code></td>
+<td>The process ID of the shell's parent process.</td>
+</tr>
+<tr>
+<td><code>PROMPT_COMMAND</code></td>
+<td>If set, the value is interpreted as a command to execute before the printing of each primary prompt (PS1).</td>
+</tr>
+<tr>
+<td><code>PS3</code></td>
+<td>The value of this variable is used as the prompt for the select command. Defaults to <code>'#? '</code></td>
+</tr>
+<tr>
+<td><code>PS4</code></td>
+<td>The value is the prompt printed before the command line is echoed when the -x option is set; defaults to <code>'+ '</code>.</td>
+</tr>
+<tr>
+<td><code>PWD</code></td>
+<td>The current working directory as set by the <code>cd</code> command.</td>
+</tr>
+<tr>
+<td><code>RANDOM</code></td>
+<td>Each time this parameter is referenced, a random integer between 0 and 32767 is generated. Assigning a value to this variable seeds the random number generator.</td>
+</tr>
+<tr>
+<td><code>REPLY</code></td>
+<td>The default variable for the read built-in.</td>
+</tr>
+<tr>
+<td><code>SECONDS</code></td>
+<td>This variable expands to the number of seconds since the shell was started.</td>
+</tr>
+<tr>
+<td><code>SHELLOPTS</code></td>
+<td>A colon-separated list of enabled shell options.</td>
+</tr>
+<tr>
+<td><code>SHLVL</code></td>
+<td>Incremented by one each time a new instance of Bash is started.</td>
+</tr>
+<tr>
+<td><code>TIMEFORMAT</code></td>
+<td>The value of this parameter is used as a format string specifying how the timing information for pipelines prefixed with the time reserved word should be displayed.</td>
+</tr>
+<tr>
+<td><code>TMOUT</code></td>
+<td>If set to a value greater than zero, <code>TMOUT</code> is treated as the default timeout for the read built-in. In an interative shell, the value is interpreted as the number of seconds to wait for input after issuing the primary prompt when the shell is interactive.</td>
+</tr>
+<tr>
+<td><code>UID</code></td>
+<td>The numeric, real user ID of the current user.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="functions">Functions</h2>
+<p>To define functions two types are possible:</p>
+<pre><code class="bash">function quit {
+    exit
+}
+
+hello () {
+    echo Hello!
+}
+
+hello
+quit
+</code></pre>
+
+<p>Parameters given to the functions are readable as <code>$1</code>... like from any command.</p>
+<h2 id="expansion">Expansion</h2>
+<p><strong>Brace expansion</strong> is a mechanism by which arbitrary strings may be generated. Patterns to be brace-expanded take the form of an optional PREAMBLE, followed by a series of comma-separated strings between a pair of braces, followed by an optional POSTSCRIPT. The preamble is prefixed to each string contained within the braces, and the postscript is then appended to each resulting string, expanding left to right.</p>
+<p>Brace expansions may be nested. The results of each expanded string are not sorted; left to right order is preserved:</p>
+<pre><code class="bash">$ echo sp{el,il,al}l
+spell spill spall
+</code></pre>
+
+<p><strong>Variable expansion</strong> will replace a variable with it's content, </p>
+<p><strong>Command substitution</strong> will replace a command with it's output before evaluating the outer line.</p>
+<pre><code class="bash">$(command)
+# backticks alternative
+`command` 
+</code></pre>
+
+<p><strong>Arithmetic expansion</strong> allows the evaluation of an arithmetic expression and the substitution of the result. The format for arithmetic expansion is:</p>
+<pre><code class="bash">$(( EXPRESSION ))
+</code></pre>
+
+<p>The expression is treated as if it were within double quotes. All tokens in the expression undergo parameter expansion, command substitution, and quote removal. Arithmetic substitutions may be nested.</p>
+<p>Evaluation of arithmetic expressions is done in fixed-width integers with no check for overflow - although division by zero is trapped and recognized as an error. The operators are roughly the same as in the C programming language. In order of decreasing precedence, the list looks like this:</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>VAR++</code> and <code>VAR--</code></td>
+<td>variable post-increment and post-decrement</td>
+</tr>
+<tr>
+<td><code>++VAR</code> and <code>--VAR</code></td>
+<td>variable pre-increment and pre-decrement</td>
+</tr>
+<tr>
+<td><code>-</code> and <code>+</code></td>
+<td>unary minus and plus</td>
+</tr>
+<tr>
+<td><code>!</code> and <code>~</code></td>
+<td>logical and bitwise negation</td>
+</tr>
+<tr>
+<td><code>**</code></td>
+<td>exponentiation</td>
+</tr>
+<tr>
+<td><code>*</code>, <code>/</code> and <code>%</code></td>
+<td>multiplication, division, remainder</td>
+</tr>
+<tr>
+<td><code>+</code> and <code>-</code></td>
+<td>addition, subtraction</td>
+</tr>
+<tr>
+<td><code>&lt;&lt;</code> and <code>&gt;&gt;</code></td>
+<td>left and right bitwise shifts</td>
+</tr>
+<tr>
+<td><code>&lt;=</code>, <code>&gt;=</code>, <code>&lt;</code> and <code>&gt;</code></td>
+<td>comparison operators</td>
+</tr>
+<tr>
+<td><code>==</code> and <code>!=</code></td>
+<td>equality and inequality</td>
+</tr>
+<tr>
+<td><code>&amp;</code></td>
+<td>bitwise AND</td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td>bitwise exclusive OR</td>
+</tr>
+<tr>
+<td><code>|</code></td>
+<td>bitwise OR</td>
+</tr>
+<tr>
+<td><code>&amp;&amp;</code></td>
+<td>logical AND</td>
+</tr>
+<tr>
+<td><code>||</code></td>
+<td>logical OR</td>
+</tr>
+<tr>
+<td><code>expr ? expr : expr</code></td>
+<td>conditional evaluation</td>
+</tr>
+<tr>
+<td><code>=</code>, <code>*=</code>, <code>/=</code>, <code>%=</code>, <code>+=</code>, <code>-=</code>, <code>&lt;&lt;=</code>, <code>&gt;&gt;=</code>, <code>&amp;=</code>, <code>^=</code> and <code>|=</code></td>
+<td>assignments</td>
+</tr>
+<tr>
+<td><code>,</code></td>
+<td>separator between expressions</td>
+</tr>
+</tbody>
+</table>
+<p><strong>File name expansion</strong> is done using <code>*</code>, <code>?</code>, and <code>[</code>. If one of these characters appears, then the word is regarded as a <code>PATTERN</code>, and replaced with an alphabetically sorted list of file names matching the pattern. If no matching file names are found, and the shell option <code>nullglob</code> is disabled, the word is left unchanged. </p>
+<h2 id="conditionals">Conditionals</h2>
+<pre><code class="bash">if [ &quot;foo&quot; = &quot;foo&quot; ]; then
+    echo expression evaluated as true
+else
+    echo expression evaluated as false
+fi
+</code></pre>
+
+<h2 id="test-conditions">Test Conditions</h2>
+<p>In Bash there are different extensions to write conditions:</p>
+<ol>
+<li><code>[ ... ]</code> is POSIX command</li>
+<li><code>[[ ... ]]</code> is a Bash extension</li>
+</ol>
+<p><code>[[ X ]]</code> is a single construct that makes <code>X</code> be parsed magically. <code>&lt;</code>, <code>&amp;&amp;</code>, <code>||</code> and <code>()</code> are treated specially, and word splitting rules are different. There are also further differences like <code>=</code> and <code>=~</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>POSIX</th>
+<th>Bash</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;</code></td>
+<td><code>[ a \&lt; b ]</code> comparison needs <code>\</code> <br>else redirects output</td>
+<td><code>[[ a &lt; b ]]</code></td>
+</tr>
+<tr>
+<td><code>&amp;&amp;</code> or <code>||</code></td>
+<td><code>[ a = a ] &amp;&amp; [ b = b ]</code> <br>deprecated: <code>[ a = a -a b = b ]</code></td>
+<td><code>[[ a = a &amp;&amp; b = b ]]</code></td>
+</tr>
+<tr>
+<td><code>(</code></td>
+<td><code>([ a = a ] || [ a = b ]) &amp;&amp; [ a = b ]</code> <br>deprecated: <code>[ \( a = a -o a = b \) -a a = b ]</code></td>
+<td><code>[[ (a = a || a = b) &amp;&amp; a = b ]]</code></td>
+</tr>
+<tr>
+<td>word splitting <br><code>x='a b'</code></td>
+<td><code>[ "$x" = 'a b' ]</code> <br>quotes needed to prevent expand</td>
+<td><code>[[ $x = 'a b' ]]</code></td>
+</tr>
+<tr>
+<td><code>=</code> or <code>==</code></td>
+<td><code>printf 'ab' | grep -Eq 'a.'</code></td>
+<td><code>[[ ab = a? ]]</code> pattern matching applies</td>
+</tr>
+<tr>
+<td><code>=~</code> or <code>!~</code></td>
+<td><code>printf 'ab' | grep -Eq 'ab?'</code></td>
+<td><code>[[ ab =~ ab? ]]</code> POSIX regexp</td>
+</tr>
+</tbody>
+</table>
+<p>As you see the bash expressions are often better readable.</p>
+<h2 id="regular-expressions">Regular Expressions</h2>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.</td>
+<td>Matches any single character.</td>
+</tr>
+<tr>
+<td>?</td>
+<td>The preceding item is optional and will be matched, at most, once.</td>
+</tr>
+<tr>
+<td>*</td>
+<td>The preceding item will be matched zero or more times.</td>
+</tr>
+<tr>
+<td>+</td>
+<td>The preceding item will be matched one or more times.</td>
+</tr>
+<tr>
+<td>{N}</td>
+<td>The preceding item is matched exactly N times.</td>
+</tr>
+<tr>
+<td>{N,}</td>
+<td>The preceding item is matched N or more times.</td>
+</tr>
+<tr>
+<td>{N,M}</td>
+<td>The preceding item is matched at least N times, but not more than M times.</td>
+</tr>
+<tr>
+<td>-</td>
+<td>represents the range if it's not first or last in a list or the ending point of a range in a list.</td>
+</tr>
+<tr>
+<td>^</td>
+<td>Matches the empty string at the beginning of a line; also represents the characters not in the range of a list.</td>
+</tr>
+<tr>
+<td>$</td>
+<td>Matches the empty string at the end of a line.</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>Matches the empty string at the edge of a word.</td>
+</tr>
+<tr>
+<td>\B</td>
+<td>Matches the empty string provided it's not at the edge of a word.</td>
+</tr>
+<tr>
+<td>\&lt;</td>
+<td>Match the empty string at the beginning of word.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="loops">Loops</h2>
+<p>Bash has three different kind of loops:</p>
+<ol>
+<li>The <code>for</code> loop is a little bit different from other programming languages. Basically, it let's you iterate over a series of 'words' within a string.</li>
+<li>The <code>while</code> executes a piece of code if the control expression is <code>true</code>, and only stops when it is <code>false</code>.</li>
+<li>The <code>until</code> loop is almost equal to the <code>while</code> loop, except that the code is executed while the control expression evaluates to <code>false</code>.</li>
+</ol>
+<p>Each loop may be exited using <code>break</code> or continued with the next round using <code>continue</code>.</p>
+<pre><code class="bash">for i in $( ls ); do
+    echo item: $i
+done
+</code></pre>
+
+<p>The variable <code>i</code> will take the different values contained in <code>$( ls )</code>.
+The block enclosed in <code>do</code> and <code>done</code> is executed in each iteration.</p>
+<p>To use <code>for</code> as a counter use the range support of bash:</p>
+<pre><code class="bash">for i in {1..10}; do
+    echo $i
+done
+</code></pre>
+
+<p>But you can also use a C-like for loop:</p>
+<pre><code class="bash">for (( c=1; c&lt;=5; c++ )); do  
+   echo &quot;Welcome $c times&quot;
+done
+</code></pre>
+
+<p>In <code>while</code> and <code>until</code> you give the condition at the start and use a code block like used in <code>for</code>:</p>
+<pre><code class="bash">COUNTER=0
+while [  $COUNTER -lt 10 ]; do
+    echo The counter is $COUNTER
+    let COUNTER+=1 
+done
+</code></pre>
+
+<pre><code class="bash">COUNTER=20
+until [  $COUNTER -lt 10 ]; do
+    echo COUNTER $COUNTER
+    let COUNTER-=1
+done
+</code></pre>
+
+<h2 id="options">Options</h2>
+<p>Shell options can either be set different from the default upon calling the shell, or be set during shell operation. 
+To change an option use <code>set -&lt;option&gt;</code>to enable or <code>set +&lt;option&gt;</code> to disable an option.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>noclobber</code></td>
+<td>prevents existing files from being overwritten by redirection operations</td>
+</tr>
+<tr>
+<td><code>noglob</code></td>
+<td>prevents special characters from being expanded</td>
+</tr>
+<tr>
+<td><code>u</code></td>
+<td>treat unset variables as an error</td>
+</tr>
+<tr>
+<td><code>x</code></td>
+<td>set debug mode which will print each expanded command before executing</td>
+</tr>
+</tbody>
+</table>
+<h2 id="include-modules">Include modules</h2>
+<p>Using the <code>source &lt;path&gt;</code> command the given script will be included like it is directly written there the <code>source</code> command is set.</p>
+<p>A relative path is based on the current directory of the calling shell.</p>
+<p>{!docs/abbreviations.txt!}</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../sass/" title="Sass" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Sass
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../go/" title="Go" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Go
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2016 - 2020 <a href="https://elviejo79.github.io">Alexander Schilling</a>
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.36cbf620.min.js"></script>
+      <script src="../../assets/javascripts/bundle.00c583dd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.7f7c8775.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

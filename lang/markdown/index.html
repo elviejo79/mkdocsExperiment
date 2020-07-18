@@ -1,0 +1,2148 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A book to learn modern web technologies.">
+      
+      
+      
+        <meta name="author" content="Alexander Schilling">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.0">
+    
+    
+      
+        <title>Markdown</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.89dc9fe3.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+      <link rel="manifest" href="../../manifest.webmanifest" crossorigin="use-credentials">
+    
+    
+      <link rel="stylesheet" href="../../assets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#markdown-syntax" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Elviejo79 Development Guide" class="md-header-nav__button md-logo" aria-label="Elviejo79 Development Guide">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21,5C19.89,4.65 18.67,4.5 17.5,4.5C15.55,4.5 13.45,4.9 12,6C10.55,4.9 8.45,4.5 6.5,4.5C4.55,4.5 2.45,4.9 1,6V20.65C1,20.9 1.25,21.15 1.5,21.15C1.6,21.15 1.65,21.1 1.75,21.1C3.1,20.45 5.05,20 6.5,20C8.45,20 10.55,20.4 12,21.5C13.35,20.65 15.8,20 17.5,20C19.15,20 20.85,20.3 22.25,21.05C22.35,21.1 22.4,21.1 22.5,21.1C22.75,21.1 23,20.85 23,20.6V6C22.4,5.55 21.75,5.25 21,5M21,18.5C19.9,18.15 18.7,18 17.5,18C15.8,18 13.35,18.65 12,19.5V8C13.35,7.15 15.8,6.5 17.5,6.5C18.7,6.5 19.9,6.65 21,7V18.5Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Elviejo79 Development Guide
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Markdown
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/elviejo79/mkdocsExperiment.git" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    elviejo79/mkdocsExperiment
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Elviejo79 Development Guide" class="md-nav__button md-logo" aria-label="Elviejo79 Development Guide">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21,5C19.89,4.65 18.67,4.5 17.5,4.5C15.55,4.5 13.45,4.9 12,6C10.55,4.9 8.45,4.5 6.5,4.5C4.55,4.5 2.45,4.9 1,6V20.65C1,20.9 1.25,21.15 1.5,21.15C1.6,21.15 1.65,21.1 1.75,21.1C3.1,20.45 5.05,20 6.5,20C8.45,20 10.55,20.4 12,21.5C13.35,20.65 15.8,20 17.5,20C19.15,20 20.85,20.3 22.25,21.05C22.35,21.1 22.4,21.1 22.5,21.1C22.75,21.1 23,20.85 23,20.6V6C22.4,5.55 21.75,5.25 21,5M21,18.5C19.9,18.15 18.7,18 17.5,18C15.8,18 13.35,18.65 12,19.5V8C13.35,7.15 15.8,6.5 17.5,6.5C18.7,6.5 19.9,6.65 21,7V18.5Z" /></svg>
+
+    </a>
+    Elviejo79 Development Guide
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/elviejo79/mkdocsExperiment.git" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    elviejo79/mkdocsExperiment
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Home
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Home" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Home
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../alinex/" title="What is Alinex" class="md-nav__link">
+      What is Alinex
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blog/2020/" title="Blog 2020" class="md-nav__link">
+      Blog 2020
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blog/2019/" title="Blog 2019" class="md-nav__link">
+      Blog 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blog/2018/" title="Blog 2018" class="md-nav__link">
+      Blog 2018
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blog/2017/" title="Blog 2017" class="md-nav__link">
+      Blog 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blog/2016/" title="Blog 2016" class="md-nav__link">
+      Blog 2016
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../LICENSE/" title="License" class="md-nav__link">
+      License
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/" title="Policy" class="md-nav__link">
+      Policy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../about/" title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Environment
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Environment" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Environment
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/freeplane/" title="Freeplane" class="md-nav__link">
+      Freeplane
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/gitlab/" title="GitLab" class="md-nav__link">
+      GitLab
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/github/" title="GitHub" class="md-nav__link">
+      GitHub
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/trello/" title="Trello" class="md-nav__link">
+      Trello
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/vscode/" title="VS Code" class="md-nav__link">
+      VS Code
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/atom/" title="Atom" class="md-nav__link">
+      Atom
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/git/" title="Git" class="md-nav__link">
+      Git
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/mkdocs/" title="MkDocs" class="md-nav__link">
+      MkDocs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/gitbook/" title="GitBook" class="md-nav__link">
+      GitBook
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Technologies
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Technologies" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Technologies
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" checked>
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Languages
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Languages" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Languages
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Markdown
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Markdown" class="md-nav__link md-nav__link--active">
+      Markdown
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#headings" class="md-nav__link">
+    Headings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paragraphs" class="md-nav__link">
+    Paragraphs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text-format" class="md-nav__link">
+    Text Format
+  </a>
+  
+    <nav class="md-nav" aria-label="Text Format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strikethrough" class="md-nav__link">
+    Strikethrough
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emphasis" class="md-nav__link">
+    Emphasis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strong" class="md-nav__link">
+    Strong
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code" class="md-nav__link">
+    Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links" class="md-nav__link">
+    Links
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lists" class="md-nav__link">
+    Lists
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blockquotes" class="md-nav__link">
+    Blockquotes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-blocks" class="md-nav__link">
+    Code blocks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#horizontal-lines" class="md-nav__link">
+    Horizontal lines
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tables" class="md-nav__link">
+    Tables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#symbols-html" class="md-nav__link">
+    Symbols &amp; HTML
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#images" class="md-nav__link">
+    Images
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extended-markdown" class="md-nav__link">
+    Extended Markdown
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../handlebars/" title="Handlebars" class="md-nav__link">
+      Handlebars
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sass/" title="Sass" class="md-nav__link">
+      Sass
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bash/" title="Bash" class="md-nav__link">
+      Bash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../go/" title="Go" class="md-nav__link">
+      Go
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Systems
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Systems" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Systems
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systems/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systems/linux/" title="Linux" class="md-nav__link">
+      Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systems/apache/" title="Apache Web Server" class="md-nav__link">
+      Apache Web Server
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systems/postgres/" title="PostgreSQL Database" class="md-nav__link">
+      PostgreSQL Database
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systems/mongo/" title="MongoDB" class="md-nav__link">
+      MongoDB
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Concepts
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Concepts" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Concepts
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../concepts/app/" title="Application" class="md-nav__link">
+      Application
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../concepts/exitcodes/" title="Exit Codes" class="md-nav__link">
+      Exit Codes
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      JavaScript
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="JavaScript" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        JavaScript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/" title="JavaScript" class="md-nav__link">
+      JavaScript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      Versions
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Versions" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Versions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/spec/" title="Specification" class="md-nav__link">
+      Specification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/es-next/" title="ES.Next" class="md-nav__link">
+      ES.Next
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/es2015/" title="ECMAScript 2015" class="md-nav__link">
+      ECMAScript 2015
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/es2016/" title="ECMAScript 2015" class="md-nav__link">
+      ECMAScript 2015
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/es2017/" title="ECMAScript 2017" class="md-nav__link">
+      ECMAScript 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/es2018/" title="ECMAScript 2018" class="md-nav__link">
+      ECMAScript 2018
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/es2019/" title="ECMAScript 2019" class="md-nav__link">
+      ECMAScript 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/es2020/" title="ECMAScript 2020" class="md-nav__link">
+      ECMAScript 2020
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
+    
+    <label class="md-nav__link" for="nav-4-3">
+      Transpiler
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Transpiler" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Transpiler
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/typescript/" title="TypeScript" class="md-nav__link">
+      TypeScript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/flow/" title="Flow" class="md-nav__link">
+      Flow
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/coffee/" title="CoffeeScript" class="md-nav__link">
+      CoffeeScript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/coffee-styleguide/" title="CoffeeScript Styleguide" class="md-nav__link">
+      CoffeeScript Styleguide
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/nodejs/" title="Node.JS" class="md-nav__link">
+      Node.JS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/npm/" title="NPM" class="md-nav__link">
+      NPM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/modules/" title="Modules" class="md-nav__link">
+      Modules
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Rust
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Rust" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Rust
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/start/" title="Getting started" class="md-nav__link">
+      Getting started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/core/" title="Language Core" class="md-nav__link">
+      Language Core
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/standard/" title="Standard Library" class="md-nav__link">
+      Standard Library
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/modules/" title="Modules" class="md-nav__link">
+      Modules
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/directory/" title="Directory Structure" class="md-nav__link">
+      Directory Structure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/test/" title="Unit Testing" class="md-nav__link">
+      Unit Testing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/tools/" title="Tooling" class="md-nav__link">
+      Tooling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/phantom/" title="Phantom Types" class="md-nav__link">
+      Phantom Types
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-10" type="checkbox" id="nav-5-10">
+    
+    <label class="md-nav__link" for="nav-5-10">
+      Crates
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Crates" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-10">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Crates
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/crates/" title="Rust" class="md-nav__link">
+      Rust
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/crates/failure/" title="Error Management" class="md-nav__link">
+      Error Management
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/crates/clap/" title="clap" class="md-nav__link">
+      clap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/crates/actix/" title="actix" class="md-nav__link">
+      actix
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/crates/actix-web/" title="actix_web" class="md-nav__link">
+      actix_web
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/crates/diesel/" title="Diesel Object Relation Mapper" class="md-nav__link">
+      Diesel Object Relation Mapper
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-11" type="checkbox" id="nav-5-11">
+    
+    <label class="md-nav__link" for="nav-5-11">
+      Solutions
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Solutions" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-11">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Solutions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/solutions/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/solutions/cache/" title="Caching using Struct" class="md-nav__link">
+      Caching using Struct
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Solutions
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Solutions" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Solutions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../solutions/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../solutions/devops/" title="DevOps" class="md-nav__link">
+      DevOps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../solutions/applications/" title="Applications" class="md-nav__link">
+      Applications
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../solutions/modules/" title="Modules" class="md-nav__link">
+      Modules
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../solutions/playground/" title="Playground" class="md-nav__link">
+      Playground
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../solutions/quality/" title="Quality Standards" class="md-nav__link">
+      Quality Standards
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#headings" class="md-nav__link">
+    Headings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paragraphs" class="md-nav__link">
+    Paragraphs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text-format" class="md-nav__link">
+    Text Format
+  </a>
+  
+    <nav class="md-nav" aria-label="Text Format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strikethrough" class="md-nav__link">
+    Strikethrough
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emphasis" class="md-nav__link">
+    Emphasis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strong" class="md-nav__link">
+    Strong
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code" class="md-nav__link">
+    Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links" class="md-nav__link">
+    Links
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lists" class="md-nav__link">
+    Lists
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blockquotes" class="md-nav__link">
+    Blockquotes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-blocks" class="md-nav__link">
+    Code blocks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#horizontal-lines" class="md-nav__link">
+    Horizontal lines
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tables" class="md-nav__link">
+    Tables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#symbols-html" class="md-nav__link">
+    Symbols &amp; HTML
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#images" class="md-nav__link">
+    Images
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extended-markdown" class="md-nav__link">
+    Extended Markdown
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="markdown-syntax">Markdown Syntax</h1>
+<p>The easiest way to document is to use markdown syntax. You write the code in plain
+text with some easy formatting rules. This can be transformed into HTML or other
+formats. But it's not an inherent standard, different flavors exist.</p>
+<p>For the alinex modules I decided to use this as the base for documentation.
+The following examples should help to use the right syntax which will be
+interpreted by GitHub and the integrated document generation of the
+<a href="http://alinex.github.io/node-builder">alinex-builder</a>.</p>
+<h2 id="headings">Headings</h2>
+<p>Two formats of headers are supported. First you may use double or single underlines:</p>
+<pre><code class="text">Heading Level 1
+==========================================
+
+Heading Level 2
+------------------------------------------
+</code></pre>
+
+<p>Or you can define the headings with starting hash signs:</p>
+<pre><code class="text"># Heading Level 1
+
+## Heading Level 2
+
+### Heading Level 4
+
+#### Heading Level 3
+
+##### Heading Level 5
+
+###### Heading Level 6
+</code></pre>
+
+<h2 id="paragraphs">Paragraphs</h2>
+<p>Paragraphs are written with an empty line. Newlines are ignored but you may add an
+<code>&lt;br /&gt;</code> Tag if you want:</p>
+<pre><code class="text">This text
+will be in one line
+&lt;br&gt;And this in a new one.
+</code></pre>
+
+<p>becomes</p>
+<p>This text
+will be in one line
+<br>And this in a new one.</p>
+<h2 id="text-format">Text Format</h2>
+<p>This styles can be used inline and also within a word. To prevent wrong
+interpretation you may escape the signs with an backslash <code>\</code>.</p>
+<h3 id="strikethrough">Strikethrough</h3>
+<p><strong>Currently not supported in the document generation but in GitHub view!</strong></p>
+<p>Use a double tilde sign before and after the text:</p>
+<pre><code class="text">Here is the ~~wrong text~~ right text.
+</code></pre>
+
+<p>becomes</p>
+<p>Here is the ~~wrong text~~ right text.</p>
+<h3 id="emphasis">Emphasis</h3>
+<pre><code class="text">*single asterisks*
+
+_single underscores_
+</code></pre>
+
+<p>becomes</p>
+<p><em>single asterisks</em></p>
+<p><em>single underscores</em></p>
+<h3 id="strong">Strong</h3>
+<pre><code class="text">**double asterisks**
+
+__double underscores__
+</code></pre>
+
+<p>becomes</p>
+<p><strong>double asterisks</strong></p>
+<p><strong>double underscores</strong></p>
+<h3 id="code">Code</h3>
+<pre><code class="text">`code in backquotes`
+</code></pre>
+
+<p>becomes</p>
+<pre><code class="text">`code in backquotes`
+</code></pre>
+
+<h2 id="links">Links</h2>
+<p>If you give a standard URL in the text an link will be added automatically. You
+can also surround them with <code>&lt;...&gt;</code>:</p>
+<pre><code class="text">http://example.com and &lt;http://example.com&gt;
+
+info@alinex.de and &lt;info@alinex.de&gt;
+</code></pre>
+
+<p>becomes</p>
+<p>http://example.com and <a href="http://example.com">http://example.com</a></p>
+<p>info@alinex.de and <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#105;&#110;&#102;&#111;&#64;&#97;&#108;&#105;&#110;&#101;&#120;&#46;&#100;&#101;">&#105;&#110;&#102;&#111;&#64;&#97;&#108;&#105;&#110;&#101;&#120;&#46;&#100;&#101;</a></p>
+<p>You may also give a special link text by writing the text in square brackets and
+the link in round brackets behind:</p>
+<pre><code class="text">This is the alinex [home](http://alinex.github.io/node-alinex).
+</code></pre>
+
+<p>becomes</p>
+<p>This is the alinex <a href="http://alinex.github.io/node-alinex">home</a>.</p>
+<p>And at last you may use referenced links like that</p>
+<pre><code class="text">This is [an example][id] reference-style link.
+
+[id]: http://example.com/  &quot;Optional Title Here&quot;
+</code></pre>
+
+<p>becomes</p>
+<p>This is <a href="../../assets/alinex-logo.png" title="ALINEX">an example</a> reference-style link.</p>
+<p>The referenced links will get you the same output but makes the source code
+more readable. You may also keep the id empty to use the name also as the id.</p>
+<h2 id="lists">Lists</h2>
+<p>You can write unordered lists like:</p>
+<pre><code class="text">* red
+* green
+* blue
+</code></pre>
+
+<p>which becomes</p>
+<ul>
+<li>red</li>
+<li>green</li>
+<li>blue</li>
+</ul>
+<p>You can do the exactly same with an <code>*</code>, <code>+</code> or <code>-</code> sign.</p>
+<p>Ordered lists are written with the numbers following by periods:</p>
+<pre><code class="text">1. red
+2. green
+3. blue
+</code></pre>
+
+<p>will become</p>
+<ol>
+<li>red</li>
+<li>green</li>
+<li>blue</li>
+</ol>
+<p>If your list entry has multiple paragraph the second paragraph has to be indented
+by 4 spaces.
+To avoid interpreting number with dots as list you may escape the dot with an
+backslash.</p>
+<h2 id="blockquotes">Blockquotes</h2>
+<p>You may use email like block indenting with lines beginning with one or
+multiple <code>&gt;</code>. You can also be lazy and put the sign only on the first line of an
+paragraph.</p>
+<pre><code class="text">I answered
+
+&gt; Hello
+&gt;
+&gt; &gt; Is this code written in coffeescript?
+&gt;
+&gt; Thats correct.
+</code></pre>
+
+<p>becomes</p>
+<p>I answered</p>
+<blockquote>
+<p>Hello</p>
+<blockquote>
+<p>Is this code written in coffeescript?</p>
+</blockquote>
+<p>Thats correct.</p>
+</blockquote>
+<p>Blockquotes can also contain any other markdown format.</p>
+<h2 id="code-blocks">Code blocks</h2>
+<p>Standard Markup Syntax is to indent code blocks with four spaces:</p>
+<pre><code class="text">function test() {
+  console.log('Test succeeded!');
+}
+</code></pre>
+
+<p>A better way is to fence the code like below. This also adds the ability to
+specify the language used (needed for syntax highlighting):</p>
+<pre><code>``` javascript
+function test() {
+  console.log('Test succeeded!');
+}
+```
+
+``` coffee
+test = -&gt;
+  console.log 'Test succeeded!'
+```
+</code></pre>
+<p>becomes</p>
+<pre><code class="javascript">function test() {
+  console.log(&quot;Test succeeded!&quot;);
+}
+</code></pre>
+
+<pre><code class="coffee">test = -&gt;
+  console.log 'Test succeeded!'
+</code></pre>
+
+<p>Possible languages are listed in the
+<a href="https://github.com/github/linguist/blob/master/lib/linguist/languages.yml">languages YAML file</a>.</p>
+<h2 id="horizontal-lines">Horizontal lines</h2>
+<p>You can add them by writing a paragraph which consists of only three or more
+<code>*</code> or <code>-</code> signs:</p>
+<pre><code class="text">----------------------
+</code></pre>
+
+<p>becomes</p>
+<hr />
+<h2 id="tables">Tables</h2>
+<p><strong>Currently not supported in the document generation but in GitHub view!</strong></p>
+<p>Tables will be created by dividing cells with a pipe <code>|</code> and the header row with
+hyphens <code>-</code>:</p>
+<pre><code class="text">    | Color | Value  |
+    | ----- | ------ |
+    | red   | ff0000 |
+    | green | 00ff00 |
+    | blue  | 0000ff |
+</code></pre>
+
+<p>becomes</p>
+<table>
+<thead>
+<tr>
+<th>Color</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>red</td>
+<td>ff0000</td>
+</tr>
+<tr>
+<td>green</td>
+<td>00ff00</td>
+</tr>
+<tr>
+<td>blue</td>
+<td>0000ff</td>
+</tr>
+</tbody>
+</table>
+<p>The cells don't need the exact same width it may also vary in the same column.
+And you may put inline markup into the cell like <code>bold</code>, <code>italic</code>...</p>
+<p>To align columns you have to add a colon in the divider line between header and
+body:</p>
+<pre><code class="text">| Left               |       Center       |              Right |
+| :----------------- | :----------------: | -----------------: |
+| first entry        |    first entry     |        first entry |
+| another            |      another       |            another |
+| and the last entry | and the last entry | and the last entry |
+</code></pre>
+
+<p>becomes</p>
+<table>
+<thead>
+<tr>
+<th align="left">Left</th>
+<th align="center">Center</th>
+<th align="right">Right</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">first entry</td>
+<td align="center">first entry</td>
+<td align="right">first entry</td>
+</tr>
+<tr>
+<td align="left">another</td>
+<td align="center">another</td>
+<td align="right">another</td>
+</tr>
+<tr>
+<td align="left">and the last entry</td>
+<td align="center">and the last entry</td>
+<td align="right">and the last entry</td>
+</tr>
+</tbody>
+</table>
+<h2 id="symbols-html">Symbols &amp; HTML</h2>
+<p>You may also use some HTML symbols or tags but only as less as possible:</p>
+<pre><code class="text">&amp;copy;&lt;br /&gt;&amp;frac12;
+</code></pre>
+
+<p>becomes</p>
+<pre><code>&amp;copy;&lt;br /&gt;&amp;frac12;
+</code></pre>
+<h2 id="images">Images</h2>
+<p>Images may be placed like links but start with an exclamation mark <code>!</code>:</p>
+<pre><code class="text">![Alinex Logo](../alinex-logo.png &quot;ALINEX&quot;)
+</code></pre>
+
+<p>becomes</p>
+<p><img alt="Alinex Logo" src="../../assets/alinex-logo.png" title="ALINEX" /></p>
+<p>The title at the end is optional but will output as the tooltip.</p>
+<p>Like for links you may use the reference style here, too:</p>
+<pre><code class="text">![Alinex Logo][id]
+
+[id]: ../alinex-logo.png &quot;ALINEX&quot;
+</code></pre>
+
+<p>becomes</p>
+<p><img alt="Alinex Logo" src="../../assets/alinex-logo.png" title="ALINEX" /></p>
+<h2 id="extended-markdown">Extended Markdown</h2>
+<p>Within the <a href="http://alinex.github.io/node-report">report</a> package an extended
+version of markdown conversion is used supporting all of the above but also</p>
+<ul>
+<li>boxes</li>
+<li>emoji</li>
+<li>special styles</li>
+<li>table of contents</li>
+<li>footnotes</li>
+<li>acronyms</li>
+<li>and more</li>
+</ul>
+<p>{!docs/abbreviations.txt!}</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../" title="Overview" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Overview
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../handlebars/" title="Handlebars" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Handlebars
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2016 - 2020 <a href="https://elviejo79.github.io">Alexander Schilling</a>
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.36cbf620.min.js"></script>
+      <script src="../../assets/javascripts/bundle.00c583dd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.7f7c8775.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

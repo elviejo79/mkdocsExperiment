@@ -1,0 +1,3242 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A book to learn modern web technologies.">
+      
+      
+      
+        <meta name="author" content="Alexander Schilling">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.0">
+    
+    
+      
+        <title>Language Core - Elviejo79 Development Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.89dc9fe3.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+      <link rel="manifest" href="../../manifest.webmanifest" crossorigin="use-credentials">
+    
+    
+      <link rel="stylesheet" href="../../assets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#language-core" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Elviejo79 Development Guide" class="md-header-nav__button md-logo" aria-label="Elviejo79 Development Guide">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21,5C19.89,4.65 18.67,4.5 17.5,4.5C15.55,4.5 13.45,4.9 12,6C10.55,4.9 8.45,4.5 6.5,4.5C4.55,4.5 2.45,4.9 1,6V20.65C1,20.9 1.25,21.15 1.5,21.15C1.6,21.15 1.65,21.1 1.75,21.1C3.1,20.45 5.05,20 6.5,20C8.45,20 10.55,20.4 12,21.5C13.35,20.65 15.8,20 17.5,20C19.15,20 20.85,20.3 22.25,21.05C22.35,21.1 22.4,21.1 22.5,21.1C22.75,21.1 23,20.85 23,20.6V6C22.4,5.55 21.75,5.25 21,5M21,18.5C19.9,18.15 18.7,18 17.5,18C15.8,18 13.35,18.65 12,19.5V8C13.35,7.15 15.8,6.5 17.5,6.5C18.7,6.5 19.9,6.65 21,7V18.5Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Elviejo79 Development Guide
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Language Core
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/elviejo79/mkdocsExperiment.git" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    elviejo79/mkdocsExperiment
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Elviejo79 Development Guide" class="md-nav__button md-logo" aria-label="Elviejo79 Development Guide">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21,5C19.89,4.65 18.67,4.5 17.5,4.5C15.55,4.5 13.45,4.9 12,6C10.55,4.9 8.45,4.5 6.5,4.5C4.55,4.5 2.45,4.9 1,6V20.65C1,20.9 1.25,21.15 1.5,21.15C1.6,21.15 1.65,21.1 1.75,21.1C3.1,20.45 5.05,20 6.5,20C8.45,20 10.55,20.4 12,21.5C13.35,20.65 15.8,20 17.5,20C19.15,20 20.85,20.3 22.25,21.05C22.35,21.1 22.4,21.1 22.5,21.1C22.75,21.1 23,20.85 23,20.6V6C22.4,5.55 21.75,5.25 21,5M21,18.5C19.9,18.15 18.7,18 17.5,18C15.8,18 13.35,18.65 12,19.5V8C13.35,7.15 15.8,6.5 17.5,6.5C18.7,6.5 19.9,6.65 21,7V18.5Z" /></svg>
+
+    </a>
+    Elviejo79 Development Guide
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/elviejo79/mkdocsExperiment.git" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    elviejo79/mkdocsExperiment
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Home
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Home" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Home
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../alinex/" title="What is Alinex" class="md-nav__link">
+      What is Alinex
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blog/2020/" title="Blog 2020" class="md-nav__link">
+      Blog 2020
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blog/2019/" title="Blog 2019" class="md-nav__link">
+      Blog 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blog/2018/" title="Blog 2018" class="md-nav__link">
+      Blog 2018
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blog/2017/" title="Blog 2017" class="md-nav__link">
+      Blog 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blog/2016/" title="Blog 2016" class="md-nav__link">
+      Blog 2016
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../LICENSE/" title="License" class="md-nav__link">
+      License
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/" title="Policy" class="md-nav__link">
+      Policy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../about/" title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Environment
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Environment" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Environment
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/freeplane/" title="Freeplane" class="md-nav__link">
+      Freeplane
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/gitlab/" title="GitLab" class="md-nav__link">
+      GitLab
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/github/" title="GitHub" class="md-nav__link">
+      GitHub
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/trello/" title="Trello" class="md-nav__link">
+      Trello
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/vscode/" title="VS Code" class="md-nav__link">
+      VS Code
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/atom/" title="Atom" class="md-nav__link">
+      Atom
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/git/" title="Git" class="md-nav__link">
+      Git
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/mkdocs/" title="MkDocs" class="md-nav__link">
+      MkDocs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../env/gitbook/" title="GitBook" class="md-nav__link">
+      GitBook
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Technologies
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Technologies" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Technologies
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Languages
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Languages" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Languages
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lang/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lang/markdown/" title="Markdown" class="md-nav__link">
+      Markdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lang/handlebars/" title="Handlebars" class="md-nav__link">
+      Handlebars
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lang/sass/" title="Sass" class="md-nav__link">
+      Sass
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lang/bash/" title="Bash" class="md-nav__link">
+      Bash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lang/go/" title="Go" class="md-nav__link">
+      Go
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Systems
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Systems" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Systems
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systems/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systems/linux/" title="Linux" class="md-nav__link">
+      Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systems/apache/" title="Apache Web Server" class="md-nav__link">
+      Apache Web Server
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systems/postgres/" title="PostgreSQL Database" class="md-nav__link">
+      PostgreSQL Database
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systems/mongo/" title="MongoDB" class="md-nav__link">
+      MongoDB
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Concepts
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Concepts" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Concepts
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../concepts/app/" title="Application" class="md-nav__link">
+      Application
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../concepts/exitcodes/" title="Exit Codes" class="md-nav__link">
+      Exit Codes
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      JavaScript
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="JavaScript" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        JavaScript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/" title="JavaScript" class="md-nav__link">
+      JavaScript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      Versions
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Versions" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Versions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/spec/" title="Specification" class="md-nav__link">
+      Specification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/es-next/" title="ES.Next" class="md-nav__link">
+      ES.Next
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/es2015/" title="ECMAScript 2015" class="md-nav__link">
+      ECMAScript 2015
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/es2016/" title="ECMAScript 2015" class="md-nav__link">
+      ECMAScript 2015
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/es2017/" title="ECMAScript 2017" class="md-nav__link">
+      ECMAScript 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/es2018/" title="ECMAScript 2018" class="md-nav__link">
+      ECMAScript 2018
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/es2019/" title="ECMAScript 2019" class="md-nav__link">
+      ECMAScript 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/es2020/" title="ECMAScript 2020" class="md-nav__link">
+      ECMAScript 2020
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
+    
+    <label class="md-nav__link" for="nav-4-3">
+      Transpiler
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Transpiler" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Transpiler
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/typescript/" title="TypeScript" class="md-nav__link">
+      TypeScript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/flow/" title="Flow" class="md-nav__link">
+      Flow
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/coffee/" title="CoffeeScript" class="md-nav__link">
+      CoffeeScript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/coffee-styleguide/" title="CoffeeScript Styleguide" class="md-nav__link">
+      CoffeeScript Styleguide
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/nodejs/" title="Node.JS" class="md-nav__link">
+      Node.JS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/npm/" title="NPM" class="md-nav__link">
+      NPM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/modules/" title="Modules" class="md-nav__link">
+      Modules
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      Rust
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Rust" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Rust
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../start/" title="Getting started" class="md-nav__link">
+      Getting started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Language Core
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Language Core" class="md-nav__link md-nav__link--active">
+      Language Core
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#local-variables" class="md-nav__link">
+    Local Variables
+  </a>
+  
+    <nav class="md-nav" aria-label="Local Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constants" class="md-nav__link">
+    Constants
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mutability" class="md-nav__link">
+    Mutability
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shadowing" class="md-nav__link">
+    Shadowing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scope" class="md-nav__link">
+    Scope
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copying" class="md-nav__link">
+    Copying
+  </a>
+  
+    <nav class="md-nav" aria-label="Copying">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ownership" class="md-nav__link">
+    Ownership
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primary-data-types" class="md-nav__link">
+    Primary Data Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Primary Data Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#integer" class="md-nav__link">
+    Integer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#float" class="md-nav__link">
+    Float
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boolean" class="md-nav__link">
+    Boolean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#character" class="md-nav__link">
+    Character
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tuple" class="md-nav__link">
+    Tuple
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array" class="md-nav__link">
+    Array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slices" class="md-nav__link">
+    Slices
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#literals" class="md-nav__link">
+    Literals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-aliasing" class="md-nav__link">
+    Type Aliasing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-conversion" class="md-nav__link">
+    Type Conversion
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#closures" class="md-nav__link">
+    Closures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diverging-functions" class="md-nav__link">
+    Diverging functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    Comments
+  </a>
+  
+    <nav class="md-nav" aria-label="Comments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#documentation-comments" class="md-nav__link">
+    Documentation Comments
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-flow" class="md-nav__link">
+    Control Flow
+  </a>
+  
+    <nav class="md-nav" aria-label="Control Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if" class="md-nav__link">
+    if
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loop" class="md-nav__link">
+    loop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#while" class="md-nav__link">
+    while
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for" class="md-nav__link">
+    for
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structs" class="md-nav__link">
+    Structs
+  </a>
+  
+    <nav class="md-nav" aria-label="Structs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#associated-functions" class="md-nav__link">
+    Associated Functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enum" class="md-nav__link">
+    Enum
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pattern-matching" class="md-nav__link">
+    Pattern Matching
+  </a>
+  
+    <nav class="md-nav" aria-label="Pattern Matching">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#match" class="md-nav__link">
+    Match
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-let" class="md-nav__link">
+    If Let
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#while-let" class="md-nav__link">
+    While let
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    Error Handling
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Handling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unrecoverable-errors" class="md-nav__link">
+    Unrecoverable errors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recoverable-errors" class="md-nav__link">
+    Recoverable errors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#propagation" class="md-nav__link">
+    Propagation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generics" class="md-nav__link">
+    Generics
+  </a>
+  
+    <nav class="md-nav" aria-label="Generics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#where-clauses" class="md-nav__link">
+    WHERE clauses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traits" class="md-nav__link">
+    Traits
+  </a>
+  
+    <nav class="md-nav" aria-label="Traits">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boundaries" class="md-nav__link">
+    Boundaries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phantom-types" class="md-nav__link">
+    Phantom Types
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lifetime" class="md-nav__link">
+    Lifetime
+  </a>
+  
+    <nav class="md-nav" aria-label="Lifetime">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#static" class="md-nav__link">
+    Static
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iterator" class="md-nav__link">
+    Iterator
+  </a>
+  
+    <nav class="md-nav" aria-label="Iterator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#own-iterator" class="md-nav__link">
+    Own Iterator
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-orientation" class="md-nav__link">
+    Object Orientation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attributes" class="md-nav__link">
+    Attributes
+  </a>
+  
+    <nav class="md-nav" aria-label="Attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compiler-warnings" class="md-nav__link">
+    Compiler Warnings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conditional-compiling" class="md-nav__link">
+    Conditional Compiling
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-conditions" class="md-nav__link">
+    Custom Conditions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../standard/" title="Standard Library" class="md-nav__link">
+      Standard Library
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modules/" title="Modules" class="md-nav__link">
+      Modules
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../directory/" title="Directory Structure" class="md-nav__link">
+      Directory Structure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../test/" title="Unit Testing" class="md-nav__link">
+      Unit Testing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tools/" title="Tooling" class="md-nav__link">
+      Tooling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../phantom/" title="Phantom Types" class="md-nav__link">
+      Phantom Types
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-10" type="checkbox" id="nav-5-10">
+    
+    <label class="md-nav__link" for="nav-5-10">
+      Crates
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Crates" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-10">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Crates
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../crates/" title="Rust" class="md-nav__link">
+      Rust
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../crates/failure/" title="Error Management" class="md-nav__link">
+      Error Management
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../crates/clap/" title="clap" class="md-nav__link">
+      clap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../crates/actix/" title="actix" class="md-nav__link">
+      actix
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../crates/actix-web/" title="actix_web" class="md-nav__link">
+      actix_web
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../crates/diesel/" title="Diesel Object Relation Mapper" class="md-nav__link">
+      Diesel Object Relation Mapper
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-11" type="checkbox" id="nav-5-11">
+    
+    <label class="md-nav__link" for="nav-5-11">
+      Solutions
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Solutions" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-11">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Solutions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../solutions/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../solutions/cache/" title="Caching using Struct" class="md-nav__link">
+      Caching using Struct
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Solutions
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Solutions" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Solutions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../solutions/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../solutions/devops/" title="DevOps" class="md-nav__link">
+      DevOps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../solutions/applications/" title="Applications" class="md-nav__link">
+      Applications
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../solutions/modules/" title="Modules" class="md-nav__link">
+      Modules
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../solutions/playground/" title="Playground" class="md-nav__link">
+      Playground
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../solutions/quality/" title="Quality Standards" class="md-nav__link">
+      Quality Standards
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#local-variables" class="md-nav__link">
+    Local Variables
+  </a>
+  
+    <nav class="md-nav" aria-label="Local Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constants" class="md-nav__link">
+    Constants
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mutability" class="md-nav__link">
+    Mutability
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shadowing" class="md-nav__link">
+    Shadowing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scope" class="md-nav__link">
+    Scope
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copying" class="md-nav__link">
+    Copying
+  </a>
+  
+    <nav class="md-nav" aria-label="Copying">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ownership" class="md-nav__link">
+    Ownership
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primary-data-types" class="md-nav__link">
+    Primary Data Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Primary Data Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#integer" class="md-nav__link">
+    Integer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#float" class="md-nav__link">
+    Float
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boolean" class="md-nav__link">
+    Boolean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#character" class="md-nav__link">
+    Character
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tuple" class="md-nav__link">
+    Tuple
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array" class="md-nav__link">
+    Array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slices" class="md-nav__link">
+    Slices
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#literals" class="md-nav__link">
+    Literals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-aliasing" class="md-nav__link">
+    Type Aliasing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-conversion" class="md-nav__link">
+    Type Conversion
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#closures" class="md-nav__link">
+    Closures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diverging-functions" class="md-nav__link">
+    Diverging functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    Comments
+  </a>
+  
+    <nav class="md-nav" aria-label="Comments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#documentation-comments" class="md-nav__link">
+    Documentation Comments
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-flow" class="md-nav__link">
+    Control Flow
+  </a>
+  
+    <nav class="md-nav" aria-label="Control Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if" class="md-nav__link">
+    if
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loop" class="md-nav__link">
+    loop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#while" class="md-nav__link">
+    while
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for" class="md-nav__link">
+    for
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structs" class="md-nav__link">
+    Structs
+  </a>
+  
+    <nav class="md-nav" aria-label="Structs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#associated-functions" class="md-nav__link">
+    Associated Functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enum" class="md-nav__link">
+    Enum
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pattern-matching" class="md-nav__link">
+    Pattern Matching
+  </a>
+  
+    <nav class="md-nav" aria-label="Pattern Matching">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#match" class="md-nav__link">
+    Match
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-let" class="md-nav__link">
+    If Let
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#while-let" class="md-nav__link">
+    While let
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    Error Handling
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Handling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unrecoverable-errors" class="md-nav__link">
+    Unrecoverable errors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recoverable-errors" class="md-nav__link">
+    Recoverable errors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#propagation" class="md-nav__link">
+    Propagation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generics" class="md-nav__link">
+    Generics
+  </a>
+  
+    <nav class="md-nav" aria-label="Generics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#where-clauses" class="md-nav__link">
+    WHERE clauses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traits" class="md-nav__link">
+    Traits
+  </a>
+  
+    <nav class="md-nav" aria-label="Traits">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boundaries" class="md-nav__link">
+    Boundaries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phantom-types" class="md-nav__link">
+    Phantom Types
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lifetime" class="md-nav__link">
+    Lifetime
+  </a>
+  
+    <nav class="md-nav" aria-label="Lifetime">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#static" class="md-nav__link">
+    Static
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iterator" class="md-nav__link">
+    Iterator
+  </a>
+  
+    <nav class="md-nav" aria-label="Iterator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#own-iterator" class="md-nav__link">
+    Own Iterator
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-orientation" class="md-nav__link">
+    Object Orientation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attributes" class="md-nav__link">
+    Attributes
+  </a>
+  
+    <nav class="md-nav" aria-label="Attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compiler-warnings" class="md-nav__link">
+    Compiler Warnings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conditional-compiling" class="md-nav__link">
+    Conditional Compiling
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-conditions" class="md-nav__link">
+    Custom Conditions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="language-core">Language Core</h1>
+<p>This very long page will go over the whole language specification explaining each part in a short form. As already said, for more detailed information read the documents already mentioned at the start of the Rust part.</p>
+<h2 id="local-variables">Local Variables</h2>
+<p>They can be defined using <code>let</code> which will immediately allocate memory but they have to be initialized with a value first to be used. Both can also be done in one step:</p>
+<pre><code class="rust">let x = 5;
+</code></pre>
+
+<p>!!! notice "Reserved names"</p>
+<pre><code>Rust has some [keywords](https://doc.rust-lang.org/reference/keywords.html) which are not possible to be used as variables. If you want to use such, use a raw variable like `fn r#match ...` starting with `r#` on definition and every call. This is mainly used while transferring files to newer editions. It is always better to use another name.
+</code></pre>
+<h3 id="constants">Constants</h3>
+<p>All hard coded values, which won't change in any circumstance, should be declared as constant.
+They are defined using <code>const</code>, have to be initialized on definition and can't be changed later.</p>
+<h3 id="mutability">Mutability</h3>
+<p>To ensure memory safety all variables are immutable by default. So you have to specify if you want to change them later. To set a variable as mutable precede it with the <code>mut</code> keyword.</p>
+<pre><code class="rust">let x = 5;      // immutable variable
+let mut x = 5;  // mutable variable
+</code></pre>
+
+<h3 id="shadowing">Shadowing</h3>
+<p>You can declare a new variable with the same name as a previous variable. Meaning the first variable is shadowed by the second so that the second variable’s value is what appears when the variable is used. You do so by redefining the variable again.</p>
+<p>This is often used to change the type of the value but reuse the same name which is not possible with mutable variables.</p>
+<h3 id="scope">Scope</h3>
+<p>The scope is the range within the program for which the variable is valid. It is valid from it's definition till the end of scope.
+The scope of the variable is the block in which it is defined.</p>
+<p>A new scope can be created by using curly braces also directly within the function.</p>
+<h2 id="copying">Copying</h2>
+<p>Data on the stack (primary data types) are copied by value, others on the heap are moved, if you assign one variable to another. That means a moved variable can't be used any longer.</p>
+<pre><code class="rust">let a = 1;
+let b = a;  // copy data on the stack
+
+let s1 = String::from(&quot;hello&quot;);
+let s2 = s1;            // move data to s2, s1 can no longer be used
+let s3 = s2.clone();    // clone data on the heap
+</code></pre>
+
+<p>To really copy heap data you need to <code>clone</code> them.</p>
+<p>The same goes for the copying/moving variables into functions as parameters or by returning them. So they are no longer valid in the parent function after the call is made.</p>
+<h3 id="ownership">Ownership</h3>
+<p>Rust’s central feature is ownership with the following rules:</p>
+<ul>
+<li>Each value in Rust has a variable that’s called its owner.</li>
+<li>There can only be one owner at a time.</li>
+<li>When the owner goes out of scope, the value will be dropped.</li>
+<li>The owner may borrow the variable to another function.</li>
+</ul>
+<p>Like shown above ownership is managed by copying/moving variables between functions.</p>
+<p>Alternatively the variable owned in the parent function can be borrowed to sub functions as reference indicated by <code>&amp;</code>. The owner stays and can further work with the variable. Keep in mind that the reference also have to be mutable if it's value should be changeable.</p>
+<pre><code class="rust">fn main() {
+    let s1 = String::from(&quot;hello&quot;);
+    let len = calculate_length(&amp;s1);
+    println!(&quot;The length of '{}' is {}.&quot;, s1, len);
+}
+
+fn calculate_length(s: &amp;String) -&gt; usize {
+    s.len()
+}
+</code></pre>
+
+<p>You can have only one mutable reference to a particular piece of data in a particular scope. If you need more you have to create separate scopes to end validity for one mutable reference before the other is created. The same goes for mixed mutable and immutable references to prevent you from references which change while using them.</p>
+<p>References can't be borrowed out of the definition scope.</p>
+<h2 id="references">References</h2>
+<p>Referencing is done by <code>&amp;</code> before the variable and dereferencing with <code>*</code> before the variable containing a reference.</p>
+<h2 id="primary-data-types">Primary Data Types</h2>
+<p>Rust is a statically typed language, which means that it must know the types of all variables at compile time. The compiler can usually infer what type we want to use based on the value and how we use it. But if not we have to annotate it.</p>
+<pre><code class="rust">let value: u32 = &quot;42&quot;.parse().expect(&quot;Not a number!&quot;);
+</code></pre>
+
+<h3 id="integer">Integer</h3>
+<table>
+<thead>
+<tr>
+<th>Length</th>
+<th>Type</th>
+<th>Min</th>
+<th>Max</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8-bit</td>
+<td>i8</td>
+<td>-128</td>
+<td>127</td>
+</tr>
+<tr>
+<td>8-bit</td>
+<td>u8</td>
+<td>0</td>
+<td>255</td>
+</tr>
+<tr>
+<td>16-bit</td>
+<td>i16</td>
+<td>-32768</td>
+<td>32767</td>
+</tr>
+<tr>
+<td>16-bit</td>
+<td>u16</td>
+<td>0</td>
+<td>65535</td>
+</tr>
+<tr>
+<td>32-bit</td>
+<td>i32</td>
+<td>-2147483648</td>
+<td>2147483647</td>
+</tr>
+<tr>
+<td>32-bit</td>
+<td>u32</td>
+<td>0</td>
+<td>4294967295</td>
+</tr>
+<tr>
+<td>64-bit</td>
+<td>i64</td>
+<td>-9223372036854775808</td>
+<td>9223372036854775807</td>
+</tr>
+<tr>
+<td>64-bit</td>
+<td>u64</td>
+<td>0</td>
+<td>18446744073709551615</td>
+</tr>
+<tr>
+<td>arch</td>
+<td>isize</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr>
+<td>arch</td>
+<td>usize</td>
+<td>0</td>
+<td>?</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>isize</code> and <code>usize</code> types depend on the kind of computer your program is running on: 64 bits if you’re on a 64-bit architecture and 32 bits if you’re on a 32-bit architecture.</p>
+<p>Integer values can be written as:</p>
+<ul>
+<li>Decimal: <code>98_222</code></li>
+<li>Hex: <code>0xff</code></li>
+<li>Octal: <code>0o77</code></li>
+<li>Binary: <code>0b1111_0000</code></li>
+<li>Byte (u8 only): <code>b'A'</code></li>
+</ul>
+<p>Integer types default is <code>i32</code> - this type is generally the fastest, even on 64-bit systems.</p>
+<p>If you set a variable you can define the type by also adding the type to the numeric value like <code>5u43</code> or with an optional underscore for better readability <code>5_u32</code>.</p>
+<h3 id="float">Float</h3>
+<p>Rust’s floating-point types are <code>f32</code> and <code>f64</code>, which are 32 bits and 64 bits in size, respectively. The default type is <code>f64</code> because on modern CPUs it’s roughly the same speed as <code>f32</code> but is capable of more precision.</p>
+<p>Like for integers the <code>_</code> may be used as visual separator and the type may be appended like <code>13_f32</code>.</p>
+<h3 id="boolean">Boolean</h3>
+<p>Boolean type in Rust are defined as <code>bool</code> and have two possible values: <code>true</code> and <code>false</code>.</p>
+<h3 id="character">Character</h3>
+<p>Rust’s <code>char</code> type is specified with single quotes and represents a Unicode character.</p>
+<h3 id="tuple">Tuple</h3>
+<p>A <code>tuple</code> is an ordered list of multiple other types. To access parts of it you can destructure it or directly access sub parts.</p>
+<pre><code class="rust">// define
+let coordinate: (i32, i32) = (25, 40);
+// destructure
+let (x, y) = coordinate;
+println!(&quot;The value of y is: {}&quot;, y);
+// direct access
+println!(&quot;The value of y is: {}&quot;, coordinate.1);
+</code></pre>
+
+<p>As far as they contain only primary data types they are completely stored on the stack.</p>
+<h3 id="array">Array</h3>
+<p>The <code>array</code> gives you a list of values, all with the same type. Arrays in Rust have a fixed length at compile time and cannot grow or shrink.</p>
+<pre><code class="rust">let a = [1, 2, 3, 4, 5];
+let second = a[1]; // access specific element
+</code></pre>
+
+<p>As far as they contain primary data types they are completely stored on the stack.</p>
+<h3 id="slices">Slices</h3>
+<p>Slices let you reference a contiguous sequence of elements in a collection rather than the whole collection.</p>
+<p>A string slice is a reference to part of a String which is created from a String with a range that begins at start and continues up to, but not including the end position, both are optional. The type is written as <code>&amp;str</code>.</p>
+<pre><code class="rust">let s = String::from(&quot;hello world&quot;);
+let hello = &amp;s[0..5];
+</code></pre>
+
+<p>String literals are also slices pointing to a position in the binary.</p>
+<p>Slices are also possible on arrays:</p>
+<pre><code class="rust">let a = [1, 2, 3, 4, 5];
+let slice = &amp;a[1..3];
+</code></pre>
+
+<p>Here the type is <code>&amp;[i32]</code>.</p>
+<h3 id="literals">Literals</h3>
+<p>Numeric literals can be type annotated by adding the type as a suffix. As an example, to specify that the literal <code>42</code> should have the type <code>i32</code>, write <code>42i32</code>.</p>
+<h3 id="type-aliasing">Type Aliasing</h3>
+<p>The main use of aliases is to reduce boilerplate; for example the <code>IoResult&lt;T&gt;</code> type is an alias for the <code>Result&lt;T, IoError&gt;</code> type. This is done by defining the type like: <code>type NanoSecond = u64;</code></p>
+<h3 id="type-conversion">Type Conversion</h3>
+<p>Explicit type conversion (casting) can be performed using the <code>as</code> keyword:</p>
+<pre><code class="rust">let decimal = 65.4321_f32;
+let integer = decimal as u8;
+let character = integer as char;
+</code></pre>
+
+<p>Conversions between custom types are implemented using the traits <code>From</code> and <code>Into</code> or for Strings <code>ToString</code> and <code>FromString</code>. They are used through the <code>from()</code> and <code>parse()</code> functions like: <code>String::from(my_str)</code> or <code>"10".parse::&lt;i32&gt;().unwrap()</code></p>
+<h2 id="functions">Functions</h2>
+<p>Functions will be declared using <code>fn</code> before it's name. If parameters are possible, they need to be defined with their types.</p>
+<p>Within the function you may use statements and expressions. While expressions evaluate to an value, statements only perform some actions. Because assignments are statements, something like <code>x = y = 6</code> is not allowed. While function calls are expressions, macros are statements and each expression ending with a <code>;</code> is also turned into a statement.</p>
+<p>Return values are declared with an arrow <code>-&gt;</code> before the function body:</p>
+<pre><code class="rust">fn add(a: i32, b: i32) -&gt; i32 {
+    a + b
+}
+// calling it using
+let res = add(5, 7);
+</code></pre>
+
+<p>You can return early from a function by using the return keyword and specifying a value, but most functions return the last expression implicitly. That's why no <code>;</code> is set after the addition expression to keep it an expression and return it's result.</p>
+<h3 id="closures">Closures</h3>
+<p>Sometimes you need anonymous functions given as a closure to another function or variable. They can capture values from the defining scope.
+The arguments here are given between pipes <code>|err|</code>, instead of round brackets used in normal functions, before a code block:</p>
+<pre><code class="rust">let add = |a, b| {
+    let x = add(5, 7);
+    x
+});
+// calling it using
+let res = add(5, 7);
+</code></pre>
+
+<p>Closures are usually short and relevant only within a narrow context they mostly don't need type annotations.
+It can also consist of a single expression without the curly braces:</p>
+<pre><code class="rust">let add_one_v4 = |x| x + 1 ;
+</code></pre>
+
+<p>Each variable in the definition scope of the closure is directly accessible:</p>
+<pre><code class="rust">let x = 4;
+let equal_to_x = |z| z == x;
+let res = equal_to_x(4); // that's true
+</code></pre>
+
+<p>Using the <code>move</code> keyword before the parameters, the closure will take ownership of the used variables.</p>
+<p>A struct can be made to hold the closure and it's result value. This allows to call it multiple times but only execute it once.
+When taking a closure as an input parameter, the closure's complete type must be annotated using one of a few traits. In order of decreasing restriction, they are:</p>
+<ul>
+<li><code>Fn</code>: the closure captures by reference (<code>&amp;T</code>)</li>
+<li><code>FnMut</code>: the closure captures by mutable reference (<code>&amp;mut T</code>)</li>
+<li><code>FnOnce</code>: the closure captures by value (<code>T</code>)</li>
+</ul>
+<p>See the description of structs and traits later in this book. See the <a href="../solutions/cache/">Caching using Struct</a> as an example of how this is used.</p>
+<h3 id="diverging-functions">Diverging functions</h3>
+<p>Functions which will never return are called diverging functions. They are marked using !, which is an empty type.</p>
+<pre><code class="rust">fn foo() -&gt; ! {
+    panic!(&quot;This call never returns.&quot;);
+}
+</code></pre>
+
+<h2 id="comments">Comments</h2>
+<p>As in most C-like languages you can have line and block comments:</p>
+<pre><code class="rust">// this is a line comment which goes to the end of this line
+/* this is a block comment ending on the first closing characters */
+</code></pre>
+
+<p>Additionally there are document comments to add text to the API documentation.</p>
+<pre><code class="rust">/// Generate library docs for the following item.
+//! Generate library docs for the enclosing item.
+</code></pre>
+
+<h3 id="documentation-comments">Documentation Comments</h3>
+<p>Documentation comments use three slashes, <code>///</code>, instead of two and support Markdown notation for formatting the text. They have to be placed just before the item they’re documenting.</p>
+<p>The documentation should explain the element. But don't describe the concrete API because this is added automatically by Rust. Useful sections may be:</p>
+<ul>
+<li><code>Examples</code> - short code parts to explain typical use</li>
+<li><code>Panics</code> - scenarios in which the function could panic</li>
+<li><code>Errors</code> - the kinds of errors that might occur within the <code>Result</code></li>
+<li><code>Safety</code> - for unsafe functions there should be an explanation why the function is unsafe and covering the invariants that the function expects callers to uphold</li>
+</ul>
+<p>Running <code>cargo test</code> will run the code examples in your documentation as tests this will keep your examples always functional and up to date.</p>
+<p>To document the file itself you can use the alternative marker <code>//!</code> which is used to document the element this comment is contained in.</p>
+<p>Attention: Documentation in <code>main.rs</code> will not be exported. Only files which could be loaded as module can be documented, so put the main documentation in <code>lib.rs</code>.</p>
+<h2 id="control-flow">Control Flow</h2>
+<h3 id="if">if</h3>
+<p>An <code>if</code> expression allows you to branch your code depending on conditions. If the condition is met the following block is executed but if not the optional <code>else</code> block is executed. The result of the condition has to be a <code>bool</code>.</p>
+<pre><code class="rust">let number = 3;
+if number &lt; 5 {
+    println!(&quot;a small number&quot;);
+} else if number &lt; 10 == 0 {
+    println!(&quot;a little bigger number&quot;);
+} else {
+    println!(&quot;big number&quot;);
+}
+</code></pre>
+
+<p>As shown multiple alternative conditions may be joined. But if you need multiple alternatives consider using <code>match</code>.</p>
+<p><code>if</code> is an expression so it can be used in a statement to set the returning value of the evaluated block to a variable.
+This means the values that have the potential to be results from each arm of the <code>if</code> must be the same type.</p>
+<pre><code class="rust">let condition = true;
+let number = if condition {
+    5
+} else {
+    6
+};
+</code></pre>
+
+<h3 id="loop">loop</h3>
+<p>The <code>loop</code> keyword tells Rust to execute a block of code over and over again forever or until you explicitly tell it to stop using <code>break</code>. With <code>continue</code> the current loop iteration is stopped and the next iteration will follow.</p>
+<p>Also the loop can be named to break or continue out of a specific loop:</p>
+<pre><code class="rust">fn main() {
+    'outer: loop {
+        println!(&quot;Entered the outer loop&quot;);
+       'inner: loop {
+            println!(&quot;Entered the inner loop&quot;);
+            break 'outer;
+        }
+        println!(&quot;This point will never be reached&quot;);
+    }
+    println!(&quot;Exited the outer loop&quot;);
+}
+</code></pre>
+
+<p>You have to use a label like <code>'outer:</code> before the loop statement and also behind the <code>break</code> or <code>continue</code>,</p>
+<p>Also you might return a value to the rest of the code by putting it after the <code>break</code>, and it will be returned by the loop expression.</p>
+<h3 id="while">while</h3>
+<p>If you want to check a condition to decide if the loop should continue you may use the <code>while</code> loop. Before each round of the loop the condition is evaluated and while it is <code>true</code> the loop goes on.</p>
+<pre><code class="rust">let mut x = 5;
+while x &lt; 10000 {
+    println!(&quot;{}&quot;, x);
+    x = x * x
+}
+</code></pre>
+
+<p>Alternatively you can do the same using <code>loop</code> and an <code>if</code> check with <code>break</code>.</p>
+<h3 id="for">for</h3>
+<p>To iterate a defined number of times use <code>for n in 1..101</code> to go from 1 to 100. To also include the second value use <code>for n in 1..=100</code> which is the same.</p>
+<p>A <code>for</code> loop is also used to execute some code for each item in a collection:</p>
+<pre><code class="rust">for element in a.iter() {
+    println!(&quot;the value is: {}&quot;, element);
+}
+</code></pre>
+
+<p>Alternatively the following iterators may be used in collections:</p>
+<ul>
+<li><code>iter()</code> - borrows each element of the collection through each iteration, leaving the collection untouched and available for reuse after the loop</li>
+<li><code>into_iter()</code> - consumes the collection and moves each element into the loop, they are no longer available in the collection</li>
+<li><code>iter_mut()</code> - mutably borrow each element of the collection, allowing for the collection to be modified in place</li>
+</ul>
+<h2 id="structs">Structs</h2>
+<p>Structs are one possibility to create objects. They are similar to tuples but with named elements, so that it is clear, what each element is. As a result the order of the elements isn't of matter.</p>
+<pre><code class="rust">struct User {
+    name: String,
+    email: String,
+    online: bool,
+}
+let mut user1 = User {
+    email: String::from(&quot;someone@example.com&quot;),
+    name: String::from(&quot;someone&quot;),
+    online: true,
+};
+user1.email = String::from(&quot;anotheremail@example.com&quot;);
+
+// if variable name and struct field is the same the creation can be simplified
+fn build_user(email: String, name: String) -&gt; User {
+    User {
+        email,
+        name,
+        online: true,
+    }
+}
+</code></pre>
+
+<p>To create a new instance partly of the old one the <code>..</code> before the variable name specifies that the undefined fields should have the same field as the specified object.</p>
+<pre><code class="rust">let user2 = User {
+    email: String::from(&quot;another@example.com&quot;),
+    username: String::from(&quot;anotherusername567&quot;),
+    ..user1
+};
+</code></pre>
+
+<p>Also you can define structs like tuples without naming the data pieces.</p>
+<pre><code class="rust">struct Color(i32, i32, i32);
+let black = Color(0, 0, 0);
+</code></pre>
+
+<h3 id="methods">Methods</h3>
+<p>Methods are functions contained within a struct, which are bound to the struct object data.</p>
+<p>An implementation block <code>impl</code> holds method functions for a struct. The method always has a reference to the struct object itself as <code>&amp;self</code> as first parameter:</p>
+<pre><code class="rust">struct Rectangle {
+    width: u32,
+    height: u32,
+}
+impl Rectangle {
+    fn area(&amp;self) -&gt; u32 {
+        self.width * self.height
+    }
+}
+
+fn main() {
+    let rect1 = Rectangle { width: 30, height: 50 };
+    let area = rect1.area();
+}
+</code></pre>
+
+<p>The self reference can also be made mutable. By calling such methods Rust will do automatic dereferencing so there is no need to make references in the calling. As with functions additional parameters are possible.</p>
+<h3 id="associated-functions">Associated Functions</h3>
+<p>This is like static methods in object oriented languages. They don't get a self reference and are called using <code>::</code></p>
+<pre><code class="rust">#[derive(Debug)]
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+impl Rectangle {
+    fn square(size: u32) -&gt; Rectangle {
+        Rectangle { width: size, height: size }
+    }
+    fn area(&amp;self) -&gt; u32 {
+        self.width * self.height
+    }
+}
+
+fn main() {
+    let sq = Rectangle::square(3);
+    let area = sq.area();
+}
+</code></pre>
+
+<p>You can also put the methods and associated functions in multiple implementation blocks.</p>
+<h2 id="enum">Enum</h2>
+<p>The <code>enum</code> can be used to present different exclusive states which may also contain an associated value.</p>
+<pre><code class="rust">enum IpAddrKind { V4, V6 }
+
+enum IpAddr {
+    V4(u8, u8, u8, u8),
+    V6(String),
+}
+let localhost = IpAddr::V4(127, 0, 0, 1);
+</code></pre>
+
+<p>As shown the second example defines an enum with assigned values. Similar to struct an enum may contain methods.</p>
+<p>Rust didn't have the <code>null</code> value but the <code>Option</code> enum will be used. It is so common that you may use its values <code>Some</code> and <code>None</code> directly without the <code>Option::</code> prefix.</p>
+<h2 id="pattern-matching">Pattern Matching</h2>
+<p>Patterns are a special syntax in Rust for matching against the structure of types, both complex and simple.</p>
+<p>Within the patterns you may use:</p>
+<ul>
+<li>value - only this concrete value</li>
+<li><code>1 | 2</code> - multiple matches are possible with or</li>
+<li><code>1 ... 5</code> - ranges</li>
+<li><code>(a, b)</code> - destructruring vector</li>
+<li><code>{ x: a, y: b }</code> - destructuring structs</li>
+<li><code>{ x, y }</code> - destructuring structs, using property name as variable names</li>
+<li><code>_</code> - is used to ignore values</li>
+<li><code>..</code> - ignoring remaining or previous parts</li>
+<li><code>ref</code> or <code>ref mut</code> - creating a reference</li>
+<li><code>@</code> - create variable (before) and also test it (after the @)</li>
+</ul>
+<h3 id="match">Match</h3>
+<p>The <code>match</code> command allows you to compare a value against a series of patterns and then execute code based on which pattern matches.</p>
+<pre><code class="rust">match x {
+    None =&gt; None,
+    Some(i) =&gt; Some(i + 1),
+}
+</code></pre>
+
+<p>All possible values have to be checked. But you can use the <code>_</code> placeholder as pattern to match the rest of the possibilities.</p>
+<p>If it gets more complex use match guards with an additional <code>if</code>:</p>
+<pre><code class="rust">let num = Some(4);
+match num {
+    Some(x) if x &lt; 5 =&gt; println!(&quot;less than five: {}&quot;, x),
+    Some(x) =&gt; println!(&quot;{}&quot;, x),
+    None =&gt; (),
+}
+</code></pre>
+
+<h3 id="if-let">If Let</h3>
+<p>The <code>if let</code> syntax lets you write a singular pattern match in an easier form:</p>
+<pre><code class="rust">if let Some(3) = some_u8_value {
+    println!(&quot;three&quot;);
+}
+</code></pre>
+
+<p>Here the pattern comes before the equal sign and the value behind. As with a normal if you can also use an else part which is executed if the pattern doesn't match. It is used like <code>if</code> and can also be combined with it using <code>else if let</code> and <code>else</code>.</p>
+<h3 id="while-let">While let</h3>
+<p>Similar to the <code>if let</code> the <code>while let</code> will run a loop while the match succeeds.</p>
+<h2 id="error-handling">Error Handling</h2>
+<p>Rust knows two types of errors:</p>
+<ul>
+<li>unrecoverable errors - will force the code to stop</li>
+<li>recoverable errors - will be handled within the code</li>
+</ul>
+<p>Use the unrecoverable errors sparsely. If a library use a recoverable error the caller always has the option to make it unrecoverable but not the other way around.</p>
+<h3 id="unrecoverable-errors">Unrecoverable errors</h3>
+<p>Then some bad situations occur which should not be there the <code>panic!</code> macro will print a failure message, unwind and clean up the stack and quit the program.</p>
+<p>The debug build will have included symbols, so that also a backtrace is possible which shows you the files and lines which brought you to the problem.
+If the program is called with the <code>RUST_BACKTRACE=1</code> environment setting this backtrace will be displayed.</p>
+<p>Use such errors in prototyping to be later replaced or in tests. Or use it than it can't really fail.</p>
+<h3 id="recoverable-errors">Recoverable errors</h3>
+<p>Functions which may have an error are returning a <code>Result</code> enum which is defined as having two variants, <code>Ok</code> with an associated value and <code>Err</code> with an associated message.</p>
+<p>This can be checked like:</p>
+<pre><code class="rust">let f = File::open(&quot;hello.txt&quot;);
+
+let f = match f {
+    Ok(file) =&gt; file,
+    Err(error) =&gt; {
+        panic!(&quot;There was a problem opening the file: {:?}&quot;, error)
+    },
+};
+</code></pre>
+
+<p>At first this is an recoverable error in the <code>file::open</code> method but then it was decided to make it in this situation unrecoverable using the <code>panic!</code> macro.</p>
+<p>The type of <code>error</code> within the <code>Err</code> handler here is <code>io::Error</code>, which is a struct provided by the standard library. This struct has a method <code>kind</code> that holds an <code>io::ErrorKind</code> value. The enum <code>io::ErrorKind</code> is also from the standard library and has variants representing the different kinds of errors that might result from an IO operation. The relevant variant in this example may be <code>ErrorKind::NotFound</code>, which indicates the file doesn’t exist yet. It can be checked like:</p>
+<pre><code class="rust">if error.kind() == ErrorKind::NotFound { ... }
+</code></pre>
+
+<p>The <code>Result&lt;T, E&gt;</code> has some useful shortcut helpers:</p>
+<ul>
+<li><code>unwrap</code> - if <code>OK</code> return the value and if <code>Err</code> then call <code>panic!</code></li>
+<li><code>unwrap_or_else</code> - like <code>unwrap</code> but on <code>Err</code> call the code in the given closure</li>
+<li><code>expect</code> - do the same but use the given error message in panic message</li>
+</ul>
+<h3 id="propagation">Propagation</h3>
+<p>This will let the error bubble up through it's call stack. The following example will check for errors and immediately propagate them:</p>
+<pre><code class="rust">let mut f = match f {
+    Ok(file) =&gt; file,
+    Err(e) =&gt; return Err(e),
+};
+</code></pre>
+
+<p>As a shortcut here the <code>?</code> operator may be used:</p>
+<pre><code class="rust">let mut f = File::open(&quot;hello.txt&quot;)?;   // immediately return on Result::Err with it
+File::open(&quot;hello.txt&quot;)?.read_to_string(&amp;mut s)?;   // also possibly in between calls
+</code></pre>
+
+<p>This will also automatically convert the error type to the function's defined returning type. But it can only be used in functions returning a <code>Result</code>.</p>
+<h2 id="generics">Generics</h2>
+<p>Generics are abstract stand-ins to allow different concrete types to be used. Therefore the generics has to be defined in the function signature:</p>
+<pre><code class="rust">fn largest&lt;T&gt;(list: &amp;[T]) -&gt; T { ... }
+</code></pre>
+
+<p>This defines that the same type which is given ad reference will be returned. So this can be used with <code>ì32</code> or <code>float</code>...</p>
+<p>Generics can also be used in <code>struct</code> or <code>enum</code> like:</p>
+<pre><code class="rust">enum Result&lt;T, E&gt; {
+    Ok(T),
+    Err(E),
+}
+</code></pre>
+
+<p>On implementations you have to define the generics directly after <code>imp&lt;T&gt; enum&lt;T&gt;{ ... }</code>.</p>
+<p>The performance of generics is not slower because the compiler will transform the generics to different concrete functions which are used.</p>
+<h3 id="where-clauses">WHERE clauses</h3>
+<p>A bound can also be expressed using a where clause immediately before the opening <code>{</code>, rather than at the type's first mention.</p>
+<p>Instead of:</p>
+<pre><code class="rust">fn apply&lt;F: FnOnce()&gt;(f: F) {
+    f();
+}
+</code></pre>
+
+<p>It can be written as:</p>
+<pre><code class="rust">fn apply&lt;F&gt;(f: F)
+    where F: FnOnce()
+{
+    f();
+}
+</code></pre>
+
+<h2 id="traits">Traits</h2>
+<p>Traits are similar to interfaces. They define behavior for multiple types. A <code>trait</code> contains the function signatures which has to be met:</p>
+<pre><code class="rust">pub trait Summary {
+    fn summarize(&amp;self) -&gt; String;
+}
+</code></pre>
+
+<p>This can be used to ensure that types marked with this trait are only allowed on types with the defined signature. To implement a trait on a type:</p>
+<pre><code class="rust">impl Summary for NewsArticle {
+    fn summarize(&amp;self) -&gt; String {
+        format!(&quot;{}, by {} ({})&quot;, self.headline, self.author, self.location)
+    }
+}
+</code></pre>
+
+<p>Traits can only be implemented on local types. If a trait should have a default behavior this is defined as functions with body to the trait definition.</p>
+<h3 id="boundaries">Boundaries</h3>
+<p>A trait can be used to limit generics to only some types.</p>
+<pre><code class="rust">pub fn notify&lt;T: Summary&gt;(item: T) {
+    println!(&quot;Breaking news! {}&quot;, item.summarize());
+}
+</code></pre>
+
+<p>Multiple trait bounds can also be set like <code>T: Summary + Display</code> but to make this better readable it can also put as <code>where</code> condition before the function body:</p>
+<pre><code class="rust">fn some_function&lt;T, U&gt;(t: T, u: U) -&gt; i32
+    where T: Display + Clone,
+          U: Clone + Debug
+{
+</code></pre>
+
+<p>You can also use traits to conditional implement methods:</p>
+<pre><code class="rust">impl&lt;T: Display + PartialOrd&gt; Pair&lt;T&gt; {
+    fn cmp_display(&amp;self) { ... }
+}
+</code></pre>
+
+<p>Or directly implement a trait on types matching another trait:</p>
+<pre><code class="rust">impl&lt;T: Display&gt; ToString for T { ... }
+</code></pre>
+
+<h3 id="phantom-types">Phantom Types</h3>
+<p>A phantom type parameter is one that doesn't show up at runtime, but is checked statically (and only) at compile time.
+In combination with generics this can help to ensure type safety.</p>
+<h2 id="lifetime">Lifetime</h2>
+<p>References have lifetimes, which are the scope for which this references are valid and help to prevent dangling references.
+The default lifetime can be adjusted using annotations.</p>
+<p>Problems occur if the reference of an inner variable is borrowed to an outer variable with longer lifetime. To solve this references are annotated with relations to lifetime spaces:</p>
+<pre><code class="rust">&amp;i32        // a reference
+&amp;'a i32     // a reference with an explicit lifetime
+&amp;'a mut i32 // a mutable reference with an explicit lifetime
+</code></pre>
+
+<p>Each lifetime for it's own didn't give any help but the relation of different references with the same lifetime defined in the function signature:</p>
+<pre><code class="rust">fn longest&lt;'a&gt;(x: &amp;'a str, y: &amp;'a str) -&gt; &amp;'a str { .. }
+</code></pre>
+
+<p>This defines that all references in the parameters and the return value must have the same lifetime. Because we’ve annotated the returned reference with the same lifetime parameter <code>`a</code>, the returned reference will also be valid for the length of the smaller of the lifetimes of<code>x</code>and<code>y</code>.</p>
+<p>Alternatively you can return an owned data type rather than a reference so the calling function is then responsible for cleaning up the value.</p>
+<p>Lifetimes are also possible in method definitions or in a <code>struct</code> that holds references
+But you won't need to add lifetime annotations anywhere because the compiler will add them automatically for known patterns.</p>
+<h3 id="static">Static</h3>
+<p>The <code>'static</code> lifetime is special, it keeps the references for the whole lifetime of the program. This is used on string literals which are stored in the binary.</p>
+<h2 id="iterator">Iterator</h2>
+<p>You can create an iterator by calling <code>iter</code>, <code>into_iter</code>, or <code>iter_mut</code> on a vector. You can create iterators from the other collection types in the standard library, such as hash map. You can also create iterators that do anything you want by implementing the Iterator trait on your own types.</p>
+<p>On iterators you can also use high level operations like:</p>
+<ul>
+<li><code>filter</code> - to only select elements where the given closure is true</li>
+<li><code>map</code> - call a closure on each element and replace it with the closure`s result</li>
+<li><code>zip</code> - combine two iterators together as tuples</li>
+<li><code>collect</code> - return a vector of values</li>
+<li><code>count</code> - count the number of elements</li>
+</ul>
+<p>And some more.</p>
+<h3 id="own-iterator">Own Iterator</h3>
+<p>Each iterator has to implement the <code>next</code> method:</p>
+<pre><code class="rust">impl Iterator for Counter {
+    type Item = u32;
+
+    fn next(&amp;mut self) -&gt; Option&lt;Self::Item&gt; {
+        self.count += 1;
+
+        if self.count &lt; 6 {
+            Some(self.count)
+        } else {
+            None
+        }
+    }
+}
+</code></pre>
+
+<h2 id="object-orientation">Object Orientation</h2>
+<p>Rust is not fully object oriented but you can implement object oriented patterns with it. Structs and enums are containing data and the procedures working on them, so they are objects. Also the implementation can partly be hide by encapsulation with modules and making only some parts public. But inheritance is not really possible. Although polymorphism is possible using the traits.</p>
+<h2 id="attributes">Attributes</h2>
+<p>An attribute is metadata applied to some module, crate or item. This metadata can be used to/for:</p>
+<ul>
+<li>conditional compilation of code</li>
+<li>set crate name, version and type (binary or library)</li>
+<li>disable lints (warnings)</li>
+<li>enable compiler features (macros, glob imports, etc.)</li>
+<li>link to a foreign library</li>
+<li>mark functions as unit tests</li>
+<li>mark functions that will be part of a benchmark</li>
+</ul>
+<p>They are written as <code>#[attribute]</code> if they apply for the current module or following item and <code>#![attribute]</code> if they apply for the whole crate. Just like with doc comments. They also may get values...</p>
+<h3 id="compiler-warnings">Compiler Warnings</h3>
+<ul>
+<li><code>#[allow(dead_code)]</code> - to don't warn about unused functions</li>
+</ul>
+<h3 id="conditional-compiling">Conditional Compiling</h3>
+<p>This allows to compile parts only on specific settings like OS:</p>
+<pre><code class="rust">#[cfg(target_os = &quot;linux&quot;)]
+fn are_you_on_linux() {
+    println!(&quot;You are running linux!&quot;);
+}
+
+#[cfg(not(target_os = &quot;linux&quot;))]
+fn are_you_on_linux() {
+    println!(&quot;You are *not* running linux!&quot;);
+}
+</code></pre>
+
+<p>The same may be achieved using the <code>cfg!</code> macro.</p>
+<p>The condition may be build using nested parts using the following helper:</p>
+<ul>
+<li><code>any</code> like <code>#[cfg(any(unix, windows))]</code></li>
+<li><code>all</code> like <code>#[cfg(all(unix, target_pointer_width = "32"))]</code></li>
+<li><code>not</code> like <code>#[cfg(not(foo))]</code></li>
+</ul>
+<p>You can also set another attribute based on a <code>cfg</code> variable with <code>#[cfg_attr(a, b)]</code>. This will set attribute <code>b</code>, but only if attribute <code>a</code> is set.</p>
+<h3 id="custom-conditions">Custom Conditions</h3>
+<p>Using Cargo, they get set in the <code>[features]</code> section of your Cargo.toml:</p>
+<pre><code class="ini">[features]
+# no features by default
+default = []
+# Add feature &quot;foo&quot; here, then you can use it.
+# Our &quot;foo&quot; feature depends on nothing else.
+foo = []
+</code></pre>
+
+<pre><code class="rust">#[cfg(feature = &quot;foo&quot;)]
+mod foo {
+}
+</code></pre>
+
+<p>Compile this using <code>cargo build</code>, no additional flag will be send to the <code>rustc</code> compiler (default). But using <code>cargo build --features "foo"</code> it will send the <code>foo</code> flag to <code>rustc</code> and the output will have the <code>mod foo</code> in it.</p>
+<p>{!docs/abbreviations.txt!}</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../start/" title="Getting started" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Getting started
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../standard/" title="Standard Library" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Standard Library
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2016 - 2020 <a href="https://elviejo79.github.io">Alexander Schilling</a>
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.36cbf620.min.js"></script>
+      <script src="../../assets/javascripts/bundle.00c583dd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.7f7c8775.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
